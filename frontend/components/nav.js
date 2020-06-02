@@ -1,41 +1,70 @@
-import React from 'react'
+import React, {useState} from 'react'
+import styles from './nav.module.scss'
 import Link from 'next/link'
+import { ARRAY_PAGES } from '../constants/routes'
 
-const Nav = ({ categories }) => {
+const SuscribeComponent = () => {
+  const onSubmit = () => {
+    alert('Submiting');
+  }
   return (
     <div>
-      <nav className="uk-navbar-container" data-uk-navbar>
-        <div className="uk-navbar-left">
-          <ul className="uk-navbar-nav">
-            <li>
-              <Link href="/">
-                <a>Strapi Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <span>RECEIVE</span>
+      <h1>Updates & News</h1>
+      <p>
+        Join the Prayers & Blessings community and receive our latest updates and news.
+      </p>
+      <p>
+        <input type='text' className={styles.input} placeholder='Your name' />
+        <input type='text' className={styles.input} placeholder='Your surname' />
+      </p>
+      <p>
+        <input type='email' className={styles.input} placeholder='Your email' />
+        <button type='submit' className={styles.submitButton} onClick={onSubmit}>Submit</button>
+      </p>
+    </div>
+  );
+}
 
-        <div className="uk-navbar-right">
+const Nav = () => {
+  let [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <>
+      {!isOpen && (
+        <div className={styles.menu}>
+          <button onClick={handleOpen}>Open</button>
+        </div>
+      )}
+      {isOpen && (
+        <div className={styles.open}>
+          <button onClick={handleClose}>X</button>
+
           <ul className="uk-navbar-nav">
-            {categories.map((category) => {
+            {ARRAY_PAGES.map((page) => {
               return (
-                <li key={category.id}>
-                  <Link as={`/category/${category.id}`} href="/category/[id]">
-                    <a className="uk-link-reset">{category.name}</a>
+                <li key={page.url}>
+                  <Link as={`${page.url}`} href={page.url}>
+                    <a onClick={handleClose}>{page.name}</a>
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
+          <SuscribeComponent/>
         </div>
-      </nav>
-    </div>
-  )
-}
+      )}
+      }
+    </>
+  );
+};
 
 export default Nav

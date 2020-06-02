@@ -1,28 +1,32 @@
 import React from 'react'
-import Articles from '../components/articles'
+import Link from 'next/link'
 import Layout from '../components/layout'
-import { getArticles, getCategories } from '../lib/api'
+import PAGES from '../constants/routes'
+import styles from './index.module.scss'
 
-const Home = ({ articles, categories }) => {
+const Home = () => {
   return (
-    <Layout categories={categories}>
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>Strapi blog</h1>
-          <Articles articles={articles} />
-        </div>
+    <Layout>
+      <p>
+        OFFER YOUR PRAYERS AND BLESSINGS
+      </p>
+      <h1>
+        To the World
+      </h1>
+      <div className={styles.candles}>
+        <Link as={`${PAGES.ABOUT_US.url}`} href={PAGES.ABOUT_US.url}>
+          {PAGES.ABOUT_US.name}
+        </Link>
+        <Link as={`${PAGES.LIGHT_A_CANDLE.url}`} href={PAGES.LIGHT_A_CANDLE.url}>
+          {PAGES.LIGHT_A_CANDLE.name}
+        </Link>
+        <Link as={`${PAGES.LIBRARY.url}`} href={PAGES.LIBRARY.url}>
+          {PAGES.LIBRARY.name}
+        </Link>
       </div>
     </Layout>
   )
 }
 
-export async function getStaticProps() {
-  const articles = (await getArticles()) || []
-  const categories = (await getCategories()) || []
-  return {
-    props: { articles, categories },
-    unstable_revalidate: 1,
-  }
-}
 
 export default Home
