@@ -15,5 +15,8 @@
     "react-markdown": "^4.2.2",
     "react-moment": "^0.9.6"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.26.7"
+  }
 }

@@ -1,0 +1,27 @@
+$sectionColor: yellow;
+$widhtMenu: 20px;
+.menu {
+  border: 2px solid black;
+  background: black;
+  opacity: 0.5;
+  width: $widhtMenu;
+  height: 100%;
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.open {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: $sectionColor;
+
+  .close-button {
+
+  }
+}
