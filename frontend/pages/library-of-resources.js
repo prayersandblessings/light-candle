@@ -76,9 +76,9 @@ const LibraryOfResources = () => {
       </p>
       { Resources.filter(({
         category
-      }) => {console.log(category, categorySelected); return category === categorySelected || categorySelected === ''}).map(
-        ({ category, title, content, author }) => 
-        <>
+      }) => (category === categorySelected || categorySelected === '')).map(
+        ({ title, content, author }) => 
+        <div key={`${title}-${author}`}>
           <h2>
             {title}
           </h2>
@@ -89,7 +89,7 @@ const LibraryOfResources = () => {
             {author}
           </p>
           <button onClick={handleShare(title)}>Share</button>
-        </>
+        </div>
       )}
     </Layout>
   );
