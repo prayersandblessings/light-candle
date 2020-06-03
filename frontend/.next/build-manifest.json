@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/a-blessing-a-day": [
+    "/light-a-candle": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/library-of-resources": [
+    "/view-candle/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

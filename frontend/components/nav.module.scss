@@ -1,9 +1,8 @@
-$sectionColor: yellow;
-$widhtMenu: 20px;
+$sectionColor: green;
+$widhtMenu: 50px;
 .menu {
   border: 2px solid black;
-  background: black;
-  opacity: 0.5;
+  background: $sectionColor;
   width: $widhtMenu;
   height: 100%;
   display: block;

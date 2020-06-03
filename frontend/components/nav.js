@@ -62,7 +62,6 @@ const Nav = () => {
           <SuscribeComponent/>
         </div>
       )}
-      }
     </>
   );
 };

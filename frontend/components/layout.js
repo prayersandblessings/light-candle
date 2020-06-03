@@ -1,12 +1,12 @@
 import Nav from './nav'
+import styles from './layout.module.scss'
 
 const Layout = ({ children, categories }) => (
-  <>
-    
-    <Nav categories={categories} />
-    <div className='content'>
+  <> 
+    <div className={styles.content}>
       {children}
     </div>
+    <Nav categories={categories} />
   </>
 )
 
