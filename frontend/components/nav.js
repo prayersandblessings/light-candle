@@ -19,7 +19,9 @@ const Nav = () => {
     <>
       {!isOpen && (
         <div className={styles.menu}>
-          <button onClick={handleOpen}>Open</button>
+          <button onClick={handleOpen}>
+            <img src="/icon-hamburguer.svg" width="33px" height="16px"></img>
+          </button>
         </div>
       )}
       {isOpen && (
