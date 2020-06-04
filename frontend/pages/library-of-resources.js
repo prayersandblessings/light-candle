@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Layout from '../components/layout'
+import SubscribeComponent from '../components/subscribe'
 const CATEGORIES = [
   'PEACE',
   'UNITY',
@@ -91,6 +92,8 @@ const LibraryOfResources = () => {
           <button onClick={handleShare(title)}>Share</button>
         </div>
       )}
+
+      <SubscribeComponent/>
     </Layout>
   );
 }
