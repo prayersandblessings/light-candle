@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phrases",
+  "info": {
+    "name": "Phrases"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "author": {
+      "type": "string"
+    },
+    "phrase_category": {
+      "model": "phrase-category"
+    }
+  }
+}

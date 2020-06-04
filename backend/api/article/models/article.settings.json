@@ -1,8 +1,9 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "articles",
   "info": {
-    "name": "article"
+    "name": "article [Example]"
   },
   "options": {
     "increments": true,
@@ -26,10 +27,6 @@
     "published_at": {
       "type": "date",
       "required": true
-    },
-    "category": {
-      "model": "category",
-      "via": "articles"
     }
   }
 }
