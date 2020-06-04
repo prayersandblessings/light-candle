@@ -1,3 +1,8 @@
+
+@import 'variables';
+@import 'typography';
+
+
 a {
   text-decoration: none;
   color: blue;
@@ -9,7 +14,7 @@ h1 {
 }
 
 body {
-  color: yellow;
+  color: white;
   margin: 0;
   padding: 0;
 }
