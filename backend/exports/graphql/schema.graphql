@@ -1,0 +1,1023 @@
+type Article {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String!
+  content: String!
+  image: UploadFile
+  published_at: Date!
+}
+
+type ArticleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ArticleConnection {
+  values: [Article]
+  groupBy: ArticleGroupBy
+  aggregate: ArticleAggregator
+}
+
+type ArticleConnectionContent {
+  key: String
+  connection: ArticleConnection
+}
+
+type ArticleConnectionCreated_at {
+  key: DateTime
+  connection: ArticleConnection
+}
+
+type ArticleConnectionId {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleConnectionImage {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleConnectionPublished_at {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleConnectionTitle {
+  key: String
+  connection: ArticleConnection
+}
+
+type ArticleConnectionUpdated_at {
+  key: DateTime
+  connection: ArticleConnection
+}
+
+type ArticleGroupBy {
+  id: [ArticleConnectionId]
+  created_at: [ArticleConnectionCreated_at]
+  updated_at: [ArticleConnectionUpdated_at]
+  title: [ArticleConnectionTitle]
+  content: [ArticleConnectionContent]
+  image: [ArticleConnectionImage]
+  published_at: [ArticleConnectionPublished_at]
+}
+
+input ArticleInput {
+  title: String!
+  content: String!
+  image: ID
+  published_at: Date!
+}
+
+input createArticleInput {
+  data: ArticleInput
+}
+
+type createArticlePayload {
+  article: Article
+}
+
+input createPhraseCategoryInput {
+  data: PhraseCategoryInput
+}
+
+type createPhraseCategoryPayload {
+  phraseCategory: PhraseCategory
+}
+
+input createPhraseInput {
+  data: PhraseInput
+}
+
+type createPhrasePayload {
+  phrase: Phrases
+}
+
+input createPrayerInput {
+  data: PrayerInput
+}
+
+type createPrayerPayload {
+  prayer: Prayer
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createSoundInput {
+  data: SoundInput
+}
+
+type createSoundPayload {
+  sound: Sounds
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
+8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+input deleteArticleInput {
+  where: InputID
+}
+
+type deleteArticlePayload {
+  article: Article
+}
+
+input deletePhraseCategoryInput {
+  where: InputID
+}
+
+type deletePhraseCategoryPayload {
+  phraseCategory: PhraseCategory
+}
+
+input deletePhraseInput {
+  where: InputID
+}
+
+type deletePhrasePayload {
+  phrase: Phrases
+}
+
+input deletePrayerInput {
+  where: InputID
+}
+
+type deletePrayerPayload {
+  prayer: Prayer
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteSoundInput {
+  where: InputID
+}
+
+type deleteSoundPayload {
+  sound: Sounds
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input editArticleInput {
+  title: String
+  content: String
+  image: ID
+  published_at: Date
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+}
+
+input editPhraseCategoryInput {
+  name: String
+}
+
+input editPhraseInput {
+  Title: String
+  Content: String
+  author: String
+  phrase_category: ID
+}
+
+input editPrayerInput {
+  WrittenBy: String
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input editSoundInput {
+  song: ID
+  Title: String
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPersmissionsPasswordPayload | Article | ArticleConnection | ArticleAggregator | ArticleGroupBy | ArticleConnectionId | ArticleConnectionCreated_at | ArticleConnectionUpdated_at | ArticleConnectionTitle | ArticleConnectionContent | ArticleConnectionImage | ArticleConnectionPublished_at | createArticlePayload | updateArticlePayload | deleteArticlePayload | PhraseCategory | PhraseCategoryConnection | PhraseCategoryAggregator | PhraseCategoryGroupBy | PhraseCategoryConnectionId | PhraseCategoryConnectionCreated_at | PhraseCategoryConnectionUpdated_at | PhraseCategoryConnectionName | createPhraseCategoryPayload | updatePhraseCategoryPayload | deletePhraseCategoryPayload | Phrases | PhrasesConnection | PhrasesAggregator | PhrasesGroupBy | PhrasesConnectionId | PhrasesConnectionCreated_at | PhrasesConnectionUpdated_at | PhrasesConnectionTitle | PhrasesConnectionContent | PhrasesConnectionAuthor | PhrasesConnectionPhrase_category | createPhrasePayload | updatePhrasePayload | deletePhrasePayload | Prayer | PrayerConnection | PrayerAggregator | PrayerGroupBy | PrayerConnectionId | PrayerConnectionCreated_at | PrayerConnectionUpdated_at | PrayerConnectionWrittenBy | createPrayerPayload | updatePrayerPayload | deletePrayerPayload | Sounds | SoundsConnection | SoundsAggregator | SoundsGroupBy | SoundsConnectionId | SoundsConnectionCreated_at | SoundsConnectionUpdated_at | SoundsConnectionSong | SoundsConnectionTitle | createSoundPayload | updateSoundPayload | deleteSoundPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+
+type Mutation {
+  createArticle(input: createArticleInput): createArticlePayload
+  updateArticle(input: updateArticleInput): updateArticlePayload
+  deleteArticle(input: deleteArticleInput): deleteArticlePayload
+  createPhraseCategory(input: createPhraseCategoryInput): createPhraseCategoryPayload
+  updatePhraseCategory(input: updatePhraseCategoryInput): updatePhraseCategoryPayload
+  deletePhraseCategory(input: deletePhraseCategoryInput): deletePhraseCategoryPayload
+  createPhrase(input: createPhraseInput): createPhrasePayload
+  updatePhrase(input: updatePhraseInput): updatePhrasePayload
+  deletePhrase(input: deletePhraseInput): deletePhrasePayload
+  createPrayer(input: createPrayerInput): createPrayerPayload
+  updatePrayer(input: updatePrayerInput): updatePrayerPayload
+  deletePrayer(input: deletePrayerInput): deletePrayerPayload
+  createSound(input: createSoundInput): createSoundPayload
+  updateSound(input: updateSoundInput): updateSoundPayload
+  deleteSound(input: deleteSoundInput): deleteSoundPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): UserPersmissionsPasswordPayload
+  resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+type PhraseCategory {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+}
+
+type PhraseCategoryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PhraseCategoryConnection {
+  values: [PhraseCategory]
+  groupBy: PhraseCategoryGroupBy
+  aggregate: PhraseCategoryAggregator
+}
+
+type PhraseCategoryConnectionCreated_at {
+  key: DateTime
+  connection: PhraseCategoryConnection
+}
+
+type PhraseCategoryConnectionId {
+  key: ID
+  connection: PhraseCategoryConnection
+}
+
+type PhraseCategoryConnectionName {
+  key: String
+  connection: PhraseCategoryConnection
+}
+
+type PhraseCategoryConnectionUpdated_at {
+  key: DateTime
+  connection: PhraseCategoryConnection
+}
+
+type PhraseCategoryGroupBy {
+  id: [PhraseCategoryConnectionId]
+  created_at: [PhraseCategoryConnectionCreated_at]
+  updated_at: [PhraseCategoryConnectionUpdated_at]
+  name: [PhraseCategoryConnectionName]
+}
+
+input PhraseCategoryInput {
+  name: String
+}
+
+input PhraseInput {
+  Title: String
+  Content: String
+  author: String
+  phrase_category: ID
+}
+
+type Phrases {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Title: String
+  Content: String
+  author: String
+  phrase_category: PhraseCategory
+}
+
+type PhrasesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PhrasesConnection {
+  values: [Phrases]
+  groupBy: PhrasesGroupBy
+  aggregate: PhrasesAggregator
+}
+
+type PhrasesConnectionAuthor {
+  key: String
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionContent {
+  key: String
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionCreated_at {
+  key: DateTime
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionId {
+  key: ID
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionPhrase_category {
+  key: ID
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionTitle {
+  key: String
+  connection: PhrasesConnection
+}
+
+type PhrasesConnectionUpdated_at {
+  key: DateTime
+  connection: PhrasesConnection
+}
+
+type PhrasesGroupBy {
+  id: [PhrasesConnectionId]
+  created_at: [PhrasesConnectionCreated_at]
+  updated_at: [PhrasesConnectionUpdated_at]
+  Title: [PhrasesConnectionTitle]
+  Content: [PhrasesConnectionContent]
+  author: [PhrasesConnectionAuthor]
+  phrase_category: [PhrasesConnectionPhrase_category]
+}
+
+type Prayer {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  WrittenBy: String!
+}
+
+type PrayerAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PrayerConnection {
+  values: [Prayer]
+  groupBy: PrayerGroupBy
+  aggregate: PrayerAggregator
+}
+
+type PrayerConnectionCreated_at {
+  key: DateTime
+  connection: PrayerConnection
+}
+
+type PrayerConnectionId {
+  key: ID
+  connection: PrayerConnection
+}
+
+type PrayerConnectionUpdated_at {
+  key: DateTime
+  connection: PrayerConnection
+}
+
+type PrayerConnectionWrittenBy {
+  key: String
+  connection: PrayerConnection
+}
+
+type PrayerGroupBy {
+  id: [PrayerConnectionId]
+  created_at: [PrayerConnectionCreated_at]
+  updated_at: [PrayerConnectionUpdated_at]
+  WrittenBy: [PrayerConnectionWrittenBy]
+}
+
+input PrayerInput {
+  WrittenBy: String!
+}
+
+type Query {
+  article(id: ID!): Article
+  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
+  articlesConnection(sort: String, limit: Int, start: Int, where: JSON): ArticleConnection
+  phraseCategory(id: ID!): PhraseCategory
+  phraseCategories(sort: String, limit: Int, start: Int, where: JSON): [PhraseCategory]
+  phraseCategoriesConnection(sort: String, limit: Int, start: Int, where: JSON): PhraseCategoryConnection
+  phrase(id: ID!): Phrases
+  phrases(sort: String, limit: Int, start: Int, where: JSON): [Phrases]
+  phrasesConnection(sort: String, limit: Int, start: Int, where: JSON): PhrasesConnection
+  prayer(id: ID!): Prayer
+  prayers(sort: String, limit: Int, start: Int, where: JSON): [Prayer]
+  prayersConnection(sort: String, limit: Int, start: Int, where: JSON): PrayerConnection
+  sound(id: ID!): Sounds
+  sounds(sort: String, limit: Int, start: Int, where: JSON): [Sounds]
+  soundsConnection(sort: String, limit: Int, start: Int, where: JSON): SoundsConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input SoundInput {
+  song: ID
+  Title: String
+}
+
+type Sounds {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  song: UploadFile
+  Title: String
+}
+
+type SoundsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SoundsConnection {
+  values: [Sounds]
+  groupBy: SoundsGroupBy
+  aggregate: SoundsAggregator
+}
+
+type SoundsConnectionCreated_at {
+  key: DateTime
+  connection: SoundsConnection
+}
+
+type SoundsConnectionId {
+  key: ID
+  connection: SoundsConnection
+}
+
+type SoundsConnectionSong {
+  key: ID
+  connection: SoundsConnection
+}
+
+type SoundsConnectionTitle {
+  key: String
+  connection: SoundsConnection
+}
+
+type SoundsConnectionUpdated_at {
+  key: DateTime
+  connection: SoundsConnection
+}
+
+type SoundsGroupBy {
+  id: [SoundsConnectionId]
+  created_at: [SoundsConnectionCreated_at]
+  updated_at: [SoundsConnectionUpdated_at]
+  song: [SoundsConnectionSong]
+  Title: [SoundsConnectionTitle]
+}
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+input updateArticleInput {
+  where: InputID
+  data: editArticleInput
+}
+
+type updateArticlePayload {
+  article: Article
+}
+
+input updatePhraseCategoryInput {
+  where: InputID
+  data: editPhraseCategoryInput
+}
+
+type updatePhraseCategoryPayload {
+  phraseCategory: PhraseCategory
+}
+
+input updatePhraseInput {
+  where: InputID
+  data: editPhraseInput
+}
+
+type updatePhrasePayload {
+  phrase: Phrases
+}
+
+input updatePrayerInput {
+  where: InputID
+  data: editPrayerInput
+}
+
+type updatePrayerPayload {
+  prayer: Prayer
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateSoundInput {
+  where: InputID
+  data: editSoundInput
+}
+
+type updateSoundPayload {
+  sound: Sounds
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  created_at: [UploadFileConnectionCreated_at]
+  updated_at: [UploadFileConnectionUpdated_at]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+type UserPersmissionsPasswordPayload {
+  ok: Boolean!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String!
+  user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+input UsersPermissionsRegisterInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
