@@ -1,2 +1,14 @@
 frontend/.next/
 frontend/.next
+// .gitnignore
+# next.js build output
+frontend/.next
+# dotenv environment variables file (build for Zeit Now)
+frontend/.env
+frontend/.env.build
+# Dependency directories
+frontend/node_modules/
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
