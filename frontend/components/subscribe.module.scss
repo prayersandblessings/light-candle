@@ -1,0 +1,23 @@
+$sectionColor: green;
+$widhtMenu: 50px;
+.menu {
+  border: 2px solid black;
+  background: $sectionColor;
+  width: $widhtMenu;
+  height: 100%;
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.open {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: $sectionColor;
+
+}
