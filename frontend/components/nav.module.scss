@@ -1,14 +1,20 @@
 $sectionColor: green;
 $widhtMenu: 50px;
+
 .menu {
-  border: 2px solid black;
-  background: $sectionColor;
   width: $widhtMenu;
   height: 100%;
   display: block;
   position: fixed;
   left: 0px;
   top: 0px;
+
+  button {
+    background: transparent;
+    border: 0;
+    margin-top: 48px;
+    margin-left: 28px;
+  }
 }
 
 .open {
@@ -19,5 +25,4 @@ $widhtMenu: 50px;
   left: 0px;
   top: 0px;
   background: $sectionColor;
-
 }
