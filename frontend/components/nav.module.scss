@@ -12,8 +12,13 @@ $widhtMenu: 50px;
   button {
     background: transparent;
     border: 0;
+    cursor: pointer;
     margin-top: 48px;
     margin-left: 28px;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 

@@ -7,11 +7,11 @@ import styles from './index.module.scss'
 const Home = () => {
   return (
     <Layout>
-      <p>
+      <p className={styles.caption}>
         OFFER YOUR PRAYERS AND BLESSINGS
       </p>
-      <h1>
-        To the World
+      <h1 className={styles.title}>
+        To the world
       </h1>
       <div className={styles.candles}>
         <Link as={`${PAGES.ABOUT_US.url}`} href={PAGES.ABOUT_US.url}>
