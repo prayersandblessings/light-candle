@@ -20,7 +20,7 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/light-a-candle": [
+    "/library-of-resources": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
