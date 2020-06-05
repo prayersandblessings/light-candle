@@ -2,7 +2,7 @@
   "name": "Strapi",
   "description": "Strapi Heroku deployment",
   "keywords": ["strapi", "heroku"],
-  "repository": "https://github.com/strapi/strapi-starter-next-blog",
+  "repository": "https://github.com/nike8806/light-a-candle",
   "env": {
     "PROJECT_PATH": {
       "description": "Backend project path",
@@ -10,15 +10,15 @@
       "value": "backend"
     },
     "CLOUDINARY_CLOUD_NAME": {
-      "description": "The 'Cloud name' of your Cloudinary account",
+      "description": "dd6tpiqxl",
       "required": true
     },
     "CLOUDINARY_API_KEY": {
-      "description": "The 'API Key' of your Cloudinary account",
+      "description": "6NSgwAnJptBjj07tkyIHrnFWYOI",
       "required": true
     },
     "CLOUDINARY_API_SECRET": {
-      "description": "The 'API Secret' of your Cloudinary account",
+      "description": "6NSgwAnJptBjj07tkyIHrnFWYOI",
       "required": true
     }
   },
@@ -26,7 +26,7 @@
   "image": "heroku/nodejs",
   "buildpacks": [
     {
-      "url": "https://github.com/timanovsky/subdir-heroku-buildpack"
+      "url": "https://github.com/nike8806/subdir-heroku-buildpack"
     },
     {
       "url": "heroku/nodejs"
