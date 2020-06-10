@@ -4,6 +4,18 @@ import Layout from '../components/layout'
 import PAGES from '../constants/routes'
 import styles from './index.module.scss'
 
+export const LinkCandle = ({url, name}) => {
+  return (
+    <Link as={url} href={url}>
+      <>
+        {name}
+        <img src="/candle" alt={name}/>
+      </>
+    </Link>
+  )
+}
+
+
 const Home = () => {
   return (
     <Layout>
@@ -14,15 +26,9 @@ const Home = () => {
         To the world
       </h1>
       <div className={styles.candles}>
-        <Link as={`${PAGES.ABOUT_US.url}`} href={PAGES.ABOUT_US.url}>
-          {PAGES.ABOUT_US.name}
-        </Link>
-        <Link as={`${PAGES.LIGHT_A_CANDLE.url}`} href={PAGES.LIGHT_A_CANDLE.url}>
-          {PAGES.LIGHT_A_CANDLE.name}
-        </Link>
-        <Link as={`${PAGES.LIBRARY.url}`} href={PAGES.LIBRARY.url}>
-          {PAGES.LIBRARY.name}
-        </Link>
+        <LinkCandle url={PAGES.ABOUT_US.url} name={PAGES.ABOUT_US.name} />
+        <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
+        <LinkCandle url={PAGES.LIBRARY.url} name={PAGES.LIBRARY.name} />
       </div>
     </Layout>
   )
