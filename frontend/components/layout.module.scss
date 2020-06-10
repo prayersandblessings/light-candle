@@ -6,7 +6,11 @@
   padding-top: 40px;
   padding-right: 40px;
   min-height: 800px;
-  display: block;
   background-size: contain;
   background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
