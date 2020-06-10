@@ -22,6 +22,7 @@ const Nav = () => {
           <button onClick={handleOpen}>
             <img src="/icon-hamburguer.svg" width="33px" height="16px"></img>
           </button>
+          <div className={styles.menuBackground}></div>
         </div>
       )}
       {isOpen && (
