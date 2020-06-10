@@ -7,10 +7,11 @@ import styles from './index.module.scss'
 export const LinkCandle = ({url, name}) => {
   return (
     <Link as={url} href={url}>
-      <>
+      <a>
         {name}
-        <img src="/candle" alt={name}/>
-      </>
+        <img src="/icon-arrow-down.svg" className={styles.iconArrow}/>
+        <img src="/candle.png" className={styles.singleCandle} />
+      </a>
     </Link>
   )
 }
