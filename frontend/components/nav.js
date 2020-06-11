@@ -27,7 +27,9 @@ const Nav = () => {
       )}
       {isOpen && (
         <div className={styles.open}>
-          <button onClick={handleClose}>X</button>
+          <button onClick={handleClose}>
+            <img src="/icon-close.svg" width="20px" height="20px"></img>
+          </button>
 
           <ul className="uk-navbar-nav">
             {ARRAY_PAGES.map((page) => {

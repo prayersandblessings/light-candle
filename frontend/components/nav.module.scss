@@ -1,4 +1,5 @@
-$sectionColor: green;
+@import '../assets/scss/variables.scss';
+
 $widhtMenu: 50px;
 
 .menu {
@@ -42,5 +43,11 @@ $widhtMenu: 50px;
   position: fixed;
   left: 0px;
   top: 0px;
-  background: $sectionColor;
+  background: $main-color;
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
 }
