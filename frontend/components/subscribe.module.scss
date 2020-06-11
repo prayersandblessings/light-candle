@@ -1,23 +1,43 @@
-$sectionColor: green;
-$widhtMenu: 50px;
-.menu {
-  border: 2px solid black;
-  background: $sectionColor;
-  width: $widhtMenu;
-  height: 100%;
-  display: block;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
+.subscribeComponent {
+  text-align: center;
+  width: 50%;
 
-.open {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  background: $sectionColor;
+  span {
+    letter-spacing: 6px;
+  }
 
+  h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  > p {
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      display: flex;
+      width: 100%;
+
+      input[type="text"] {
+        margin: 0 0 0 1rem;
+        width: 50%;
+      }
+
+      input[type="email"] {
+        margin: 0 0 0 1rem;
+        width: 52%;
+      }
+
+      button {
+        margin-left: auto;
+        width: 33%;
+      }
+    } 
+  }
 }
