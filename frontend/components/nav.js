@@ -18,7 +18,7 @@ const Nav = () => {
   return (
     <>
       {!isOpen && (
-        <div className={styles.menu}>
+        <div className={styles.openCloseMenu}>
           <button onClick={handleOpen}>
             <img src="/icon-hamburguer.svg" width="33px" height="16px"></img>
           </button>
@@ -27,22 +27,26 @@ const Nav = () => {
       )}
       {isOpen && (
         <div className={styles.open}>
-          <button onClick={handleClose}>
-            <img src="/icon-close.svg" width="20px" height="20px"></img>
-          </button>
-
-          <ul className="uk-navbar-nav">
-            {ARRAY_PAGES.map((page) => {
-              return (
-                <li key={page.url}>
-                  <Link as={`${page.url}`} href={page.url}>
-                    <a onClick={handleClose}>{page.name}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <SubscribeComponent/>
+          <div className={styles.openCloseMenu}>
+            <button onClick={handleClose}>
+              <img src="/icon-close.svg" width="20px" height="20px"></img>
+            </button>
+            <div className={styles.menuBackground}></div>
+          </div>
+          <div className={styles.navContainer}>
+            <ul className={styles.navbar}>
+              {ARRAY_PAGES.map((page) => {
+                return (
+                  <li key={page.url}>
+                    <Link as={`${page.url}`} href={page.url}>
+                      <a onClick={handleClose}>{page.name}</a>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <SubscribeComponent/>
+          </div>
         </div>
       )}
     </>
