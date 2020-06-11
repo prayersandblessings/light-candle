@@ -1,8 +1,9 @@
 @import '../assets/scss/variables.scss';
 
 .caption {
-  font-family: $captions-font;
+  font-family: $main-font;
   font-size: 1.25rem;
+  font-weight: 400;
   letter-spacing: 6px;
   margin-top: 20%;
   text-align: center;
@@ -11,7 +12,7 @@
 .title {
   font-family: $main-font;
   font-size: 80px;
-  font-weight: lighter;
+  font-weight: 500;
   margin: 0;
   text-align: center;
 }
