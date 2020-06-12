@@ -1,20 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './nav.module.scss'
 import Link from 'next/link'
 import SubscribeComponent from './subscribe'
 import { ARRAY_PAGES } from '../constants/routes'
 
-const Nav = () => {
-  let [isOpen, setIsOpen] = useState(false);
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
-
+const Nav = ({isOpen, handleClose, handleOpen}) => {
+  
   return (
     <>
       {!isOpen && (

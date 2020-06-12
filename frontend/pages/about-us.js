@@ -5,7 +5,7 @@ import PAGES from '../constants/routes'
 
 const AboutUs = () => {
   return (
-    <Layout>
+    <Layout backgroundState = 'color'>
       <p>About US</p>
       <p>Who we are</p>
       <p>

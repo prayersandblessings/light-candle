@@ -1,14 +1,15 @@
+import React, {useState} from 'react'
 import Nav from './nav'
 import styles from './layout.module.scss'
 import Link from 'next/link'
 import PAGES from '../constants/routes'
 
-const SecondaryNav = () => (
+const SecondaryNav = ({handleOpen}) => (
   <div className={styles.secondaryNav}>
     <Link as={PAGES.A_BLESSING_DAY.url} href={PAGES.A_BLESSING_DAY.url}>
       A Blessing a Day
     </Link> |
-    <a>Subscribe</a>
+    <a onClick={handleOpen}>Subscribe</a>
     <ul>
       <li>
         <a href="" className={styles.facebook}>Facebook</a>
@@ -20,14 +21,41 @@ const SecondaryNav = () => (
   </div>
 )
 
-const Layout = ({ children, categories }) => (
-  <> 
-    <div className={styles.content}>
-      {children}
-    </div>
-    <Nav categories={categories} />
-    <SecondaryNav />
-  </>
-)
+const Layout = ({ children, backgroundState = 'img' }) => {
+  let [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  let backgroundStyle;
+
+  switch ( backgroundState ) {
+    case 'color':
+      backgroundStyle = styles.color;
+      break;
+    case 'video':
+      backgroundStyle = styles.video;
+      break;
+    default:
+      backgroundStyle = styles.image;
+  }
+
+  return (
+    <> 
+      <div className={`${styles.content} ${backgroundStyle}`}>
+        {children}
+      </div>
+      <Nav isOpen={isOpen} handleClose={handleClose} handleOpen={handleOpen} />
+      <SecondaryNav handleOpen={handleOpen}/>
+    </>
+  )
+}
+
+
 
 export default Layout
