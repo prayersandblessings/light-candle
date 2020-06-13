@@ -45,6 +45,7 @@ $RECYCLE.BIN/
 *.jar
 *.rar
 *.tar
+*.zip
 *.com
 *.class
 *.dll
@@ -79,6 +80,7 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
+public/uploads/*
 !public/uploads/.gitkeep
 
 ############################
@@ -105,5 +107,7 @@ coverage
 # Strapi
 ############################
 
+.env
+exports
 .cache
 build
