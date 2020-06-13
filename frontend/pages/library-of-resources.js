@@ -1,55 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from '../components/layout'
 import SubscribeComponent from '../components/subscribe'
-const CATEGORIES = [
-  'PEACE',
-  'UNITY',
-  'MOTHER EARTH',
-  'GRIEF',
-  'CELEBRATION'
-];
-const LOREM_IPSUM = `
-Lorem Ipsum is simply dummy text of the printing 
-and typesetting industry. Lorem Ipsum has been the industry's 
-standard dummy text ever since the 1500s, when an unknown printer 
-took a galley of type and scrambled it to make a type specimen book. 
-It has survived not only five centuries, but also the leap into 
-electronic typesetting, remaining essentially unchanged. 
-It was popularised in the 1960s with the release of Letraset
-sheets containing Lorem Ipsum passages, and more recently with
-desktop publishing software like Aldus PageMaker including versions
-of Lorem Ipsum.
-`;
-const RESOURCES = [
-  {
-    title: 'Prayer for Serenity PEACE',
-    content: LOREM_IPSUM,
-    author: 'Reinhold Niebuhr (1892-1971)',
-    category: 'PEACE'
-  },
-  {
-    title: 'Prayer for Serenity MOTHER EARTH',
-    content: LOREM_IPSUM,
-    author: 'Reinhold Niebuhr (1892-1971)',
-    category: 'MOTHER EARTH'
-  },
-  {
-    title: 'Prayer for Serenity MOTHER EARTH 2',
-    content: LOREM_IPSUM,
-    author: 'Reinhold Niebuhr (1892-1971)',
-    category: 'MOTHER EARTH'
-  },
-  {
-    title: 'Prayer for Serenity UNITY',
-    content: LOREM_IPSUM,
-    author: 'Reinhold Niebuhr (1892-1971)',
-    category: 'UNITY'
-  }
-]
+import axios from '../lib/axios'
 
 const LibraryOfResources = () => {
-  const Categories = CATEGORIES;
-  const Resources = RESOURCES;
+  let [resources, setResources] = useState([]);
+  let [categories, setCategories] = useState([]);
   let [categorySelected, setCategory] = useState('');
 
   const handleSelectCategory = (category) => () => {
@@ -60,6 +16,21 @@ const LibraryOfResources = () => {
     alert('Share category', title);
   }
 
+  const handleResourcesChanges = (resources, categories) => {
+    setResources(resources);
+    setCategories(categories);
+  }
+
+  useEffect(()=>{
+    axios.get('/api/resources').then( ({ data : {resources, categories} }) => {
+      handleResourcesChanges(resources, categories);
+    }).catch(error => {
+      console.log(error);
+      handleResourcesChanges([], []);
+    })
+  },[])
+  
+
   return (
     <Layout>
       <h2>
@@ -69,14 +40,14 @@ const LibraryOfResources = () => {
         Of resources
       </h1>
       <p>
-        {Categories.map((category) => (
-          <button onClick={handleSelectCategory(category)}>
+        {categories.map((category) => (
+          <button key={category} onClick={handleSelectCategory(category)}>
             {category}
           </button>
         ))}
       </p>
-      { Resources.filter(({
-        category
+      { resources.filter(({
+        resource_category: { title: category }
       }) => (category === categorySelected || categorySelected === '')).map(
         ({ title, content, author }) => 
         <div key={`${title}-${author}`}>

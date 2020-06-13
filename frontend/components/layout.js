@@ -7,7 +7,9 @@ import PAGES from '../constants/routes'
 const SecondaryNav = ({handleOpen}) => (
   <div className={styles.secondaryNav}>
     <Link as={PAGES.A_BLESSING_DAY.url} href={PAGES.A_BLESSING_DAY.url}>
-      A Blessing a Day
+      <a>
+        A Blessing a Day
+      </a>
     </Link> |
     <a onClick={handleOpen}>Subscribe</a>
     <ul>

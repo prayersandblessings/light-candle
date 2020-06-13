@@ -16,7 +16,7 @@ const CANDLE_CONTENT = {
   urlVideo: '/small.mp4'
 }
 
-async function fetchAPI(query, { variables } = {}) {
+export async function fetchAPI(query, { variables } = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
     method: 'POST',
     headers: {
