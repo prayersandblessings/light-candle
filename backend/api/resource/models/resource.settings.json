@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resources",
+  "info": {
+    "name": "Resource"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "author": {
+      "type": "string",
+      "required": false
+    },
+    "resource_category": {
+      "model": "resource-category"
+    }
+  }
+}
