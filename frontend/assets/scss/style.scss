@@ -31,3 +31,14 @@ body {
 #__next {
   height: 100%;
 }
+
+p {
+  font-family: $text-font;
+  line-height: 28px;
+} 
+
+.caption {
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
