@@ -5,7 +5,7 @@ export default async (req, res)  => {
 
   const { resources = [] } = await fetchAPI(
     `query getResources {
-      resources {
+      resources(where: { enabled: true }) {
         title,
         author,
         content,
