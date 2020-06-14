@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Layout from '../components/layout'
 import SubscribeComponent from '../components/subscribe'
 import axios from '../lib/axios'
+import styles from './library-of-resources.module.scss'
 
 const LibraryOfResources = () => {
   let [resources, setResources] = useState([]);
@@ -33,36 +34,41 @@ const LibraryOfResources = () => {
 
   return (
     <Layout>
-      <h2>
-        LIBRARY
-      </h2>
-      <h1>
-        Of resources
-      </h1>
-      <p>
+      <div className={styles.libraryContainer}>
+        <span className={styles.caption + ' caption'}>Library</span>
+        <h2 className={styles.title}>Of resources</h2>
+        <a>
+          <img src="/icon-arrow-down.svg" width='24px'></img>
+        </a>
+      </div>
+      <div className={styles.categories}>
         {categories.map((category) => (
           <button key={category} onClick={handleSelectCategory(category)}>
             {category}
           </button>
         ))}
-      </p>
+      </div>
       { resources.filter(({
         resource_category: { title: category }
       }) => (category === categorySelected || categorySelected === '')).map(
         ({ title, content, author }) => 
-        <div key={`${title}-${author}`}>
+        <div key={`${title}-${author}`} className={styles.prayer}>
           <h2>
             {title}
           </h2>
           <p>
             {content}
           </p>
-          <p>
-            {author}
-          </p>
-          <button onClick={handleShare(title)}>Share</button>
+          <span className={styles.author}>
+            - {author}
+          </span>
+          <button onClick={handleShare(title)}>
+            <img src="/icon-share.svg" width="16px"></img>
+          </button>
         </div>
       )}
+
+      <div class="divider"></div>
 
       <SubscribeComponent/>
     </Layout>
