@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prayers_and_blessings",
+  "info": {
+    "name": "PrayersAndBlessings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Sender": {
+      "type": "string"
+    },
+    "receiver_email": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "language": {
+      "model": "language"
+    },
+    "sound": {
+      "model": "sound"
+    }
+  }
+}

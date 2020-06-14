@@ -1,15 +1,15 @@
 {
   "kind": "collectionType",
-  "collectionName": "resource_categories",
+  "collectionName": "languages",
   "info": {
-    "name": "ResourceCategory"
+    "name": "Language"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
     "enabled": {

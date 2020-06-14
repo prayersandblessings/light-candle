@@ -1,3 +1,19 @@
+input createLanguageInput {
+  data: LanguageInput
+}
+
+type createLanguagePayload {
+  language: Language
+}
+
+input createPrayersAndBlessingInput {
+  data: PrayersAndBlessingInput
+}
+
+type createPrayersAndBlessingPayload {
+  prayersAndBlessing: PrayersAndBlessings
+}
+
 input createResourceCategoryInput {
   data: ResourceCategoryInput
 }
@@ -22,6 +38,14 @@ type createRolePayload {
   role: UsersPermissionsRole
 }
 
+input createSoundInput {
+  data: SoundInput
+}
+
+type createSoundPayload {
+  sound: Sound
+}
+
 input createUserInput {
   data: UserInput
 }
@@ -43,6 +67,22 @@ A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
 8601 standard for representation of dates and times using the Gregorian calendar.
 """
 scalar DateTime
+
+input deleteLanguageInput {
+  where: InputID
+}
+
+type deleteLanguagePayload {
+  language: Language
+}
+
+input deletePrayersAndBlessingInput {
+  where: InputID
+}
+
+type deletePrayersAndBlessingPayload {
+  prayersAndBlessing: PrayersAndBlessings
+}
 
 input deleteResourceCategoryInput {
   where: InputID
@@ -66,6 +106,14 @@ input deleteRoleInput {
 
 type deleteRolePayload {
   role: UsersPermissionsRole
+}
+
+input deleteSoundInput {
+  where: InputID
+}
+
+type deleteSoundPayload {
+  sound: Sound
 }
 
 input deleteUserInput {
@@ -94,8 +142,23 @@ input editFileInput {
   related: [ID]
 }
 
+input editLanguageInput {
+  name: String
+  enabled: Boolean
+}
+
+input editPrayersAndBlessingInput {
+  Sender: String
+  receiver_email: String
+  message: String
+  enabled: Boolean
+  language: ID
+  sound: ID
+}
+
 input editResourceCategoryInput {
   title: String
+  enabled: Boolean
 }
 
 input editResourceInput {
@@ -103,6 +166,7 @@ input editResourceInput {
   content: String
   author: String
   resource_category: ID
+  enabled: Boolean
 }
 
 input editRoleInput {
@@ -111,6 +175,12 @@ input editRoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input editSoundInput {
+  name: String
+  sound: ID
+  enabled: Boolean
 }
 
 input editUserInput {
@@ -151,18 +221,84 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
+type Language {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  enabled: Boolean
+}
+
+type LanguageAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type LanguageConnection {
+  values: [Language]
+  groupBy: LanguageGroupBy
+  aggregate: LanguageAggregator
+}
+
+type LanguageConnectionCreated_at {
+  key: DateTime
+  connection: LanguageConnection
+}
+
+type LanguageConnectionEnabled {
+  key: Boolean
+  connection: LanguageConnection
+}
+
+type LanguageConnectionId {
+  key: ID
+  connection: LanguageConnection
+}
+
+type LanguageConnectionName {
+  key: String
+  connection: LanguageConnection
+}
+
+type LanguageConnectionUpdated_at {
+  key: DateTime
+  connection: LanguageConnection
+}
+
+type LanguageGroupBy {
+  id: [LanguageConnectionId]
+  created_at: [LanguageConnectionCreated_at]
+  updated_at: [LanguageConnectionUpdated_at]
+  name: [LanguageConnectionName]
+  enabled: [LanguageConnectionEnabled]
+}
+
+input LanguageInput {
+  name: String
+  enabled: Boolean
+}
+
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | ResourceCategory | ResourceCategoryConnection | ResourceCategoryAggregator | ResourceCategoryGroupBy | ResourceCategoryConnectionId | ResourceCategoryConnectionCreated_at | ResourceCategoryConnectionUpdated_at | ResourceCategoryConnectionTitle | createResourceCategoryPayload | updateResourceCategoryPayload | deleteResourceCategoryPayload | Resource | ResourceConnection | ResourceAggregator | ResourceGroupBy | ResourceConnectionId | ResourceConnectionCreated_at | ResourceConnectionUpdated_at | ResourceConnectionTitle | ResourceConnectionContent | ResourceConnectionAuthor | ResourceConnectionResource_category | createResourcePayload | updateResourcePayload | deleteResourcePayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_at | LanguageConnectionUpdated_at | LanguageConnectionName | LanguageConnectionEnabled | createLanguagePayload | updateLanguagePayload | deleteLanguagePayload | PrayersAndBlessings | PrayersAndBlessingsConnection | PrayersAndBlessingsAggregator | PrayersAndBlessingsGroupBy | PrayersAndBlessingsConnectionId | PrayersAndBlessingsConnectionCreated_at | PrayersAndBlessingsConnectionUpdated_at | PrayersAndBlessingsConnectionSender | PrayersAndBlessingsConnectionReceiver_email | PrayersAndBlessingsConnectionMessage | PrayersAndBlessingsConnectionEnabled | PrayersAndBlessingsConnectionLanguage | PrayersAndBlessingsConnectionSound | createPrayersAndBlessingPayload | updatePrayersAndBlessingPayload | deletePrayersAndBlessingPayload | ResourceCategory | ResourceCategoryConnection | ResourceCategoryAggregator | ResourceCategoryGroupBy | ResourceCategoryConnectionId | ResourceCategoryConnectionCreated_at | ResourceCategoryConnectionUpdated_at | ResourceCategoryConnectionTitle | ResourceCategoryConnectionEnabled | createResourceCategoryPayload | updateResourceCategoryPayload | deleteResourceCategoryPayload | Resource | ResourceConnection | ResourceAggregator | ResourceGroupBy | ResourceConnectionId | ResourceConnectionCreated_at | ResourceConnectionUpdated_at | ResourceConnectionTitle | ResourceConnectionContent | ResourceConnectionAuthor | ResourceConnectionResource_category | ResourceConnectionEnabled | createResourcePayload | updateResourcePayload | deleteResourcePayload | Sound | SoundConnection | SoundAggregator | SoundGroupBy | SoundConnectionId | SoundConnectionCreated_at | SoundConnectionUpdated_at | SoundConnectionName | SoundConnectionSound | SoundConnectionEnabled | createSoundPayload | updateSoundPayload | deleteSoundPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
+  createLanguage(input: createLanguageInput): createLanguagePayload
+  updateLanguage(input: updateLanguageInput): updateLanguagePayload
+  deleteLanguage(input: deleteLanguageInput): deleteLanguagePayload
+  createPrayersAndBlessing(input: createPrayersAndBlessingInput): createPrayersAndBlessingPayload
+  updatePrayersAndBlessing(input: updatePrayersAndBlessingInput): updatePrayersAndBlessingPayload
+  deletePrayersAndBlessing(input: deletePrayersAndBlessingInput): deletePrayersAndBlessingPayload
   createResourceCategory(input: createResourceCategoryInput): createResourceCategoryPayload
   updateResourceCategory(input: updateResourceCategoryInput): updateResourceCategoryPayload
   deleteResourceCategory(input: deleteResourceCategoryInput): deleteResourceCategoryPayload
   createResource(input: createResourceInput): createResourcePayload
   updateResource(input: updateResourceInput): updateResourcePayload
   deleteResource(input: deleteResourceInput): deleteResourcePayload
+  createSound(input: createSoundInput): createSoundPayload
+  updateSound(input: updateSoundInput): updateSoundPayload
+  deleteSound(input: deleteSoundInput): deleteSoundPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -190,13 +326,111 @@ type Mutation {
   emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
 }
 
+input PrayersAndBlessingInput {
+  Sender: String
+  receiver_email: String
+  message: String
+  enabled: Boolean
+  language: ID
+  sound: ID
+}
+
+type PrayersAndBlessings {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Sender: String
+  receiver_email: String
+  message: String
+  enabled: Boolean
+  language: Language
+  sound: Sound
+}
+
+type PrayersAndBlessingsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PrayersAndBlessingsConnection {
+  values: [PrayersAndBlessings]
+  groupBy: PrayersAndBlessingsGroupBy
+  aggregate: PrayersAndBlessingsAggregator
+}
+
+type PrayersAndBlessingsConnectionCreated_at {
+  key: DateTime
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionEnabled {
+  key: Boolean
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionId {
+  key: ID
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionLanguage {
+  key: ID
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionMessage {
+  key: String
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionReceiver_email {
+  key: String
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionSender {
+  key: String
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionSound {
+  key: ID
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsConnectionUpdated_at {
+  key: DateTime
+  connection: PrayersAndBlessingsConnection
+}
+
+type PrayersAndBlessingsGroupBy {
+  id: [PrayersAndBlessingsConnectionId]
+  created_at: [PrayersAndBlessingsConnectionCreated_at]
+  updated_at: [PrayersAndBlessingsConnectionUpdated_at]
+  Sender: [PrayersAndBlessingsConnectionSender]
+  receiver_email: [PrayersAndBlessingsConnectionReceiver_email]
+  message: [PrayersAndBlessingsConnectionMessage]
+  enabled: [PrayersAndBlessingsConnectionEnabled]
+  language: [PrayersAndBlessingsConnectionLanguage]
+  sound: [PrayersAndBlessingsConnectionSound]
+}
+
 type Query {
+  language(id: ID!): Language
+  languages(sort: String, limit: Int, start: Int, where: JSON): [Language]
+  languagesConnection(sort: String, limit: Int, start: Int, where: JSON): LanguageConnection
+  prayersAndBlessing(id: ID!): PrayersAndBlessings
+  prayersAndBlessings(sort: String, limit: Int, start: Int, where: JSON): [PrayersAndBlessings]
+  prayersAndBlessingsConnection(sort: String, limit: Int, start: Int, where: JSON): PrayersAndBlessingsConnection
   resourceCategory(id: ID!): ResourceCategory
   resourceCategories(sort: String, limit: Int, start: Int, where: JSON): [ResourceCategory]
   resourceCategoriesConnection(sort: String, limit: Int, start: Int, where: JSON): ResourceCategoryConnection
   resource(id: ID!): Resource
   resources(sort: String, limit: Int, start: Int, where: JSON): [Resource]
   resourcesConnection(sort: String, limit: Int, start: Int, where: JSON): ResourceConnection
+  sound(id: ID!): Sound
+  sounds(sort: String, limit: Int, start: Int, where: JSON): [Sound]
+  soundsConnection(sort: String, limit: Int, start: Int, where: JSON): SoundConnection
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!): UsersPermissionsRole
@@ -220,6 +454,7 @@ type Resource {
   content: String
   author: String
   resource_category: ResourceCategory
+  enabled: Boolean
 }
 
 type ResourceAggregator {
@@ -232,6 +467,7 @@ type ResourceCategory {
   created_at: DateTime!
   updated_at: DateTime!
   title: String
+  enabled: Boolean
 }
 
 type ResourceCategoryAggregator {
@@ -247,6 +483,11 @@ type ResourceCategoryConnection {
 
 type ResourceCategoryConnectionCreated_at {
   key: DateTime
+  connection: ResourceCategoryConnection
+}
+
+type ResourceCategoryConnectionEnabled {
+  key: Boolean
   connection: ResourceCategoryConnection
 }
 
@@ -270,10 +511,12 @@ type ResourceCategoryGroupBy {
   created_at: [ResourceCategoryConnectionCreated_at]
   updated_at: [ResourceCategoryConnectionUpdated_at]
   title: [ResourceCategoryConnectionTitle]
+  enabled: [ResourceCategoryConnectionEnabled]
 }
 
 input ResourceCategoryInput {
   title: String
+  enabled: Boolean
 }
 
 type ResourceConnection {
@@ -294,6 +537,11 @@ type ResourceConnectionContent {
 
 type ResourceConnectionCreated_at {
   key: DateTime
+  connection: ResourceConnection
+}
+
+type ResourceConnectionEnabled {
+  key: Boolean
   connection: ResourceConnection
 }
 
@@ -325,6 +573,7 @@ type ResourceGroupBy {
   content: [ResourceConnectionContent]
   author: [ResourceConnectionAuthor]
   resource_category: [ResourceConnectionResource_category]
+  enabled: [ResourceConnectionEnabled]
 }
 
 input ResourceInput {
@@ -332,6 +581,7 @@ input ResourceInput {
   content: String
   author: String
   resource_category: ID
+  enabled: Boolean
 }
 
 input RoleInput {
@@ -342,8 +592,91 @@ input RoleInput {
   users: [ID]
 }
 
+type Sound {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  sound: UploadFile
+  enabled: Boolean
+}
+
+type SoundAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SoundConnection {
+  values: [Sound]
+  groupBy: SoundGroupBy
+  aggregate: SoundAggregator
+}
+
+type SoundConnectionCreated_at {
+  key: DateTime
+  connection: SoundConnection
+}
+
+type SoundConnectionEnabled {
+  key: Boolean
+  connection: SoundConnection
+}
+
+type SoundConnectionId {
+  key: ID
+  connection: SoundConnection
+}
+
+type SoundConnectionName {
+  key: String
+  connection: SoundConnection
+}
+
+type SoundConnectionSound {
+  key: ID
+  connection: SoundConnection
+}
+
+type SoundConnectionUpdated_at {
+  key: DateTime
+  connection: SoundConnection
+}
+
+type SoundGroupBy {
+  id: [SoundConnectionId]
+  created_at: [SoundConnectionCreated_at]
+  updated_at: [SoundConnectionUpdated_at]
+  name: [SoundConnectionName]
+  sound: [SoundConnectionSound]
+  enabled: [SoundConnectionEnabled]
+}
+
+input SoundInput {
+  name: String
+  sound: ID
+  enabled: Boolean
+}
+
 """A time string with format: HH:mm:ss.SSS"""
 scalar Time
+
+input updateLanguageInput {
+  where: InputID
+  data: editLanguageInput
+}
+
+type updateLanguagePayload {
+  language: Language
+}
+
+input updatePrayersAndBlessingInput {
+  where: InputID
+  data: editPrayersAndBlessingInput
+}
+
+type updatePrayersAndBlessingPayload {
+  prayersAndBlessing: PrayersAndBlessings
+}
 
 input updateResourceCategoryInput {
   where: InputID
@@ -370,6 +703,15 @@ input updateRoleInput {
 
 type updateRolePayload {
   role: UsersPermissionsRole
+}
+
+input updateSoundInput {
+  where: InputID
+  data: editSoundInput
+}
+
+type updateSoundPayload {
+  sound: Sound
 }
 
 input updateUserInput {
