@@ -7,7 +7,7 @@ export const INTRODUCTION_TEXT = {
   SUBTITLE: 'LIGHTING A CANDLE WHILE OFFERING A PRAYER OR BLESSING',
   TITLE: 'Has been a sacred ritual throughout the ages',
   DESCRIPTION: 'Reflect on the prayer or blessing you with to offer. you wish to visi the resource library for inspiration',
-  CANDLE: '{candles} CANDLES HAVE BEEN LIT',
+  CANDLE: 'CANDLES HAVE BEEN LIT',
   WRITE_PRAYER: 'Write your prayer'
 }
 export const FORM_TEXT = {
