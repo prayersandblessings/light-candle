@@ -49,9 +49,23 @@ const Layout = ({ children, backgroundState = 'img' }) => {
 
   return (
     <> 
-      <div className={`${styles.content} ${backgroundStyle}`}>
-        {children}
-      </div>
+      {backgroundState == 'img' && (
+        <>
+          <div className={styles.image} />
+          <div className={styles.content}>
+            {children}
+          </div>
+        </>
+      )}
+      {
+        backgroundState !== 'img' && (
+          <>
+            <div className={`${styles.content} ${backgroundStyle}`}>
+              {children}
+            </div>
+          </>
+      )}
+      
       <Nav isOpen={isOpen} handleClose={handleClose} handleOpen={handleOpen} />
       <SecondaryNav handleOpen={handleOpen}/>
     </>
