@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/prayers-and-blessings",
+      "handler": "prayers-and-blessings.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/prayers-and-blessings/count",
+      "handler": "prayers-and-blessings.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/prayers-and-blessings/:id",
+      "handler": "prayers-and-blessings.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/prayers-and-blessings",
+      "handler": "prayers-and-blessings.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/prayers-and-blessings/:id",
+      "handler": "prayers-and-blessings.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/prayers-and-blessings/:id",
+      "handler": "prayers-and-blessings.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

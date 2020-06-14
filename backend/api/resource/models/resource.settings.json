@@ -22,6 +22,9 @@
     },
     "resource_category": {
       "model": "resource-category"
+    },
+    "enabled": {
+      "type": "boolean"
     }
   }
 }
