@@ -48,7 +48,7 @@ const Layout = ({ children, backgroundState = 'img' }) => {
       {
         backgroundState === 'color' && (
           <>
-            <div className={`${styles.content} ${styles.image}`}>
+            <div className={`${styles.content} ${styles.color}`}>
               {children}
             </div>
           </>

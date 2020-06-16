@@ -1,13 +1,24 @@
 @import '../assets/scss/variables.scss';
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 20% 0 12% 0;
+}
+
 .caption {
-    margin-top: 15rem;
+    text-align: center;
+    width: 100%;
 }
 
 .title {
     font-size: 3rem;
     font-weight: 400;
     margin: 0 0 10rem 0;
+    text-align: center;
+    width: 100%;
 }
 
 .aboutUsText {
@@ -22,6 +33,8 @@
 
 .aboutUsImage {
     border-radius: .4rem;
+    max-width: 100%;
+    height: auto;
 }
 
 .documentaryButton {
@@ -61,4 +74,8 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 1280px) {
+
 }

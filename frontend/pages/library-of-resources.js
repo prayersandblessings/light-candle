@@ -34,43 +34,45 @@ const LibraryOfResources = () => {
 
   return (
     <Layout>
-      <div className={styles.libraryContainer}>
-        <span className={styles.caption + ' caption'}>Library</span>
-        <h2 className={styles.title}>Of resources</h2>
-        <a>
-          <img src="/icon-arrow-down.svg" width='24px'></img>
-        </a>
-      </div>
-      <div className={styles.categories}>
-        {categories.map((category) => (
-          <button key={category} onClick={handleSelectCategory(category)}>
-            {category}
-          </button>
-        ))}
-      </div>
-      { resources.filter(({
-        resource_category: { title: category }
-      }) => (category === categorySelected || categorySelected === '')).map(
-        ({ title, content, author }) => 
-        <div key={`${title}-${author}`} className={styles.prayer}>
-          <h2>
-            {title}
-          </h2>
-          <p>
-            {content}
-          </p>
-          <span className={styles.author}>
-            - {author}
-          </span>
-          <button onClick={handleShare(title)}>
-            <img src="/icon-share.svg" width="16px"></img>
-          </button>
+      <div className={styles.container}>
+        <div className={styles.libraryContainer}>
+          <span className={styles.caption + ' caption'}>Library</span>
+          <h2 className={styles.title}>Of resources</h2>
+          <a>
+            <img src="/icon-arrow-down.svg" width='24px'></img>
+          </a>
         </div>
-      )}
+        <div className={styles.categories}>
+          {categories.map((category) => (
+            <button key={category} onClick={handleSelectCategory(category)}>
+              {category}
+            </button>
+          ))}
+        </div>
+        { resources.filter(({
+          resource_category: { title: category }
+        }) => (category === categorySelected || categorySelected === '')).map(
+          ({ title, content, author }) => 
+          <div key={`${title}-${author}`} className={styles.prayer}>
+            <h2>
+              {title}
+            </h2>
+            <p>
+              {content}
+            </p>
+            <span className={styles.author}>
+              - {author}
+            </span>
+            <button onClick={handleShare(title)}>
+              <img src="/icon-share.svg" width="16px"></img>
+            </button>
+          </div>
+        )}
 
-      <div class="divider"></div>
+        <div class="divider"></div>
 
-      <SubscribeComponent/>
+        <SubscribeComponent/>
+      </div>
     </Layout>
   );
 }
