@@ -1,0 +1,43 @@
+@import '../assets/scss/variables.scss';
+
+.caption {
+    margin-top: 25%;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+}
+
+.paragraph {
+    text-align: center;
+    font-weight: 300;
+    width: 50%;
+}
+
+.subscribeForm {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 4rem;
+    width: 50%;
+
+    input[type="email"] {
+        margin-right: 1rem;
+        min-width: 232px;
+    }
+
+    img {
+        margin-right: 1rem;
+    }
+
+    input[type="submit"] {
+        background-color: transparent;
+        border: 0;
+        color: white;
+        font-family: $main-font;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
