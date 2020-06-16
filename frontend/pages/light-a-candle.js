@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../components/layout';
-import ReactPlayer from 'react-player';
-import Link from 'next/link';
-import PAGES from '../constants/routes';
 import axios from '../lib/axios'
+import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 import {
   NEXT_BUTTON__TEXT,
@@ -18,11 +16,11 @@ import {
 const SECTIONS = {
   STEP1: 'SELECT_LANGUAGE',
   STEP2: 'INTRODUCTION',
-  STEP3: 'FORM',
-  STEP4: 'SOUND',
-  STEP5: 'TOUCH_YOUR_CANDLE',
-  STEP6: 'A_LONG_AS_YOU_WISH',
-  STEP7: 'END'
+  STEP3: 'INTRODUCTION_2',
+  STEP4: 'FORM',
+  STEP5: 'SOUND',
+  STEP6: 'TOUCH_YOUR_CANDLE',
+  STEP7: 'A_LONG_AS_YOU_WISH'
 }
 
 /**
@@ -35,7 +33,8 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
   const inputEmail = useRef(null);
   const inputMessage = useRef(null);
 
-  const onClickNext = () => {
+  const onHandleSubmit = (event) => {
+    event.preventDefault();
     const { current : { value: name = '' }} = inputName;
     const { current : { value: email = '' }} = inputEmail;
     const { current : { value: message = '' }} = inputMessage;
@@ -44,23 +43,43 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
 
   return (
     <>
-      <button onClick={onCloseForm}>X Close</button>
+      <form  onSubmit={onHandleSubmit}> 
+        <button onClick={onCloseForm}>X Close</button>
 
-      <h4>{FORM_TEXT.TITLE_1}</h4>
-      <h3>{FORM_TEXT.TITLE_2}</h3>
+        <h4>{FORM_TEXT.TITLE_1}</h4>
+        <h3>{FORM_TEXT.TITLE_2}</h3>
 
-      <input ref={inputName} type="text" placeholder={FORM_TEXT.WRITE_NAME} />
-      <br />
+        <input
+          ref={inputName}
+          type="text"
+          name="Sender"
+          placeholder={FORM_TEXT.WRITE_NAME}
+          required
+          />
+        <br />
 
-      <input ref={inputEmail} type="text" placeholder={FORM_TEXT.WRITE_EMAIL} />
-      <br />
+        <input
+          ref={inputEmail}
+          name="receiver_email"
+          type="email"
+          placeholder={FORM_TEXT.WRITE_EMAIL}
+          required
+          />
+        <br />
 
-      <textarea ref={inputMessage} type="text" placeholder={FORM_TEXT.WRITE_PRAYER} />
-      <br />
+        <textarea
+          ref={inputMessage}
+          name="message"
+          type="text"
+          placeholder={FORM_TEXT.WRITE_PRAYER}
+          required
+          />
+        <br />
 
-      <button onClick={onClickNext}>
-        -----> {NEXT_BUTTON__TEXT}
-      </button>
+        <button type="submit">
+          -----> {NEXT_BUTTON__TEXT}
+        </button>
+      </form>
     </>
   )  
 } 
@@ -73,7 +92,8 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
 const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
   const selectLanguage = useRef(null);
 
-  const onClickNext = () => {
+  const onClickNext = (e) => {
+    console.log(e)
     const { current : { value: language = '' }} = selectLanguage;
     onLanguageSelected(language);
   }
@@ -108,22 +128,18 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
 const SelectSoundSection = ({ onSoundSelected, sounds})  => {
   const soundSelected = useRef(null);
   const [soundUrl, setSoundUrl] = useState(null);
-  let likeAudio;
 
   const onClickNext = () => {
     const { current : { value: sound = '' }} = soundSelected;
-    if(likeAudio) {
-      likeAudio.stop();
-    }
     onSoundSelected(sound);
   }
+
   const onSelectChange = () => {
     const { current: {
-        selectedOptions: [selectedOption]
+      selectedOptions: [selectedOption]
     }} = soundSelected;
 
     const url = selectedOption.getAttribute('soundurl');
-    
 
     if(!url){
       setSoundUrl(null);
@@ -161,13 +177,24 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
   )
 } 
 
+const PlayAudio = ({ soundsList, soundSelected = null }) => {
+  if(soundSelected === null || soundSelected == '0') {
+    return <div />
+  }
+
+  const [ 
+    { sound: { url: soundUrl } }
+  ] = soundsList.filter(({id}) => id ===  soundSelected);
+
+  return <audio src={process.env.NEXT_PUBLIC_API_URL + soundUrl} controls autoPlay/>;
+}
 
 /**
  * Main Component
  * @param {*} param0 
  */
 const LightACandle = () => {
-  const [showSection, setSection] = useState(SECTIONS.STEP1);
+  const [showSection, setSection] = useState('');
   const [prayer, setPrayer] = useState({
     language: null,
     sound: null,
@@ -191,12 +218,12 @@ const LightACandle = () => {
 
   const handlePrayerWritten = (name, email, message) => {
     setPrayer({...prayer, name, email, message});
-    setSection(SECTIONS.STEP4);
+    setSection(SECTIONS.STEP5);
   }
 
   const handleSoundSelected = (sound) => {
     setPrayer({...prayer, sound});
-    setSection(SECTIONS.STEP5);
+    setSection(SECTIONS.STEP6);
   }
 
   const handleLightCandle = () => {
@@ -208,19 +235,22 @@ const LightACandle = () => {
     }
 
     axios.post('/api/light-a-candle/new', prayer).then( (result) => {
-      console.log(result)
-      setSection(SECTIONS.STEP6);
+      setSection(SECTIONS.STEP7);
     }).catch(error => {
       alert('An error has ocurred');
-      setSection(SECTIONS.STEP6);
+      setSection(SECTIONS.STEP7);
     })
   }
 
-  const onVideoEnd = () => {
-    setSection(SECTIONS.STEP7);
-  }
-
   const handleLightACandleValues = (languages = [], sounds = [], totalPrayers = 0) => {
+    if(languages.length === 1) {
+      const [ { id: defaultLanguage } ] = languages
+      setPrayer({...prayer, language: defaultLanguage });
+      setSection(SECTIONS.STEP2);
+    } else {
+      setSection(SECTIONS.STEP1);
+    }
+
     setLanguages(languages);
     setSounds(sounds);
     setTotalPrayers(totalPrayers)
@@ -240,7 +270,7 @@ const LightACandle = () => {
   },[])
 
   return (
-    <Layout>
+    <Layout backgroundState={showSection === SECTIONS.STEP7 ? 'video': 'img'}>
       {showSection === SECTIONS.STEP1 && (
         <SelectLanguageSection onLanguageSelected={handleLanguageSelected} languages={languagesList} />
       )}
@@ -249,30 +279,38 @@ const LightACandle = () => {
         <>
           <h2>{INTRODUCTION_TEXT.SUBTITLE}</h2>
           <h1>{INTRODUCTION_TEXT.TITLE}</h1>
-          <p>{INTRODUCTION_TEXT.TITLE}</p>
-          <p>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
           <button onClick={handleNextSection(SECTIONS.STEP3)}>
+            --->
+          </button>
+        </>
+      )}
+
+      {showSection === SECTIONS.STEP3 && (
+        <>
+          <p>{INTRODUCTION_TEXT.DESCRIPTION}</p>
+          <p>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
+          <button onClick={handleNextSection(SECTIONS.STEP4)}>
             {INTRODUCTION_TEXT.WRITE_PRAYER}
             <i>+</i>
           </button>
         </>
       )}
 
-      {showSection === SECTIONS.STEP3 && (
+      {showSection === SECTIONS.STEP4 && (
         <WritePrayerSection
           onCloseForm={handleNextSection(SECTIONS.STEP2)}
           onPrayerWritten={handlePrayerWritten}
           />
       )}
 
-      {showSection === SECTIONS.STEP4 && (
+      {showSection === SECTIONS.STEP5 && (
         <SelectSoundSection
           onSoundSelected={handleSoundSelected}
           sounds={soundsList}
         />
       )}
 
-      {showSection === SECTIONS.STEP5 && (
+      {showSection === SECTIONS.STEP6 && (
         <>
           <h2>
             {TOUCH_TEXT.SUBTITLE}
@@ -285,26 +323,11 @@ const LightACandle = () => {
         </>
       )}
 
-      {showSection === SECTIONS.STEP6 && (
-        <>
-          Show video
-          {/* http://techslides.com/demos/sample-videos/small.mp4 */}
-          <ReactPlayer url='/small.mp4' playing onEnded={onVideoEnd}/>
-        </>
-      )}
-
       {showSection === SECTIONS.STEP7 && (
         <>
-        <Link
-          as={`${PAGES.HOME.url}`}
-          href={PAGES.HOME.url}
-        >
-          Go Home
-        </Link>
+          <PlayAudio soundSelected={prayer.sound} soundsList={soundsList} />
         </>
       )}
-
-
     </Layout>
   );
 };

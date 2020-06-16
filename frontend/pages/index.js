@@ -19,7 +19,7 @@ export const LinkCandle = ({url, name}) => {
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout backgroundState='video'>
       <p className={styles.caption}>
         OFFER YOUR PRAYERS AND BLESSINGS
       </p>
