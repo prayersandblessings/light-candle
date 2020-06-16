@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../components/layout';
 import axios from '../lib/axios'
+import styles from './light-a-candle.module.scss';
 import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 import {
@@ -77,7 +78,7 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
         <br />
 
         <button type="submit">
-          -----> {NEXT_BUTTON__TEXT}
+          ----- {NEXT_BUTTON__TEXT}
         </button>
       </form>
     </>
@@ -113,7 +114,7 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
 
       <br />
       <button onClick={onClickNext}>
-        -----> {NEXT_BUTTON__TEXT}
+        ----- {NEXT_BUTTON__TEXT}
       </button>
     </>
   )
@@ -171,7 +172,7 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
 
       <br />
       <button onClick={onClickNext}>
-        -----> {NEXT_BUTTON__TEXT}
+        ----- {NEXT_BUTTON__TEXT}
       </button>
     </>
   )
@@ -277,22 +278,28 @@ const LightACandle = () => {
 
       {showSection === SECTIONS.STEP2 && (
         <>
-          <h2>{INTRODUCTION_TEXT.SUBTITLE}</h2>
-          <h1>{INTRODUCTION_TEXT.TITLE}</h1>
-          <button onClick={handleNextSection(SECTIONS.STEP3)}>
-            --->
-          </button>
+          <div className={styles.container + ' ' + styles.stepOne}>
+            <span class="caption">{INTRODUCTION_TEXT.SUBTITLE}</span>
+            <h1 className={styles.title}>{INTRODUCTION_TEXT.TITLE}</h1>
+            <button onClick={handleNextSection(SECTIONS.STEP3)}>
+              <img src="/icon-arrow-right.svg" width="52px"></img>
+            </button>
+          </div>
         </>
       )}
 
       {showSection === SECTIONS.STEP3 && (
         <>
-          <p>{INTRODUCTION_TEXT.DESCRIPTION}</p>
-          <p>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
-          <button onClick={handleNextSection(SECTIONS.STEP4)}>
-            {INTRODUCTION_TEXT.WRITE_PRAYER}
-            <i>+</i>
-          </button>
+          <div className={styles.container + ' ' + styles.stepTwo}>
+            <span class="caption">{INTRODUCTION_TEXT.DESCRIPTION_ONE}</span>
+            <h1 className={styles.title}>{INTRODUCTION_TEXT.DESCRIPTION_TWO}</h1>
+            <p>{INTRODUCTION_TEXT.DESCRIPTION_THREE}</p>
+            <p className={styles.lit}>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
+            <button onClick={handleNextSection(SECTIONS.STEP4)}>
+              <p>{INTRODUCTION_TEXT.WRITE_PRAYER}</p>
+              <i>+</i>
+            </button>
+          </div>
         </>
       )}
 
