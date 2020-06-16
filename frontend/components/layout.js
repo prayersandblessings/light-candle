@@ -3,6 +3,7 @@ import Nav from './nav'
 import styles from './layout.module.scss'
 import Link from 'next/link'
 import PAGES from '../constants/routes'
+import BackgroundVideo from './BackgroundVideo/BackgroundVideo';
 
 const SecondaryNav = ({handleOpen}) => (
   <div className={styles.secondaryNav}>
@@ -34,22 +35,9 @@ const Layout = ({ children, backgroundState = 'img' }) => {
     setIsOpen(true);
   };
 
-  let backgroundStyle;
-
-  switch ( backgroundState ) {
-    case 'color':
-      backgroundStyle = styles.color;
-      break;
-    case 'video':
-      backgroundStyle = styles.video;
-      break;
-    default:
-      backgroundStyle = styles.image;
-  }
-
   return (
     <> 
-      {backgroundState == 'img' && (
+      {backgroundState === 'img' && (
         <>
           <div className={styles.image} />
           <div className={styles.content}>
@@ -58,11 +46,21 @@ const Layout = ({ children, backgroundState = 'img' }) => {
         </>
       )}
       {
-        backgroundState !== 'img' && (
+        backgroundState === 'color' && (
           <>
-            <div className={`${styles.content} ${backgroundStyle}`}>
+            <div className={`${styles.content} ${styles.image}`}>
               {children}
             </div>
+          </>
+      )}
+      {
+        backgroundState === 'video' && (
+          <>
+            <BackgroundVideo >
+              <div className={styles.content}>
+                {children}
+              </div>
+            </BackgroundVideo>
           </>
       )}
       
