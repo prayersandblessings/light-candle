@@ -1,0 +1,51 @@
+@import '../assets/scss/variables.scss';
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 20% 0 12% 0;
+}
+
+.stepOne {
+    button {
+        background-color: transparent;
+        border: 0;
+    }
+}
+
+.stepTwo {
+    p {
+        font-family: $text-font;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .lit {
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        position: absolute;
+        background: transparent;
+        border: 0;
+        bottom: 24px;
+        color: white;
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 5rem;
+    margin: 0 0 2rem 0;
+    text-align: center;
+    width: 100%;
+}
