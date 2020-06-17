@@ -44,43 +44,44 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
 
   return (
     <>
-      <form  onSubmit={onHandleSubmit}> 
-        <button onClick={onCloseForm}>X Close</button>
+      <div className={styles.container}>
+        <form  onSubmit={onHandleSubmit} className={styles.prayerForm}> 
+          <button onClick={onCloseForm}>
+            <img src='/icon-close.svg' width='16px'></img>
+            <span>Close</span>
+          </button>
+          <span class="caption">{FORM_TEXT.TITLE_1}</span>
+          <h3>{FORM_TEXT.TITLE_2}</h3>
 
-        <h4>{FORM_TEXT.TITLE_1}</h4>
-        <h3>{FORM_TEXT.TITLE_2}</h3>
+          <input
+            ref={inputName}
+            type="text"
+            name="Sender"
+            placeholder={FORM_TEXT.WRITE_NAME}
+            required
+            />
 
-        <input
-          ref={inputName}
-          type="text"
-          name="Sender"
-          placeholder={FORM_TEXT.WRITE_NAME}
-          required
-          />
-        <br />
+          <input
+            ref={inputEmail}
+            name="receiver_email"
+            type="email"
+            placeholder={FORM_TEXT.WRITE_EMAIL}
+            required
+            />
 
-        <input
-          ref={inputEmail}
-          name="receiver_email"
-          type="email"
-          placeholder={FORM_TEXT.WRITE_EMAIL}
-          required
-          />
-        <br />
+          <textarea
+            ref={inputMessage}
+            name="message"
+            type="text"
+            placeholder={FORM_TEXT.WRITE_PRAYER}
+            required
+            />
 
-        <textarea
-          ref={inputMessage}
-          name="message"
-          type="text"
-          placeholder={FORM_TEXT.WRITE_PRAYER}
-          required
-          />
-        <br />
-
-        <button type="submit">
-          ----- {NEXT_BUTTON__TEXT}
-        </button>
-      </form>
+          <button type="submit">
+            <img src='/icon-arrow-right.svg' width='44px'></img>
+          </button>
+        </form>
+      </div>
     </>
   )  
 } 
@@ -297,7 +298,7 @@ const LightACandle = () => {
             <p className={styles.lit}>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
             <button onClick={handleNextSection(SECTIONS.STEP4)}>
               <p>{INTRODUCTION_TEXT.WRITE_PRAYER}</p>
-              <i>+</i>
+              <img src='/icon-more.png' width='32px'></img>
             </button>
           </div>
         </>
