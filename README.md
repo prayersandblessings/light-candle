@@ -27,7 +27,7 @@ Once you have created these accounts you can deploy your instance by clicking on
 
   `npm i -g now`
 
-  - Secure your `API_URL` with now by running the following command:
+  - Secure your `NEXT_PUBLIC_API_URL` with now by running the following command:
 
   `now secret add api-url <https://your-strapi-instance.herokuapp.com>`
 
@@ -47,7 +47,7 @@ To deploy this Strapi instance you'll need:
 
 Once you have created your account you can deploy your instance by clicking on this button.
 
-[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/strapi/strapi-starter-next-blog)
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/prayersandblessings/light-a-candle)
 
   - Select a repository name and fill API_URL with the url of your Strapi instance on Heroku (eg: https://your-app.herokuapp.com) without the trailing slash
 

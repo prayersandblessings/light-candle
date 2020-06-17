@@ -148,7 +148,7 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
       return;
     }
 
-    setSoundUrl(process.env.NEXT_PUBLIC_API_URL + url);
+    setSoundUrl(url);
   }
 
   return (
@@ -188,7 +188,7 @@ const PlayAudio = ({ soundsList, soundSelected = null }) => {
     { sound: { url: soundUrl } }
   ] = soundsList.filter(({id}) => id ===  soundSelected);
 
-  return <audio src={process.env.NEXT_PUBLIC_API_URL + soundUrl} controls autoPlay/>;
+  return <audio src={soundUrl} controls autoPlay/>;
 }
 
 /**
