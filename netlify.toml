@@ -1,7 +1,7 @@
 [build]
   base = "frontend/"
   publish = "out/"
-  command = "yarn develop"
+  command = "yarn start"
 
 [template.environment]
   NEXT_PUBLIC_API_URL = "NEXT_PUBLIC_API_URL"
