@@ -44,7 +44,7 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container + ' ' + styles.prayerContainter}>
         <form  onSubmit={onHandleSubmit} className={styles.prayerForm}> 
           <button onClick={onCloseForm}>
             <img src='/icon-close.svg' width='16px'></img>
@@ -74,6 +74,7 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
             name="message"
             type="text"
             placeholder={FORM_TEXT.WRITE_PRAYER}
+            rows="2"
             required
             />
 
@@ -102,21 +103,23 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
 
   return (
     <>
-      <h2>{SELECT_YOUR_LANGUAGE_TEXT.TITLE}</h2>
+      <div className={styles.container}>
+        <span class="caption">{SELECT_YOUR_LANGUAGE_TEXT.TITLE}</span>
 
-      <br />
-      <select ref={selectLanguage}>
-        {languages.map(({ id, name }) => (
-          <option key={id} value={id}>
-            {name}
-          </option>
-        ))}
-      </select>
+        <br />
+        <select ref={selectLanguage}>
+          {languages.map(({ id, name }) => (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
 
-      <br />
-      <button onClick={onClickNext}>
-        ----- {NEXT_BUTTON__TEXT}
-      </button>
+        <br />
+        <button onClick={onClickNext}>
+          ----- {NEXT_BUTTON__TEXT}
+        </button>
+      </div>
     </>
   )
   
@@ -153,28 +156,30 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
 
   return (
     <>
-      <h2>{SELECT_SOUND_TEXT.TITLE}</h2>
-
-      <br />
-      <select ref={soundSelected} defaultValue={null} onChange={onSelectChange}>
-        <option value={0}>
-          Sit In silence
-        </option>
-        {sounds.map(({id, name, sound: { url }}) => (
-          <option key={id} value={id} soundurl={url}>
-            {name}
+      <div className={styles.container + ' ' + styles.selectMusic}>
+        <span class="caption">{SELECT_SOUND_TEXT.TITLE}</span>
+        <br />
+        <select ref={soundSelected} defaultValue={null} onChange={onSelectChange}>
+          <option value={0}>
+            Sit In silence
           </option>
-        ))}
-      </select>
+          {sounds.map(({id, name, sound: { url }}) => (
+            <option key={id} value={id} soundurl={url}>
+              {name}
+            </option>
+          ))}
+        </select>
 
-      {soundUrl && (
-        <audio src={soundUrl} controls autoPlay/>
-      )}
+        {soundUrl && (
+          <audio src={soundUrl} controls autoPlay/>
+        )}
 
-      <br />
-      <button onClick={onClickNext}>
-        ----- {NEXT_BUTTON__TEXT}
-      </button>
+        <br />
+        <button onClick={onClickNext} class="next-button">
+          <img src='/icon-arrow-right.svg' width='52'></img>
+          <span>{NEXT_BUTTON__TEXT}</span>
+        </button>
+      </div>
     </>
   )
 } 

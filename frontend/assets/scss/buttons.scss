@@ -17,3 +17,15 @@
     text-transform: uppercase;
     padding: 20px 24px;
 }
+
+.next-button {
+    background: transparent;
+    border: 0;
+    color: white;
+    font-family: $main-font;
+    font-size: 1rem;
+
+    span {
+        margin-left: .5rem;
+    }
+}
