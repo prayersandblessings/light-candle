@@ -51,6 +51,10 @@
     width: 100%;
 }
 
+.prayerContainter {
+    padding: 12% 0 12%;
+}
+
 .prayerForm {
     background: rgba($color: #000000, $alpha: 0.4);
     display: flex;
@@ -95,17 +99,18 @@
 
     textarea {
         background: url(/background-textarea.png);
+        background-position: 50% 68%;
+        background-repeat: repeat-x;
         border: 0;
         color: white;
         font-family: $text-font;
         font-style: italic;
+        height: 88px;
         line-height: 25px;
         margin: 0 4rem 2rem 4rem;
-        min-height: 88px;
-        resize: none;
-        background-position: 50% 68%;
-        background-repeat: repeat-x;
+        overflow: hidden;
         padding: 0 24px;
+        resize: none;
 
         &:focus {
             outline: none;
@@ -115,5 +120,19 @@
     button[type="submit"] {
         margin-left: initial;
         margin-right: initial;
+    }
+}
+
+.selectMusic {
+    align-items: center;
+    flex-direction: column;
+
+    > span {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    select {
+        margin-bottom: 1.5rem;
     }
 }
