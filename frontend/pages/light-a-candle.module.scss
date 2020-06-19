@@ -171,3 +171,18 @@
         opacity: 0;
     }
 }
+
+.toolBar {
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    left: .5rem;
+    position: absolute;
+
+    button {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+}
