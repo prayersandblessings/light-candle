@@ -178,6 +178,7 @@
     flex-direction: column;
     left: .5rem;
     position: absolute;
+    z-index: 1;
 
     button {
         background: none;
