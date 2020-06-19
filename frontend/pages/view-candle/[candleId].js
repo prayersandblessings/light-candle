@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../../components/layout';
 import ReactPlayer from 'react-player'
 import Link from 'next/link'
 import PAGES from '../../constants/routes'
+import Router, { useRouter } from 'next/router'
+import axios from '../../lib/axios'
 import {
   NEXT_BUTTON__TEXT
 } from '../../constants/text';
-import { getCandleInfo } from '../../lib/api'
 
 const SECTIONS = {
   STEP1: 'CANDLE_MESSAGE',
@@ -14,8 +15,29 @@ const SECTIONS = {
   STEP3: 'END',
 }
 
-const ViewCandle = ({candleContent}) => {
+const ViewCandle = () => {
+  const router = useRouter()
   const [showSection, setSection] = useState(SECTIONS.STEP1);
+  const [candleContent, setcandleContent] = useState({});
+  const { candleId } = router.query
+
+  useEffect(() => {
+      if(candleId) {
+        axios.get(`/api/candle/${candleId}`).then( ({data: { 
+          content 
+        }}) => {
+          if(!content) {
+            Router.push('/')
+          }
+          setcandleContent(content);
+        }).catch(error => {
+          setcandleContent({});
+          Router.push('/')
+        })
+      }
+  }, [candleId])
+
+
   const onVideoEnd = () => {
     setSection(SECTIONS.STEP3);
   }
@@ -24,10 +46,11 @@ const ViewCandle = ({candleContent}) => {
     setSection(section);
     console.log(section);
   }
+  
 
   return (
     <Layout>
-      {showSection === SECTIONS.STEP1 && (
+      {showSection === SECTIONS.STEP1 & !!candleContent && (
         <div>
           <p>
             {candleContent.message}
@@ -61,28 +84,5 @@ const ViewCandle = ({candleContent}) => {
     </Layout>
   );
 };
-
-
-export async function getStaticPaths() {
-  // const categories = (await getCandleInfo()) || []
-  return {
-    paths: [
-      {
-        params: {
-          id: '33333',
-        }
-      }
-    ]
-    ,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const candleContent = (await getCandleInfo(params.id)) || []
-  return {
-    props: { candleContent }
-  }
-}
 
 export default ViewCandle;
