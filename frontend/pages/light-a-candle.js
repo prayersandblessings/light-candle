@@ -337,7 +337,9 @@ const LightACandle = () => {
 
       {showSection === SECTIONS.STEP7 && (
         <>
-          <PlayAudio soundSelected={prayer.sound} soundsList={soundsList} />
+          <div className={styles.audio}>
+            <PlayAudio soundSelected={prayer.sound} soundsList={soundsList} />
+          </div>
         </>
       )}
     </Layout>
