@@ -11,7 +11,7 @@ export default async (req, res)  => {
       message = ''
     }
   } = req;
-  console.log(req.body);
+
   if(!language || !name || !email || !message ) {
     res.status(400).json({ message: 'Missing fields'})
     return;

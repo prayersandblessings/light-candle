@@ -6,13 +6,17 @@
  */
 
 const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
-const newEmail = (data) => {
-    console.log('New Email');
-    return `
+const newEmail = ({
+  id, 
+  Sender,
+  receiver_email,
+  message,
+}) => {
+  const content = `
     Hi
     <br />
     <p>
-      ${data.Sender} has lit a candle for you:
+      ${Sender} has lit a candle for you:
     </p>
     <img style={{width: '100%', height: 'auto'}} src="http://localhost:1338/email-bg.jpg" />
     <br />
@@ -25,7 +29,7 @@ const newEmail = (data) => {
       'border-radius': '20px';
       'padding': '10px 20px';
       "
-      href="http://localhost:3000/view-candle/${data.id}"
+      href="${process.env.FRONT_END_URL}/view-candle/${id}"
       >
         Click here to view your candle
     </a>
@@ -34,7 +38,7 @@ const newEmail = (data) => {
     <p style="
       'text-align': 'center'
       ">
-      ${data.message}
+      ${message}
     </p>
     <br/>
     <hr />
@@ -56,7 +60,17 @@ const newEmail = (data) => {
     <p>
       Copyright © 2020 Prayers & Blessings, All rights reserved.
     </p>
-    `
+    `;
+  
+  const emailInput = {
+    to: receiver_email,
+    from: `joelrobuchon@strapi.io`,
+    replyTo: 'no-reply@strapi.io',
+    subject: 'You have received a prayer',
+    text: 'Hello world!',
+    html: content ,
+  }
+  return emailInput;
 }
 
 module.exports = {
@@ -68,26 +82,14 @@ module.exports = {
 
   async create(ctx) {
     let entity;
-    let content;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services['prayers-and-blessings'].create(data, { files });
-      console.log(entity);
-      content = newEmail(entity);
     } else {
       entity = await strapi.services['prayers-and-blessings'].create(ctx.request.body);
-      console.log(entity);
-      content = newEmail(entity);
     }
 
-    await strapi.plugins['email'].services.email.send({
-        to: 'jhdezcruz@gmail.com',
-        from: 'joelrobuchon@strapi.io',
-        replyTo: 'no-reply@strapi.io',
-        subject: 'You have received a prayer',
-        text: 'Hello world!',
-        html: content ,
-      });
+    await strapi.plugins['email'].services.email.send(newEmail(entity));
     
     return sanitizeEntity(entity, { model: strapi.models['prayers-and-blessings'] });
   },
