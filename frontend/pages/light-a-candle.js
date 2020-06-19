@@ -342,6 +342,17 @@ const LightACandle = () => {
               <span class="caption">Stay here quietly</span>
               <h1 class={styles.title}>As long as you wish</h1>
             </div>
+            <div className={styles.toolBar}>
+              <button>
+                <img src="/icon-audio.svg" width="18px"></img>
+              </button>
+              <button>
+                <img src="/icon-download.svg" width="18px"></img>
+              </button>
+              <button>
+                <img src="/icon-share.svg" width="18px"></img>
+              </button>
+            </div>
             <div className={styles.audio}>
               <PlayAudio soundSelected={prayer.sound} soundsList={soundsList} />
             </div>
