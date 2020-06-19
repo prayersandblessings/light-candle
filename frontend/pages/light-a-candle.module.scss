@@ -136,3 +136,15 @@
         margin-bottom: 1.5rem;
     }
 }
+
+.candleButton {
+    background: none;
+    border: 0;
+    bottom: 32px;
+    max-width: 140px;
+    position: absolute;
+
+    img {
+        width: 100%;
+    }
+}
