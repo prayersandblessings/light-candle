@@ -153,9 +153,21 @@
 }
 
 .audio {
-    bottom: 0;
+    bottom: 24px;
     left: 0;
     position: absolute;
     right: 0;
     text-align: center;
+}
+
+.hideText {
+    animation: cssAnimation 0s 4s forwards;
+    text-align: center;
+    opacity: 1;
+}
+
+@keyframes cssAnimation {
+    to   {
+        opacity: 0;
+    }
 }
