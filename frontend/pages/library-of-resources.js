@@ -22,6 +22,10 @@ const LibraryOfResources = () => {
     setCategories(categories);
   }
 
+  const scrollTo = () => {
+    document.getElementById('categoriesComponent').scrollIntoView({ behavior: 'smooth' });
+  }
+
   useEffect(()=>{
     axios.get('/api/resources').then( ({ data : {resources, categories} }) => {
       handleResourcesChanges(resources, categories);
@@ -38,11 +42,11 @@ const LibraryOfResources = () => {
         <div className={styles.libraryContainer}>
           <span className={styles.caption + ' caption'}>Library</span>
           <h2 className={styles.title + ' title'}>Of resources</h2>
-          <a>
+          <a onClick={scrollTo}>
             <img src="/icon-arrow-down.svg" width='24px'></img>
           </a>
         </div>
-        <div className={styles.categories}>
+        <div className={styles.categories} id="categoriesComponent">
           {categories.map((category) => (
             <button key={category} onClick={handleSelectCategory(category)}>
               {category}
