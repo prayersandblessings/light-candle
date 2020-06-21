@@ -154,6 +154,7 @@ input editPrayersAndBlessingInput {
   enabled: Boolean
   language: ID
   sound: ID
+  name_receipent: String
 }
 
 input editResourceCategoryInput {
@@ -281,7 +282,7 @@ input LanguageInput {
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_at | LanguageConnectionUpdated_at | LanguageConnectionName | LanguageConnectionEnabled | createLanguagePayload | updateLanguagePayload | deleteLanguagePayload | PrayersAndBlessings | PrayersAndBlessingsConnection | PrayersAndBlessingsAggregator | PrayersAndBlessingsGroupBy | PrayersAndBlessingsConnectionId | PrayersAndBlessingsConnectionCreated_at | PrayersAndBlessingsConnectionUpdated_at | PrayersAndBlessingsConnectionSender | PrayersAndBlessingsConnectionReceiver_email | PrayersAndBlessingsConnectionMessage | PrayersAndBlessingsConnectionEnabled | PrayersAndBlessingsConnectionLanguage | PrayersAndBlessingsConnectionSound | createPrayersAndBlessingPayload | updatePrayersAndBlessingPayload | deletePrayersAndBlessingPayload | ResourceCategory | ResourceCategoryConnection | ResourceCategoryAggregator | ResourceCategoryGroupBy | ResourceCategoryConnectionId | ResourceCategoryConnectionCreated_at | ResourceCategoryConnectionUpdated_at | ResourceCategoryConnectionTitle | ResourceCategoryConnectionEnabled | createResourceCategoryPayload | updateResourceCategoryPayload | deleteResourceCategoryPayload | Resource | ResourceConnection | ResourceAggregator | ResourceGroupBy | ResourceConnectionId | ResourceConnectionCreated_at | ResourceConnectionUpdated_at | ResourceConnectionTitle | ResourceConnectionContent | ResourceConnectionAuthor | ResourceConnectionResource_category | ResourceConnectionEnabled | createResourcePayload | updateResourcePayload | deleteResourcePayload | Sound | SoundConnection | SoundAggregator | SoundGroupBy | SoundConnectionId | SoundConnectionCreated_at | SoundConnectionUpdated_at | SoundConnectionName | SoundConnectionSound | SoundConnectionEnabled | createSoundPayload | updateSoundPayload | deleteSoundPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_at | LanguageConnectionUpdated_at | LanguageConnectionName | LanguageConnectionEnabled | createLanguagePayload | updateLanguagePayload | deleteLanguagePayload | PrayersAndBlessings | PrayersAndBlessingsConnection | PrayersAndBlessingsAggregator | PrayersAndBlessingsGroupBy | PrayersAndBlessingsConnectionId | PrayersAndBlessingsConnectionCreated_at | PrayersAndBlessingsConnectionUpdated_at | PrayersAndBlessingsConnectionSender | PrayersAndBlessingsConnectionReceiver_email | PrayersAndBlessingsConnectionMessage | PrayersAndBlessingsConnectionEnabled | PrayersAndBlessingsConnectionLanguage | PrayersAndBlessingsConnectionSound | PrayersAndBlessingsConnectionName_receipent | createPrayersAndBlessingPayload | updatePrayersAndBlessingPayload | deletePrayersAndBlessingPayload | ResourceCategory | ResourceCategoryConnection | ResourceCategoryAggregator | ResourceCategoryGroupBy | ResourceCategoryConnectionId | ResourceCategoryConnectionCreated_at | ResourceCategoryConnectionUpdated_at | ResourceCategoryConnectionTitle | ResourceCategoryConnectionEnabled | createResourceCategoryPayload | updateResourceCategoryPayload | deleteResourceCategoryPayload | Resource | ResourceConnection | ResourceAggregator | ResourceGroupBy | ResourceConnectionId | ResourceConnectionCreated_at | ResourceConnectionUpdated_at | ResourceConnectionTitle | ResourceConnectionContent | ResourceConnectionAuthor | ResourceConnectionResource_category | ResourceConnectionEnabled | createResourcePayload | updateResourcePayload | deleteResourcePayload | Sound | SoundConnection | SoundAggregator | SoundGroupBy | SoundConnectionId | SoundConnectionCreated_at | SoundConnectionUpdated_at | SoundConnectionName | SoundConnectionSound | SoundConnectionEnabled | createSoundPayload | updateSoundPayload | deleteSoundPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createLanguage(input: createLanguageInput): createLanguagePayload
@@ -333,6 +334,7 @@ input PrayersAndBlessingInput {
   enabled: Boolean
   language: ID
   sound: ID
+  name_receipent: String
 }
 
 type PrayersAndBlessings {
@@ -345,6 +347,7 @@ type PrayersAndBlessings {
   enabled: Boolean
   language: Language
   sound: Sound
+  name_receipent: String
 }
 
 type PrayersAndBlessingsAggregator {
@@ -383,6 +386,11 @@ type PrayersAndBlessingsConnectionMessage {
   connection: PrayersAndBlessingsConnection
 }
 
+type PrayersAndBlessingsConnectionName_receipent {
+  key: String
+  connection: PrayersAndBlessingsConnection
+}
+
 type PrayersAndBlessingsConnectionReceiver_email {
   key: String
   connection: PrayersAndBlessingsConnection
@@ -413,6 +421,7 @@ type PrayersAndBlessingsGroupBy {
   enabled: [PrayersAndBlessingsConnectionEnabled]
   language: [PrayersAndBlessingsConnectionLanguage]
   sound: [PrayersAndBlessingsConnectionSound]
+  name_receipent: [PrayersAndBlessingsConnectionName_receipent]
 }
 
 type Query {

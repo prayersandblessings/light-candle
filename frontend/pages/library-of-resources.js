@@ -31,7 +31,6 @@ const LibraryOfResources = () => {
     axios.get('/api/resources').then( ({ data : {resources, categories} }) => {
       handleResourcesChanges(resources, categories);
     }).catch(error => {
-      console.log(error);
       handleResourcesChanges([], []);
     })
   },[])

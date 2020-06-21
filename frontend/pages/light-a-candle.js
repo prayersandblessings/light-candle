@@ -98,7 +98,6 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
   const selectLanguage = useRef(null);
 
   const onClickNext = (e) => {
-    console.log(e)
     const { current : { value: language = '' }} = selectLanguage;
     onLanguageSelected(language);
   }
