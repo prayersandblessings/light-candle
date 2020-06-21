@@ -22,7 +22,7 @@ const ViewCandle = ({candleId}) => {
   useEffect(() => {
     console.log('Rendered', candleId)
       if(candleId) {
-        axios.get(`/api/candle/${candleId}`).then( ({data: { 
+        axios.get(`/api/candle/detail?candleId=${candleId}`).then( ({data: { 
           content 
         }}) => {
           if(!content) {
