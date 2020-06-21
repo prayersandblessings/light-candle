@@ -50,8 +50,8 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
             <img src='/icon-close.svg' width='16px'></img>
             <span>Close</span>
           </button>
-          <span class="caption">{FORM_TEXT.TITLE_1}</span>
-          <h3 class="title">{FORM_TEXT.TITLE_2}</h3>
+          <span className="caption">{FORM_TEXT.TITLE_1}</span>
+          <h3 className="title">{FORM_TEXT.TITLE_2}</h3>
 
           <input
             ref={inputName}
@@ -104,7 +104,7 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
   return (
     <>
       <div className={styles.container}>
-        <span class="caption">{SELECT_YOUR_LANGUAGE_TEXT.TITLE}</span>
+        <span className="caption">{SELECT_YOUR_LANGUAGE_TEXT.TITLE}</span>
 
         <br />
         <select ref={selectLanguage}>
@@ -157,7 +157,7 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
   return (
     <>
       <div className={styles.container + ' ' + styles.selectMusic}>
-        <span class="caption">{SELECT_SOUND_TEXT.TITLE}</span>
+        <span className="caption">{SELECT_SOUND_TEXT.TITLE}</span>
         <br />
         <select ref={soundSelected} defaultValue={null} onChange={onSelectChange}>
           <option value={0}>
@@ -175,7 +175,7 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
         )}
 
         <br />
-        <button onClick={onClickNext} class="next-button">
+        <button onClick={onClickNext} className="next-button">
           <img src='/icon-arrow-right.svg' width='52'></img>
           <span>{NEXT_BUTTON__TEXT}</span>
         </button>
@@ -290,7 +290,7 @@ const LightACandle = () => {
       {showSection === SECTIONS.STEP2 && (
         <>
           <div className={styles.container + ' ' + styles.stepOne}>
-            <span class="caption">{INTRODUCTION_TEXT.SUBTITLE}</span>
+            <span className="caption">{INTRODUCTION_TEXT.SUBTITLE}</span>
             <h1 className={styles.title + ' title'}>{INTRODUCTION_TEXT.TITLE}</h1>
             <button onClick={handleNextSection(SECTIONS.STEP3)}>
               <img src="/icon-arrow-right.svg" width="52px"></img>
@@ -302,7 +302,7 @@ const LightACandle = () => {
       {showSection === SECTIONS.STEP3 && (
         <>
           <div className={styles.container + ' ' + styles.stepTwo}>
-            <span class="caption">{INTRODUCTION_TEXT.DESCRIPTION_ONE}</span>
+            <span className="caption">{INTRODUCTION_TEXT.DESCRIPTION_ONE}</span>
             <h1 className={styles.title + ' title'}>{INTRODUCTION_TEXT.DESCRIPTION_TWO}</h1>
             <p>{INTRODUCTION_TEXT.DESCRIPTION_THREE}</p>
             <p className={styles.lit}>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
@@ -331,7 +331,7 @@ const LightACandle = () => {
       {showSection === SECTIONS.STEP6 && (
         <>
           <div className={styles.container}>
-            <span class="caption">{TOUCH_TEXT.SUBTITLE}</span>
+            <span className="caption">{TOUCH_TEXT.SUBTITLE}</span>
             <h1 className={styles.title + ' title'}>{TOUCH_TEXT.TITLE}</h1>
             <button onClick={handleLightCandle} className={styles.candleButton}>
               <img src="/candle.png" />
@@ -344,8 +344,8 @@ const LightACandle = () => {
         <>
           <div className={styles.container}>
             <div className={styles.hideText}>
-              <span class="caption">Stay here quietly</span>
-              <h1 class={styles.title + ' title'}>As long as you wish</h1>
+              <span className="caption">Stay here quietly</span>
+              <h1 className={styles.title + ' title'}>As long as you wish</h1>
             </div>
             <div className={styles.toolBar}>
               <button>
