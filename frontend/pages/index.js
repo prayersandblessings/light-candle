@@ -21,8 +21,10 @@ const Home = () => {
   return (
     <Layout backgroundState='img'>
       <div className={styles.container}>
-        <span className="caption">Offer your prayers and blessings</span>
-        <h1 className="title">To the world</h1>
+        <div className={styles.showText}>
+          <span className="caption">Offer your prayers and blessings</span>
+          <h1 className="title">To the world</h1>
+        </div>
         <div className={styles.candles}>
           <LinkCandle url={PAGES.ABOUT_US.url} name={PAGES.ABOUT_US.name} />
           <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />

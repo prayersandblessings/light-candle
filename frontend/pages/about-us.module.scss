@@ -1,11 +1,13 @@
 @import '../assets/scss/variables.scss';
 
 .container {
+    animation: fadeIn ease 2s;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 12% 0 12%;
     padding: 20% 0 12% 0;
+    -webkit-animation: fadeIn ease 2s;
 }
 
 .caption {
@@ -67,6 +69,11 @@
             }
         }
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @media screen and (max-width: 1280px) {
