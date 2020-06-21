@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Layout from '../components/layout'
 import SubscribeComponent from '../components/subscribe'
 import axios from '../lib/axios'
@@ -8,6 +8,7 @@ const LibraryOfResources = () => {
   let [resources, setResources] = useState([]);
   let [categories, setCategories] = useState([]);
   let [categorySelected, setCategory] = useState('');
+  const categoriesSectionRef = useRef('');
 
   const handleSelectCategory = (category) => () => {
     setCategory(category);
@@ -23,7 +24,7 @@ const LibraryOfResources = () => {
   }
 
   const scrollTo = () => {
-    document.getElementById('categoriesComponent').scrollIntoView({ behavior: 'smooth' });
+    categoriesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   useEffect(()=>{
@@ -46,7 +47,7 @@ const LibraryOfResources = () => {
             <img src="/icon-arrow-down.svg" width='24px'></img>
           </a>
         </div>
-        <div className={styles.categories} id="categoriesComponent">
+        <div className={styles.categories} id="categoriesComponent" ref={categoriesSectionRef}>
           {categories.map((category) => (
             <button key={category} onClick={handleSelectCategory(category)}>
               {category}
