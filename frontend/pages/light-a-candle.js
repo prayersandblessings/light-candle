@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../components/layout';
 import axios from '../lib/axios'
 import styles from './light-a-candle.module.scss';
+import Link from 'next/link'
+import PAGES from '../constants/routes'
 import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 import {
@@ -304,7 +306,13 @@ const LightACandle = () => {
           <div className={styles.container + ' ' + styles.stepTwo}>
             <span className="caption">{INTRODUCTION_TEXT.DESCRIPTION_ONE}</span>
             <h1 className={styles.title + ' title'}>{INTRODUCTION_TEXT.DESCRIPTION_TWO}</h1>
-            <p>{INTRODUCTION_TEXT.DESCRIPTION_THREE}</p>
+            <p>
+              {INTRODUCTION_TEXT.DESCRIPTION_THREE} 
+              <Link as={PAGES.LIBRARY.url} href={PAGES.LIBRARY.url}>
+                <a> resource library </a>
+              </Link>
+              {INTRODUCTION_TEXT.DESCRIPTION_FOUR}
+            </p>
             <p className={styles.lit}>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
             <button onClick={handleNextSection(SECTIONS.STEP4)}>
               <p>{INTRODUCTION_TEXT.WRITE_PRAYER}</p>
