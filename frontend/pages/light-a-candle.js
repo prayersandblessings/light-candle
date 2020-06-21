@@ -33,15 +33,17 @@ const SECTIONS = {
  */
 const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
   const inputName = useRef(null);
+  const inputreceipentName = useRef(null);
   const inputEmail = useRef(null);
   const inputMessage = useRef(null);
 
   const onHandleSubmit = (event) => {
     event.preventDefault();
     const { current : { value: name = '' }} = inputName;
+    const { current : { value: receipentName = '' }} = inputreceipentName;
     const { current : { value: email = '' }} = inputEmail;
     const { current : { value: message = '' }} = inputMessage;
-    onPrayerWritten(name, email, message);
+    onPrayerWritten(name, receipentName,email, message);
   }
 
   return (
@@ -62,6 +64,14 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
             placeholder={FORM_TEXT.WRITE_NAME}
             required
             />
+          
+          <input
+            ref={inputreceipentName}
+            type="text"
+            name="Recipient"
+            placeholder={FORM_TEXT.WRITE_RECEIPENT_NAME}
+            required
+          />
 
           <input
             ref={inputEmail}
