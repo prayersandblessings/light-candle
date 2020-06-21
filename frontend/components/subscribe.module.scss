@@ -1,3 +1,5 @@
+@import '../assets/scss/variables.scss';
+
 .subscribeComponent {
   text-align: center;
   width: 50%;
@@ -35,6 +37,7 @@
       }
 
       button {
+        font-family: $main-font;
         margin-left: auto;
         width: 33%;
       }
