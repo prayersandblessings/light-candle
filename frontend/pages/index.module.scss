@@ -8,6 +8,11 @@
   padding: 20% 0 12% 0;
 }
 
+.showText {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+}
+
 .candles {
   width: 100%;
   display: flex;
@@ -43,4 +48,9 @@
     }
 
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
