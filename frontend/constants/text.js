@@ -8,8 +8,9 @@ export const INTRODUCTION_TEXT = {
   TITLE: 'Has been a sacred ritual throughout the ages',
   DESCRIPTION_ONE: 'Reflect on the prayer or blessing',
   DESCRIPTION_TWO: 'You wish to offer',
-  DESCRIPTION_THREE: 'You may wish to visi the resource library for inspiration',
-  CANDLE: 'CANDLES HAVE BEEN LIT',
+  DESCRIPTION_THREE: 'You may wish to visit the',
+  DESCRIPTION_FOUR: 'for inspiration.',
+  CANDLE: 'CANDLES HAVE BEEN LIT.',
   WRITE_PRAYER: 'Write your prayer'
 }
 export const FORM_TEXT = {
