@@ -15,13 +15,12 @@ const SECTIONS = {
   STEP3: 'END',
 }
 
-const ViewCandle = () => {
-  const router = useRouter()
+const ViewCandle = ({candleId}) => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
   const [candleContent, setcandleContent] = useState({});
-  const { candleId } = router.query
 
   useEffect(() => {
+    console.log('Rendered', candleId)
       if(candleId) {
         axios.get(`/api/candle/${candleId}`).then( ({data: { 
           content 
@@ -84,5 +83,12 @@ const ViewCandle = () => {
     </Layout>
   );
 };
+
+// This gets called on every request
+export async function getServerSideProps(req) {
+  const { candleId } = req.query;
+  console.log(candleId);
+  return { props: { candleId } }
+}
 
 export default ViewCandle;
