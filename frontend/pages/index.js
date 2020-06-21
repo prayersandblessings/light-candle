@@ -20,16 +20,14 @@ export const LinkCandle = ({url, name}) => {
 const Home = () => {
   return (
     <Layout backgroundState='video'>
-      <p className={styles.caption}>
-        OFFER YOUR PRAYERS AND BLESSINGS
-      </p>
-      <h1 className={styles.title}>
-        To the world
-      </h1>
-      <div className={styles.candles}>
-        <LinkCandle url={PAGES.ABOUT_US.url} name={PAGES.ABOUT_US.name} />
-        <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
-        <LinkCandle url={PAGES.LIBRARY.url} name={PAGES.LIBRARY.name} />
+      <div className={styles.container}>
+        <span class="caption">Offer your prayers and blessings</span>
+        <h1 class="title">To the world</h1>
+        <div className={styles.candles}>
+          <LinkCandle url={PAGES.ABOUT_US.url} name={PAGES.ABOUT_US.name} />
+          <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
+          <LinkCandle url={PAGES.LIBRARY.url} name={PAGES.LIBRARY.name} />
+        </div>
       </div>
     </Layout>
   )

@@ -37,7 +37,7 @@ const LibraryOfResources = () => {
       <div className={styles.container}>
         <div className={styles.libraryContainer}>
           <span className={styles.caption + ' caption'}>Library</span>
-          <h2 className={styles.title}>Of resources</h2>
+          <h2 className={styles.title + ' title'}>Of resources</h2>
           <a>
             <img src="/icon-arrow-down.svg" width='24px'></img>
           </a>

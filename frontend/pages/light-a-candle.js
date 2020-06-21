@@ -51,7 +51,7 @@ const WritePrayerSection = ({ onPrayerWritten, onCloseForm })  => {
             <span>Close</span>
           </button>
           <span class="caption">{FORM_TEXT.TITLE_1}</span>
-          <h3>{FORM_TEXT.TITLE_2}</h3>
+          <h3 class="title">{FORM_TEXT.TITLE_2}</h3>
 
           <input
             ref={inputName}
@@ -291,7 +291,7 @@ const LightACandle = () => {
         <>
           <div className={styles.container + ' ' + styles.stepOne}>
             <span class="caption">{INTRODUCTION_TEXT.SUBTITLE}</span>
-            <h1 className={styles.title}>{INTRODUCTION_TEXT.TITLE}</h1>
+            <h1 className={styles.title + ' title'}>{INTRODUCTION_TEXT.TITLE}</h1>
             <button onClick={handleNextSection(SECTIONS.STEP3)}>
               <img src="/icon-arrow-right.svg" width="52px"></img>
             </button>
@@ -303,7 +303,7 @@ const LightACandle = () => {
         <>
           <div className={styles.container + ' ' + styles.stepTwo}>
             <span class="caption">{INTRODUCTION_TEXT.DESCRIPTION_ONE}</span>
-            <h1 className={styles.title}>{INTRODUCTION_TEXT.DESCRIPTION_TWO}</h1>
+            <h1 className={styles.title + ' title'}>{INTRODUCTION_TEXT.DESCRIPTION_TWO}</h1>
             <p>{INTRODUCTION_TEXT.DESCRIPTION_THREE}</p>
             <p className={styles.lit}>{totalPrayers} {INTRODUCTION_TEXT.CANDLE}</p>
             <button onClick={handleNextSection(SECTIONS.STEP4)}>
@@ -332,7 +332,7 @@ const LightACandle = () => {
         <>
           <div className={styles.container}>
             <span class="caption">{TOUCH_TEXT.SUBTITLE}</span>
-            <h1 className={styles.title}>{TOUCH_TEXT.TITLE}</h1>
+            <h1 className={styles.title + ' title'}>{TOUCH_TEXT.TITLE}</h1>
             <button onClick={handleLightCandle} className={styles.candleButton}>
               <img src="/candle.png" />
             </button>
@@ -345,7 +345,7 @@ const LightACandle = () => {
           <div className={styles.container}>
             <div className={styles.hideText}>
               <span class="caption">Stay here quietly</span>
-              <h1 class={styles.title}>As long as you wish</h1>
+              <h1 class={styles.title + ' title'}>As long as you wish</h1>
             </div>
             <div className={styles.toolBar}>
               <button>
