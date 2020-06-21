@@ -27,9 +27,9 @@
 .secondaryNav {
   color: $main-color;
   display: flex;
-  position: fixed;
+  position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 3rem;
 
   > a {
     color: $main-color;
