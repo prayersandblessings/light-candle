@@ -20,6 +20,9 @@ const AboutUs = () => {
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem veritatis.</p>
             <p>Et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
             <div className="divider"></div>
+            <Link href="/[candleId]/view-candle" as="/80/view-candle">
+              Testing go to candle
+            </Link>
             <Link
               as={`${PAGES.LIGHT_A_CANDLE.url}`}
               href={PAGES.LIGHT_A_CANDLE.url}
