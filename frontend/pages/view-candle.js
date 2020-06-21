@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../../components/layout';
+import Layout from '../components/layout';
 import ReactPlayer from 'react-player'
 import Link from 'next/link'
-import PAGES from '../../constants/routes'
+import PAGES from '../constants/routes'
 import Router, { useRouter } from 'next/router'
-import axios from '../../lib/axios'
+import axios from '../lib/axios'
 import {
   NEXT_BUTTON__TEXT
-} from '../../constants/text';
+} from '../constants/text';
 
 const SECTIONS = {
   STEP1: 'CANDLE_MESSAGE',
@@ -86,8 +86,7 @@ const ViewCandle = ({candleId}) => {
 
 // This gets called on every request
 export async function getServerSideProps(req) {
-  const { candleId } = req.query;
-  console.log(candleId);
+  const { candleId = 0 } = req.query;
   return { props: { candleId } }
 }
 
