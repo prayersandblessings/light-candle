@@ -217,6 +217,7 @@ const LightACandle = () => {
     language: null,
     sound: null,
     name: null,
+    nameReceipent: null,
     email: null,
     message: null
   });
@@ -234,8 +235,8 @@ const LightACandle = () => {
     setSection(SECTIONS.STEP2);
   }
 
-  const handlePrayerWritten = (name, email, message) => {
-    setPrayer({...prayer, name, email, message});
+  const handlePrayerWritten = (name, nameReceipent, email, message) => {
+    setPrayer({...prayer, name, nameReceipent, email, message});
     setSection(SECTIONS.STEP5);
   }
 

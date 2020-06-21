@@ -7,12 +7,13 @@ export default async (req, res)  => {
       language = '',
       sound = '',
       name = '',
+      nameReceipent = '',
       email = '',
       message = ''
     }
   } = req;
 
-  if(!language || !name || !email || !message ) {
+  if(!language || !name || !nameReceipent || !email || !message ) {
     res.status(400).json({ message: 'Missing fields'})
     return;
   }
@@ -20,12 +21,13 @@ export default async (req, res)  => {
   
 
   const {  createPrayersAndBlessing: { prayersAndBlessing: prayer  = null } } = await fetchAPI(
-    `mutation($name: String, $email: String, $message: String, $sound:ID, $language:ID) {
+    `mutation($name: String, $nameReceipent: String, $email: String, $message: String, $sound:ID, $language:ID) {
       createPrayersAndBlessing(input: {
         data: {
           Sender: $name
           receiver_email: $email
           enabled: true
+          name_receipent: $nameReceipent
           message: $message
           sound: $sound
           language: $language
@@ -45,7 +47,7 @@ export default async (req, res)  => {
         }
       }
     }`,
-    { variables: { language , sound , name, email, message } }
+    { variables: { language , sound , name, nameReceipent, email, message } }
   )
 
 
