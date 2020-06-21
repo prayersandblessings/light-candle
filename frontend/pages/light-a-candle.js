@@ -361,7 +361,7 @@ const LightACandle = () => {
       {showSection === SECTIONS.STEP7 && (
         <>
           <div className={styles.container}>
-            <div className={styles.hideText}>
+            <div className={styles.showText}>
               <span className="caption">Stay here quietly</span>
               <h1 className={styles.title + ' title'}>As long as you wish</h1>
             </div>
