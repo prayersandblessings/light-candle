@@ -26,6 +26,9 @@
     },
     "sound": {
       "model": "sound"
+    },
+    "name_receipent": {
+      "type": "string"
     }
   }
 }
