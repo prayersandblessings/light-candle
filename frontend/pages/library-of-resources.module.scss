@@ -33,7 +33,7 @@
 
 .categories {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 7rem;
     margin-top: 10%;
     width: 100%;
@@ -45,6 +45,7 @@
         font-family: $main-font;
         font-weight: 400;
         letter-spacing: 6px;
+        margin: 0 1.5rem;
         text-transform: uppercase;
     }
 }
@@ -53,8 +54,9 @@
     background: $main-color;
     border-radius: 4px;
     margin-bottom: 2rem;
-    padding: 4rem 11rem;
+    padding: 4rem 5rem;
     text-align: center;
+    width: 85%;
 
     h2 {
         font-size: 2.5rem;
