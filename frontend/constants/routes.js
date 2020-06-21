@@ -8,7 +8,7 @@ const PAGES = {
     url: '/about-us'
   },
   LIBRARY:{
-    name: 'Libary of Resources',
+    name: 'Libary',
     url: '/library-of-resources'
   },
   LIGHT_A_CANDLE:{
