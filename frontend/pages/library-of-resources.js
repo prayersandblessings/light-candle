@@ -69,7 +69,7 @@ const LibraryOfResources = () => {
           </div>
         )}
 
-        <div class="divider"></div>
+        <div className="divider" />
 
         <SubscribeComponent/>
       </div>
