@@ -10,6 +10,9 @@
 }
 
 .stepOne {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+
     button {
         background-color: transparent;
         border: 0;
@@ -17,6 +20,9 @@
 }
 
 .stepTwo {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+
     p {
         font-family: $text-font;
         text-align: center;
@@ -59,7 +65,9 @@
 }
 
 .prayerContainter {
+    animation: fadeIn ease 3s;
     padding: 10% 0 0;
+    -webkit-animation: fadeIn ease 3s;
 }
 
 .prayerForm {
@@ -165,16 +173,10 @@
     text-align: center;
 }
 
-.hideText {
-    animation: cssAnimation 0s 4s forwards;
+.showText {
+    animation: fadeIn ease 2s;
     text-align: center;
-    opacity: 1;
-}
-
-@keyframes cssAnimation {
-    to   {
-        opacity: 0;
-    }
+    -webkit-animation: fadeIn ease 2s;
 }
 
 .toolBar {
@@ -191,4 +193,9 @@
         cursor: pointer;
         margin-top: 1rem;
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
