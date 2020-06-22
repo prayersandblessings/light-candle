@@ -4,7 +4,6 @@
     animation: fadeIn ease 2s;
     align-items: center;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 12% 0 12%;
@@ -58,7 +57,7 @@
     margin-bottom: 2rem;
     padding: 4rem 5rem;
     text-align: center;
-    width: 85%;
+    width: 100%;
 
     h2 {
         font-size: 2.5rem;
@@ -89,6 +88,13 @@
         margin: auto;
         width: 44px;
     }
+}
+.libraryFooter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .subscribeComponent {
