@@ -49,7 +49,7 @@ const StayHereQuietly = ({ soundUrl }) => {
       </div>
       {soundUrl && (
         <div className={styles.audio}>
-          <audio src={soundUrl}  ref={audioRef} autoPlay />
+          <audio src={soundUrl}  ref={audioRef} autoPlay loop />
         </div>
       )}
     </div>

@@ -34,6 +34,7 @@
     margin-bottom: 4rem;
     max-width: 100%;
     height: auto;
+    width: 100%;
 }
 
 .aboutUsDescription {
@@ -76,6 +77,19 @@
     100% { opacity: 1; }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 768px) {
 
+    .title {
+        margin-bottom: 2rem;
+    }
+
+    .aboutUsText {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0 8% 0 8%;
+    }
 }
