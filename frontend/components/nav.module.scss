@@ -42,6 +42,7 @@
   top: 0px;
   width: 100%;
   z-index: 2;
+  overflow-y: scroll;
 
   .openCloseMenu {
     margin-right: 5%;
@@ -86,15 +87,6 @@
 
   .open {
     display: initial;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0 0 3rem 0;
 
     .openCloseMenu {
       display: initial;
@@ -115,7 +107,7 @@
     display: inherit;
     flex-wrap: inherit;
     margin: 0;
-    width: 90%;
+    width: 85%;
     padding-left: 5%;
     padding-right: 5%;
 
