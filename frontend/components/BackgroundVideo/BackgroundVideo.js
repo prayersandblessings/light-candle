@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import classes from './BackgroundVideo.module.scss';
 
 const BackgroundVideo = ({children}) => {
-    const videoSource = "./background-video.mp4"
+    const [videoSource, setVideoSource] = useState("./background-video.mp4");
+
+    useEffect(() => {
+        if ( window.innerWidth <= 768 ){
+            setVideoSource("./background-video-mobile.mp4");
+        }
+    }, []);
+
     return (
         <div className={classes.Container} >
             <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
