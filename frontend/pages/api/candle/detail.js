@@ -33,6 +33,9 @@ export default async (req, res) => {
               message
               sound {
                 name
+                sound {
+                  url
+                }
               }
               language {
                 name
