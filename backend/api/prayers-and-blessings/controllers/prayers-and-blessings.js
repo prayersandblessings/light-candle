@@ -29,7 +29,7 @@ const newEmail = ({
       'border-radius': '20px';
       'padding': '10px 20px';
       "
-      href="${process.env.FRONT_END_URL}/view-candle/${id}"
+      href="${process.env.FRONT_END_URL}/view-candle?candleId=${id}"
       >
         Click here to view your candle
     </a>
