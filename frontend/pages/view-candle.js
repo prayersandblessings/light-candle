@@ -5,6 +5,7 @@ import Link from 'next/link'
 import PAGES from '../constants/routes'
 import Router, { useRouter } from 'next/router'
 import axios from '../lib/axios'
+import styles from './view-candle.module.scss'
 import {
   NEXT_BUTTON__TEXT
 } from '../constants/text';
@@ -50,17 +51,20 @@ const ViewCandle = ({candleId}) => {
   return (
     <Layout>
       {showSection === SECTIONS.STEP1 & !!candleContent && (
-        <div>
-          <p>
-            {candleContent.message}
-          </p>
-          <p>
-            {candleContent.author}
-          </p>
-          <br />
-          <button onClick={handleNextSection(SECTIONS.STEP2)}>
-            -----> {NEXT_BUTTON__TEXT}
-          </button>
+        <div className={styles.container}>
+
+          <div className={styles.messageReceived}>
+            <p>
+              {candleContent.message}
+            </p>
+            <p>
+              {candleContent.author}
+            </p>
+            <button onClick={handleNextSection(SECTIONS.STEP2)} className={'next-button'}>
+              <img src="/icon-arrow-right.svg" width="44px"/>
+              <span>{NEXT_BUTTON__TEXT}</span>
+            </button>
+          </div>
         </div>
       )}
       {showSection === SECTIONS.STEP2 && (
