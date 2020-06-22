@@ -1,14 +1,22 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Layout from '../components/layout'
+import useScrollPosition from '../components/CustomHooks/useScrollPosition'
 import SubscribeComponent from '../components/subscribe'
 import axios from '../lib/axios'
 import styles from './library-of-resources.module.scss'
+
 
 const LibraryOfResources = () => {
   let [resources, setResources] = useState([]);
   let [categories, setCategories] = useState([]);
   let [categorySelected, setCategory] = useState('');
   const categoriesSectionRef = useRef('');
+  const [hasOverlay, setHasOverlay] = useState(false)
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    const isBackgroundBlack = Math.abs(currPos.y) >= categoriesSectionRef.current.offsetTop - 200;
+    setHasOverlay(isBackgroundBlack)  
+  }, [hasOverlay])
 
   const handleSelectCategory = (category) => () => {
     setCategory(category);
@@ -38,6 +46,8 @@ const LibraryOfResources = () => {
 
   return (
     <Layout>
+      <>
+      <div className={`${styles.overlay} ${hasOverlay ?  styles.showOverlay: 'no-overlay' }`} />
       <div className={styles.container}>
         <div className={styles.libraryContainer}>
           <span className={styles.caption + ' caption'}>Library</span>
@@ -53,24 +63,24 @@ const LibraryOfResources = () => {
             </button>
           ))}
         </div>
-        { resources.filter(({
+        {resources.filter(({
           resource_category: { title: category }
         }) => (category === categorySelected || categorySelected === '')).map(
-          ({ title, content, author }) => 
-          <div key={`${title}-${author}`} className={styles.prayer}>
-            <h2>
-              {title}
-            </h2>
-            <p>
-              {content}
-            </p>
-            <span className={styles.author}>
-              - {author}
-            </span>
-            <button onClick={handleShare(title)}>
-              <img src="/icon-share.svg" width="16px"></img>
-            </button>
-          </div>
+          ({ title, content, author }) =>
+            <div key={`${title}-${author}`} className={styles.prayer}>
+              <h2>
+                {title}
+              </h2>
+              <p>
+                {content}
+              </p>
+              <span className={styles.author}>
+                - {author}
+              </span>
+              <button onClick={handleShare(title)}>
+                <img src="/icon-share.svg" width="16px"></img>
+              </button>
+            </div>
         )}
 
         <div className={styles.libraryFooter}>
@@ -78,6 +88,7 @@ const LibraryOfResources = () => {
           <SubscribeComponent/>
         </div>
       </div>
+      </>
     </Layout>
   );
 }
