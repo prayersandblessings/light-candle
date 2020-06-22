@@ -44,3 +44,51 @@
     } 
   }
 }
+
+@media screen and (max-width: 1024px) {
+
+  .subscribeComponent {
+
+    form {
+
+      p {
+        input[type="email"] {
+          width: 46%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .subscribeComponent {
+    margin-left: inherit;
+    width: 100%;
+
+    form {
+      flex-wrap: wrap;
+
+      p {
+        margin: 0;
+        flex-wrap: wrap;
+
+        input[type="text"], input[type="email"], button {
+          margin-bottom: 1rem;
+          margin-left: 0;
+          width: 100%;
+        }
+      } 
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .subscribeComponent {
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
