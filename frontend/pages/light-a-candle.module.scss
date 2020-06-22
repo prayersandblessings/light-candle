@@ -137,8 +137,10 @@
 }
 
 .selectMusic {
+    animation: fadeIn ease 4s;
     align-items: center;
     flex-direction: column;
+    -webkit-animation: fadeIn ease 4s;
 
     > span {
         margin-bottom: 1rem;
@@ -148,6 +150,11 @@
     select {
         margin-bottom: 1.5rem;
     }
+}
+
+.touchCandle {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
 }
 
 .candleButton {
