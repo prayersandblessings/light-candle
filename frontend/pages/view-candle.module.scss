@@ -1,0 +1,62 @@
+@import '../assets/scss/variables.scss';
+
+.container {
+    animation: fadeIn ease 2s;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 20% 0 12% 0;
+    -webkit-animation: fadeIn ease 2s;
+}
+
+.messageReceived {
+    background: $main-color;
+    border-radius: 4px;
+    padding: 4rem 5rem;
+    text-align: center;
+    width: 85%;
+    
+    button {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .messageReceived {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        margin: 0 12% 0 17%;
+        padding-top: 24%;
+    }
+
+    .messageReceived {
+        padding: 2rem 3rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .container {
+        margin: 0 12% 0 20%;
+        padding-top: 26%;
+    }
+
+    .messageReceived {
+        padding: 1rem 2rem;
+        width: 70%;
+
+        p {
+            font-size: .9rem;
+        }
+    }
+}

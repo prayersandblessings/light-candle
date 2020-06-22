@@ -1,4 +1,4 @@
-export const NEXT_BUTTON__TEXT = 'Next';
+export const NEXT_BUTTON__TEXT = 'View my candle';
 
 export const SELECT_YOUR_LANGUAGE_TEXT = {
   TITLE: 'SELECT YOUR LANGUAGE'
