@@ -1,6 +1,7 @@
 @import '../assets/scss/variables.scss';
 
 .content {
+  height: 100%;
 
   &.color {
     background-color: $secondary-color;

@@ -6,7 +6,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 12% 0 12%;
-    padding: 20% 0 12% 0;
+    padding: 0 0 12% 0;
+    height: 100%;
 }
 
 .title {
@@ -54,5 +55,12 @@
   0% { opacity: 1; }
   100% { 
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
+    line-height: 3.5rem;
   }
 }
