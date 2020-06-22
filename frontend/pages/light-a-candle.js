@@ -348,7 +348,7 @@ const LightACandle = () => {
 
       {showSection === SECTIONS.STEP6 && (
         <>
-          <div className={styles.container}>
+          <div className={styles.container + ' ' + styles.touchCandle}>
             <span className="caption">{TOUCH_TEXT.SUBTITLE}</span>
             <h1 className={styles.title + ' title'}>{TOUCH_TEXT.TITLE}</h1>
             <button onClick={handleLightCandle} className={styles.candleButton}>
