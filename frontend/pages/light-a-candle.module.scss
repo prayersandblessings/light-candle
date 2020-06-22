@@ -180,28 +180,6 @@
     text-align: center;
 }
 
-.showText {
-    animation: fadeIn ease 2s;
-    text-align: center;
-    -webkit-animation: fadeIn ease 2s;
-}
-
-.toolBar {
-    bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    left: .5rem;
-    position: absolute;
-    z-index: 1;
-
-    button {
-        background: none;
-        border: 0;
-        cursor: pointer;
-        margin-top: 1rem;
-    }
-}
-
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }

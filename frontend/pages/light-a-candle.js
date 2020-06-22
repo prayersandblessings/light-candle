@@ -4,7 +4,7 @@ import axios from '../lib/axios'
 import styles from './light-a-candle.module.scss';
 import Link from 'next/link'
 import PAGES from '../constants/routes'
-import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
+import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
 
 import {
   NEXT_BUTTON__TEXT,
@@ -195,18 +195,6 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
   )
 } 
 
-const PlayAudio = ({ soundsList, soundSelected = null }) => {
-  if(soundSelected === null || soundSelected == '0') {
-    return <div />
-  }
-
-  const [ 
-    { sound: { url: soundUrl } }
-  ] = soundsList.filter(({id}) => id ===  soundSelected);
-
-  return <audio src={soundUrl} controls autoPlay/>;
-}
-
 /**
  * Main Component
  * @param {*} param0 
@@ -221,6 +209,7 @@ const LightACandle = () => {
     email: null,
     message: null
   });
+  const [urlSoundSelected, seturlSoundSelected] = useState('')
 
   const [languagesList, setLanguages] = useState([]);
   const [soundsList, setSounds] = useState([]);
@@ -242,6 +231,12 @@ const LightACandle = () => {
 
   const handleSoundSelected = (sound) => {
     setPrayer({...prayer, sound});
+
+    const [ 
+      { sound: { url: soundUrl } = {} } = {}
+    ] = soundsList.filter(({id}) => id ===  sound) || '';
+    seturlSoundSelected(soundUrl === 0 ? '' : soundUrl);
+
     setSection(SECTIONS.STEP6);
   }
 
@@ -359,28 +354,7 @@ const LightACandle = () => {
       )}
 
       {showSection === SECTIONS.STEP7 && (
-        <>
-          <div className={styles.container}>
-            <div className={styles.showText}>
-              <span className="caption">Stay here quietly</span>
-              <h1 className={styles.title + ' title'}>As long as you wish</h1>
-            </div>
-            <div className={styles.toolBar}>
-              <button>
-                <img src="/icon-audio.svg" width="18px"></img>
-              </button>
-              <button onClick={openNewWidow}>
-                <img src="/icon-download.svg" width="18px"></img>
-              </button>
-              <button>
-                <img src="/icon-share.svg" width="18px"></img>
-              </button>
-            </div>
-            <div className={styles.audio}>
-              <PlayAudio soundSelected={prayer.sound} soundsList={soundsList} />
-            </div>
-          </div>
-        </>
+        <StayHereQuietly soundUrl={urlSoundSelected} />
       )}
     </Layout>
   );

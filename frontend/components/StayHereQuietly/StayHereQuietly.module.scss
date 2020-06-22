@@ -1,0 +1,58 @@
+@import '../../assets/scss/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 20% 0 12% 0;
+}
+
+.title {
+    line-height: 5rem;
+    margin: 0 auto 2rem auto;
+    width: 80%;
+}
+
+.audio {
+    bottom: 24px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+.showText {
+    text-align: center;
+    opacity: 1;
+}
+
+.fadeOut {
+  animation: fadeOut ease 5s;
+  -webkit-animation: fadeOut ease 5s;
+  opacity: 0;
+}
+
+.toolBar {
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    left: .5rem;
+    position: absolute;
+    z-index: 1;
+
+    button {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { 
+    opacity: 0;
+  }
+}
