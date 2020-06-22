@@ -13,12 +13,15 @@ const newEmail = ({
   message,
 }) => {
   const content = `
+    <style>
+    
+    </style>
     Hi
     <br />
     <p>
       ${Sender} has lit a candle for you:
     </p>
-    <img style={{width: '100%', height: 'auto'}} src="http://localhost:1338/email-bg.jpg" />
+    <img style={{width: '100%', height: 'auto'}} src="${process.env.FRONT_END_URL}/email-bg.jpg" />
     <br />
 
     <a style="
@@ -47,13 +50,13 @@ const newEmail = ({
       href="https://www.facebook.com/"
       style="'margin': '0px 5px;'"
       >
-        <img style="width: '10px', height: 'auto', 'background': 'black'" src="http://localhost:1338/icon-facebook.svg" />
+        <img style="width: '10px', height: 'auto', 'background': 'black'" src="${process.env.FRONT_END_URL}/icon-facebook.svg" />
     </a>
     <a 
       href="https://twitter.com"
       style="'margin': '0px 5px;'"
       >
-        <img style="width: '10px', height: 'auto', 'background': 'black' " src="http://localhost:1338/icon-twitter.svg" />
+        <img style="width: '10px', height: 'auto', 'background': 'black' " src="${process.env.FRONT_END_URL}/icon-twitter.svg" />
     </a>
     </p>
     <br/>
