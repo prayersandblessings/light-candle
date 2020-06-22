@@ -8,6 +8,7 @@
 const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
 const newEmail = ({
   id, 
+  nameReceipent,
   Sender,
   receiver_email,
   message,
@@ -21,7 +22,8 @@ const newEmail = ({
     <p>
       ${Sender} has lit a candle for you:
     </p>
-    <img style={{width: '100%', height: 'auto'}} src="${process.env.FRONT_END_URL}/email-bg.jpg" />
+
+    <img style="width: 500px;" width="500" src="${process.env.BACK_END_URL}/email-bg.jpg">
     <br />
 
     <a style="
@@ -50,13 +52,13 @@ const newEmail = ({
       href="https://www.facebook.com/"
       style="'margin': '0px 5px;'"
       >
-        <img style="width: '10px', height: 'auto', 'background': 'black'" src="${process.env.FRONT_END_URL}/icon-facebook.svg" />
+        <img style="width: '10px', height: 'auto', 'background': 'black'" src="${process.env.BACK_END_URL}/icon-facebook.svg" />
     </a>
     <a 
       href="https://twitter.com"
       style="'margin': '0px 5px;'"
       >
-        <img style="width: '10px', height: 'auto', 'background': 'black' " src="${process.env.FRONT_END_URL}/icon-twitter.svg" />
+        <img style="width: '10px', height: 'auto', 'background': 'black' " src="${process.env.BACK_END_URL}/icon-twitter.svg" />
     </a>
     </p>
     <br/>
