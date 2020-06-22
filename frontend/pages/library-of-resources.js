@@ -73,9 +73,10 @@ const LibraryOfResources = () => {
           </div>
         )}
 
-        <div className="divider" />
-
-        <SubscribeComponent/>
+        <div className={styles.libraryFooter}>
+          <div className="divider" />
+          <SubscribeComponent/>
+        </div>
       </div>
     </Layout>
   );
