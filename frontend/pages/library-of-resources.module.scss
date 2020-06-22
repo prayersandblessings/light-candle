@@ -63,6 +63,13 @@
         text-transform: uppercase;
     }
 }
+.prayerImage {
+    border-radius: 0.4rem;
+    margin-bottom: 4rem;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
 
 .prayer {
     background: $main-color;

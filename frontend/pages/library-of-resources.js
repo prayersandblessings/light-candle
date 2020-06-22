@@ -41,8 +41,27 @@ const LibraryOfResources = () => {
     }).catch(error => {
       handleResourcesChanges([], []);
     })
-  },[])
-  
+  },[]);
+  const images = [{ title: 'Image', content:'', author:'' }, { title: 'Image', content:'', author:'' }, { title: 'Image', content:'', author:'' } ];
+  const filteredResources = resources.filter(({
+    resource_category: { title: category }
+  }, index) => {
+    if(category === categorySelected) {
+      return true;
+    }
+    if(categorySelected === '' && index < 5){
+      return true;
+    }
+    return false;
+  });
+
+  images.forEach((image, index) => {
+    if(index % 3 === 0 ) {
+      filteredResources.splice(index+3,0, image);
+    }
+  });
+
+  const libraryElements = filteredResources;
 
   return (
     <Layout>
@@ -63,24 +82,29 @@ const LibraryOfResources = () => {
             </button>
           ))}
         </div>
-        {resources.filter(({
-          resource_category: { title: category }
-        }) => (category === categorySelected || categorySelected === '')).map(
+        { libraryElements.map(
           ({ title, content, author }) =>
-            <div key={`${title}-${author}`} className={styles.prayer}>
-              <h2>
-                {title}
-              </h2>
-              <p>
-                {content}
-              </p>
-              <span className={styles.author}>
-                - {author}
-              </span>
-              <button onClick={handleShare(title)}>
-                <img src="/icon-share.svg" width="16px"></img>
-              </button>
-            </div>
+            <>
+              {title === 'Image' && (
+                <img src="/image-library.jpg" className={styles.prayerImage}/>
+              )}
+              {title !== 'Image' && (
+                <div key={`${title}-${author}`} className={styles.prayer}>
+                  <h2>
+                    {title}
+                  </h2>
+                  <p>
+                    {content}
+                  </p>
+                  <span className={styles.author}>
+                    - {author}
+                  </span>
+                  <button onClick={handleShare(title)}>
+                    <img src="/icon-share.svg" width="16px"></img>
+                  </button>
+                </div>
+              )}
+            </>
         )}
 
         <div className={styles.libraryFooter}>
