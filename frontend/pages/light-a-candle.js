@@ -5,6 +5,7 @@ import styles from './light-a-candle.module.scss';
 import Link from 'next/link'
 import PAGES from '../constants/routes'
 import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
+import Dropdown from 'react-dropdown';
 
 import {
   NEXT_BUTTON__TEXT,
@@ -142,44 +143,44 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
  * @param {Array} sounds list of languages
  */
 const SelectSoundSection = ({ onSoundSelected, sounds})  => {
-  const soundSelected = useRef(null);
+  const [selectedValue, setSelectedValue] = useState(0);
   const [soundUrl, setSoundUrl] = useState(null);
-
   const onClickNext = () => {
-    const { current : { value: sound = '' }} = soundSelected;
-    onSoundSelected(sound);
+    onSoundSelected(selectedValue.value);
   }
 
-  const onSelectChange = () => {
-    const { current: {
-      selectedOptions: [selectedOption]
-    }} = soundSelected;
+  const onSelectChange = (selectedOption) => {
+    setSelectedValue(selectedOption)
 
-    const url = selectedOption.getAttribute('soundurl');
-
-    if(!url){
+    const [{sound: {url : soundUrl } = {} } = {}] = sounds.filter( ({id}) => id == selectedOption.value);
+    if(!soundUrl){
       setSoundUrl(null);
       return;
     }
 
-    setSoundUrl(url);
+    setSoundUrl(soundUrl);
   }
 
+  const selectOptions = [
+    {value: 0, label:'Sit In silence'}, 
+    ...sounds.map(({id: value, name: label }) => (
+      { value, label }
+    )
+    )
+  ];
+  
   return (
     <>
       <div className={styles.container + ' ' + styles.selectMusic}>
         <span className="caption">{SELECT_SOUND_TEXT.TITLE}</span>
         <br />
-        <select ref={soundSelected} defaultValue={null} onChange={onSelectChange}>
-          <option value={0}>
-            Sit In silence
-          </option>
-          {sounds.map(({id, name, sound: { url }}) => (
-            <option key={id} value={id} soundurl={url}>
-              {name}
-            </option>
-          ))}
-        </select>
+        <Dropdown
+          options={selectOptions}
+          onChange={onSelectChange}
+          value={selectedValue}
+          controlClassName="controlDropDown"
+          menuClassName="menuDropDown"
+          />
 
         {soundUrl && (
           <audio src={soundUrl} controls autoPlay/>

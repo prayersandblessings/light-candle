@@ -13,6 +13,7 @@
     "next": "9.3.7-canary.19",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-dropdown": "^1.7.0",
     "react-markdown": "^4.2.2",
     "react-moment": "^0.9.6",
     "react-player": "^2.1.1"
