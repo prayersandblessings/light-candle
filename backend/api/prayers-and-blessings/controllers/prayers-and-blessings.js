@@ -14,58 +14,49 @@ const newEmail = ({
   message,
 }) => {
   const content = `
-    <style>
-    
-    </style>
-    Hi
-    <br />
-    <p>
-      ${Sender} has lit a candle for you:
-    </p>
-
-    <img style="width: 500px;" width="500" src="${process.env.BACK_END_URL}/email-bg.jpg">
-    <br />
-
-    <a style="
-      'background': '#c2a25f';
-      'text-decoration': 'none';
-      'color': 'white';
-      'text-align': 'center';
-      'border-radius': '20px';
-      'padding': '10px 20px';
-      "
-      href="${process.env.FRONT_END_URL}/view-candle?candleId=${id}"
-      >
-        Click here to view your candle
-    </a>
-
-    <br />
-    <p style="
-      'text-align': 'center'
-      ">
-      ${message}
-    </p>
-    <br/>
-    <hr />
-    <p>
-    <a 
-      href="https://www.facebook.com/"
-      style="'margin': '0px 5px;'"
-      >
-        <img style="width: '10px', height: 'auto', 'background': 'black'" src="${process.env.BACK_END_URL}/icon-facebook.svg" />
-    </a>
-    <a 
-      href="https://twitter.com"
-      style="'margin': '0px 5px;'"
-      >
-        <img style="width: '10px', height: 'auto', 'background': 'black' " src="${process.env.BACK_END_URL}/icon-twitter.svg" />
-    </a>
-    </p>
-    <br/>
-    <p>
-      Copyright © 2020 Prayers & Blessings, All rights reserved.
-    </p>
-    `;
+    <div style="max-width: 620px">
+      <p style="margin-left: 32px; margin-top: 40px">Dear , </p>
+      <p style="margin-left: 32px; margin-bottom: 40px">${Sender} has lit a candle for you:</p>
+      <img width="620" style="margin-bottom: 40px" src="https://prayers-and-blessings.herokuapp.com/email-bg.jpg">
+      <br />
+      <div style="text-align: center;">
+        <a style="background:#c2a25f;
+          text-decoration:none;
+          color:white;
+          text-align: center;
+          border-radius: 20px;
+          padding: 10px 24px;
+          display: inline-block;
+          margin: 0 auto;
+          "
+          href="${process.env.FRONT_END_URL}/view-candle?candleId=${id}"
+        >
+          Click here to view your candle
+        </a>
+      </div>
+      <br><br><br><br>
+      <p style="text-align:center;">
+        <a 
+          href="https://www.facebook.com/"
+          style="'margin': '0px 5px;'"
+          >
+            <img width="24" height="24" style="background: black" src="https://prayers-and-blessings.herokuapp.com/icon-facebook.svg" />
+        </a>
+        <a 
+          href="https://twitter.com"
+          style="'margin': '0px 5px;'"
+          >
+            <img width="24" height="24"style="background:black" src="https://prayers-and-blessings.herokuapp.com/icon-twitter.svg" />
+        </a>
+      </p>
+      <br />
+      <hr />
+      <br/>
+      <p style="text-align: center; margin-bottom: 60px">
+        Copyright © 2020 Prayers & Blessings, All rights reserved.
+      </p>
+    </div>
+  `;
   
   const emailInput = {
     to: receiver_email,
