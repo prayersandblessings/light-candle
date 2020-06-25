@@ -10,6 +10,24 @@
     height: 100%;
 }
 
+.icon {
+  cursor: pointer;
+
+  &:hover {
+    label {
+      display: inline-block;
+      opacity: 1;
+      position: relative;
+      left: 30px;
+    }
+  }
+
+  label {
+    opacity: 0;
+    line-height: 25px;
+  }
+}
+
 .title {
     line-height: 5rem;
     margin: 0 auto 2rem auto;
