@@ -79,8 +79,10 @@ const LibraryOfResources = () => {
       <div className={`${styles.overlay} ${hasOverlay ?  styles.showOverlay: 'no-overlay' }`} />
       <div className={styles.container}>
         <div className={styles.libraryContainer}>
-          <span className={styles.caption + ' caption'}>Library</span>
-          <h2 className={styles.title + ' title'}>Of resources</h2>
+          <div>
+            <span className='caption'>Library</span>
+            <h2 className={styles.title + ' title'}>Of resources</h2>
+          </div>
           <a onClick={scrollTo}>
             <img src="/icon-arrow-down.svg" width='24px'></img>
           </a>
