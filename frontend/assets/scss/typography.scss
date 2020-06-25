@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+
+
 @font-face {
-    font-family: 'cormorant';
-    src: url('../fonts/cormorant/italic/Cormorant-Italic-webfont.woff') format('woff'),
-         url('../fonts/cormorant/italic/Cormorant-Italic-webfont.eot') format('eot'),
-         url('../fonts/cormorant/italic/Cormorant-Italic-webfont.svg') format('svg'),
-         url('../fonts/cormorant/italic/Cormorant-Italic-webfont.ttf') format('truetype');
-    font-weight: lighter;
-    font-style: italic;
+    font-family: 'tenor-sans';
+    src: url('../fonts/tenor-sans/Tenor-Sans.ttf.woff') format('woff'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf.eot') format('eot'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf.svg') format('svg'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf') format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
@@ -27,5 +30,3 @@
     font-weight: 600;
     font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
