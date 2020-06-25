@@ -18,6 +18,10 @@ const PAGES = {
   A_BLESSING_DAY: {
     name: 'A Blessing a Day',
     url: '/a-blessing-a-day'
+  },
+  SUSCRIBE: {
+    name: 'Subscribe',
+    url: '/subscribe',
   }
 }
 export const ARRAY_PAGES = Object.keys(PAGES).map(page => PAGES[page]);
