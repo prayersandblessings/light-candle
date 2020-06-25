@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './nav.module.scss'
 import Link from 'next/link'
-import SubscribeComponent from './subscribe'
 import { ARRAY_PAGES } from '../constants/routes'
 
 const Nav = ({isOpen, handleClose, handleOpen}) => {
@@ -36,7 +35,6 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
                 );
               })}
             </ul>
-            <SubscribeComponent/>
           </div>
         </div>
       )}
