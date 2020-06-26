@@ -43,27 +43,27 @@ select {
 .menuDropDown {
     background-color: rgba(0,0,0, 0.8);
     border-radius: 0px 0px 4px 4px;
+    font-family: $text-font;
     position: fixed;
     z-index: 10;
     min-width: 326px;
-    // animation-duration: 3s;        
-    // animation-name: UpIn;
+
     .Dropdown-option {
-				padding: 20px 24px;
-				cursor: pointer;
-				&.is-selected {
-					background-color: rgba(0,0,0, 1);
-				}
-				&:hover {
-					color: gray;
-				}
+        padding: 20px 24px;
+        cursor: pointer;
+        &.is-selected {
+            background-color: rgba(0,0,0, 1);
+        }
+        &:hover {
+            color: gray;
+        }
     }
 }
 
 .Dropdown-root.is-open {
-	.Dropdown-placeholder {
-		opacity: 0;
-	}
+    .Dropdown-placeholder {
+        opacity: 0;
+    }
 }
 
 // @keyframes UpIn {
