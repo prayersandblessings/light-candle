@@ -8,8 +8,8 @@ const SubscribeComponent = () => {
   }
   return (
     <div className={styles.subscribeComponent}>
-      <span>RECEIVE</span>
-      <h1>Updates & News</h1>
+      <span className="caption">RECEIVE</span>
+      <h1 className="title">Updates & News</h1>
       <p>
         Join the Prayers & Blessings community and receive our latest updates and news.
       </p>
