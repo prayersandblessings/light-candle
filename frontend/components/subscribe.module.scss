@@ -4,15 +4,6 @@
   text-align: center;
   width: 50%;
 
-  span {
-    letter-spacing: 6px;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin: 1rem 0;
-  }
-
   > p {
     font-weight: 300;
     margin-bottom: 2rem;
@@ -27,19 +18,20 @@
       width: 100%;
 
       input[type="text"] {
-        margin: 0 0 0 1rem;
+        margin: 0 0 0 .8rem;
         width: 50%;
       }
 
       input[type="email"] {
-        margin: 0 0 0 1rem;
-        width: 52%;
+        margin: 0 0 0 .8rem;
+        width: 50%;
       }
 
       button {
-        font-family: $main-font;
-        margin-left: auto;
-        width: 33%;
+        font-family: $text-font;
+        height: inherit;
+        margin-left: .8rem;
+        width: 50%;
       }
     } 
   }
