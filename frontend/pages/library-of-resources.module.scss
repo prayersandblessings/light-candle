@@ -25,12 +25,9 @@
 }
 
 .libraryContainer {
-    align-items: center;
-    display: flex;
     min-height: 100vh;
-    flex-direction: inherit;
-    flex-wrap: wrap;
     text-align: center;
+    padding-top: 34%;
 
     > div {
         align-self: flex-end;
@@ -38,8 +35,15 @@
     }
 
     a {
+        bottom: 1.5rem;
         cursor: pointer;
-        margin: auto auto 1.5rem auto;
+        position: absolute;
+        transition: ease-in .4s;
+
+        &:hover {
+            bottom: 2.5rem;
+            transition: ease-in .4s;
+        }
     }
 }
 
