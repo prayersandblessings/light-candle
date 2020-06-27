@@ -35,6 +35,23 @@
     font-family: $main-font;
     font-size: 1.15rem;
     margin: 0 6rem;
+    position: relative;
+    padding-top: 80px;
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+
+    .candleTitle {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      transition: ease-in .4s;
+      top: 0;
+    }
 
     .iconArrow {
       margin-top: 0.75rem;
@@ -53,6 +70,14 @@
       }
     }
 
+  }
+
+  a:hover {
+
+    .candleTitle {
+      top: -16px;
+      transition: ease-in .4s;
+    }
   }
 }
 
