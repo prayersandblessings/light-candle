@@ -8,8 +8,10 @@ export const LinkCandle = ({url, name}) => {
   return (
     <Link as={url} href={url}>
       <a>
-        {name}
-        <img src="/icon-arrow-down.svg" className={styles.iconArrow}/>
+        <div className={styles.candleTitle}>
+          {name}
+          <img src="/icon-arrow-down.svg" className={styles.iconArrow}/>
+        </div>
         <img src="/candle.png" className={styles.singleCandle} />
       </a>
     </Link>
