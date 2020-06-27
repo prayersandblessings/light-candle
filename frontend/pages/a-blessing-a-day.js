@@ -12,8 +12,10 @@ const ABlessingADay = () => {
         <p className={styles.paragraph}>A blessing a day is a word that reflects a noble quality. You will receive this word every day, and by implementing it into your life you will add to the positive energy in the world.</p>
         <form className={styles.subscribeForm}>
           <input type="email" placeholder="Your email" className="secondary"></input>
-          <img src="/icon-arrow-right.svg" width="44px"></img>
-          <input type="submit" value="Subscribe"></input>
+          <button type="submit" className="next-button">
+            <img src="/icon-arrow-right.svg" width="44px"></img>
+            Subscribe
+          </button>
         </form>
       </div>
     </Layout>
