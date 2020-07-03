@@ -3,7 +3,6 @@ import Nav from './nav'
 import styles from './layout.module.scss'
 import BackgroundVideo from './BackgroundVideo/BackgroundVideo';
 
-
 const Layout = ({ children, backgroundState = 'img' }) => {
   let [isOpen, setIsOpen] = useState(false);
 
