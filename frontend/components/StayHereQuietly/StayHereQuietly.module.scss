@@ -9,6 +9,17 @@
     height: 100%;
 }
 
+.video {
+  animation: fadeIn ease 2s;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-animation: fadeIn ease 2s;
+}
+
 .icon {
   cursor: pointer;
   margin-top: 1rem;

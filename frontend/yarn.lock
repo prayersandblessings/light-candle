@@ -910,9 +910,45 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
 
+"@types/prop-types@*":
+  version "15.7.3"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+  integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+
 "@types/q@^1.5.1":
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
+
+"@types/react@^16.9.32":
+  version "16.9.41"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.41.tgz#925137ee4d2ff406a0ecf29e8e9237390844002e"
+  integrity sha512-6cFei7F7L4wwuM+IND/Q2cV1koQUvJ8iSV+Gwn0c3kvABZ691g7sp3hfEQHOUBJtccl1gPi+EyNjMIl9nGA0ug==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/vimeo__player@^2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@types/vimeo__player/-/vimeo__player-2.9.0.tgz#47f70c2e9788670e64c6e2186b0f9c9e2e96f34f"
+  integrity sha512-KLcx6GR+iXfLKnP2ecnK808rX6uf+y/aPOzOw4+lQBc8SqlMn4xv6cX6eXgKBaZgau8qNbNLzbS4RyW5ojrJhg==
+
+"@u-wave/react-vimeo@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.0.tgz#f33d1a6069393c09f94e0aeb81b123e33ddef7e8"
+  integrity sha512-xGE0WQtQEkfCdMsrGwzNvGjMARdU2pMQ3xdtmR1ruIYnImIJyUG/XrbLtOy+F9f8c4fVEtiyPrJIa15B7kCayA==
+  dependencies:
+    "@types/react" "^16.9.32"
+    "@types/vimeo__player" "^2.9.0"
+    "@vimeo/player" "^2.10.0"
+    prop-types "^15.7.2"
+
+"@vimeo/player@^2.10.0":
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.12.1.tgz#e4408363cd2b6a31508e3eeebea3ce2dd65b7156"
+  integrity sha512-C8g9iBDaMmYl0ifmuljk8n/+wieOXQTIHLAdPiV/1Y229f6OqJwDGBgrIlkhMhXEgZB9eoRmsBLsNN4BYInHYg==
+  dependencies:
+    native-promise-only "0.8.1"
+    weakmap-polyfill "2.0.1"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -1951,6 +1987,11 @@ csso@^4.0.2:
   resolved "https://registry.yarnpkg.com/csso/-/csso-4.0.3.tgz#0d9985dc852c7cc2b2cacfbbe1079014d1a8e903"
   dependencies:
     css-tree "1.0.0-alpha.39"
+
+csstype@^2.2.0:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.11.tgz#452f4d024149ecf260a852b025e36562a253ffc5"
+  integrity sha512-l8YyEC9NBkSm783PFTvh0FmJy7s5pFKrDp49ZL7zBGX3fWkO+N4EEyan1qqp8cwPLDcD0OSdyY6hAMoxp34JFw==
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -3260,6 +3301,11 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+  integrity sha1-IKMYwwy0X3H+et+/eyHJnBRy7xE=
 
 native-url@0.3.1:
   version "0.3.1"
@@ -5069,6 +5115,11 @@ watchpack@^1.6.1:
   optionalDependencies:
     chokidar "^3.4.0"
     watchpack-chokidar2 "^2.0.0"
+
+weakmap-polyfill@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/weakmap-polyfill/-/weakmap-polyfill-2.0.1.tgz#ff0278c7f75bb0c492fc3343257f3e87114d709a"
+  integrity sha512-Jy177Lvb1LCrPQDWJsXyyqf4eOhcdvQHFGoCqSv921kVF5i42MVbr4e2WEwetuTLBn1NX0IhPzTmMu0N3cURqQ==
 
 web-vitals@0.2.1:
   version "0.2.1"

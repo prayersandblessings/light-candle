@@ -210,8 +210,8 @@ const LightACandle = () => {
     email: null,
     message: null
   });
-  const [urlSoundSelected, seturlSoundSelected] = useState('')
 
+  const [urlSoundSelected, seturlSoundSelected] = useState('')
   const [languagesList, setLanguages] = useState([]);
   const [soundsList, setSounds] = useState([]);
   const [totalPrayers, setTotalPrayers] = useState(0);
@@ -242,28 +242,28 @@ const LightACandle = () => {
   }
 
   const handleLightCandle = () => {
-    const { language, sound, name, email, message } = prayer 
+    // const { language, sound, name, email, message } = prayer 
     
-    if(!language || !name || !email || !message ) {
-      alert('An error has ocurred, files are missing');
-      return;
-    }
+    // if(!language || !name || !email || !message ) {
+    //   alert('An error has ocurred, files are missing');
+    //   return;
+    // }
 
-    axios.post('/api/light-a-candle/new', prayer).then( (result) => {
+    // axios.post('/api/light-a-candle/new', prayer).then( (result) => {
       setSection(SECTIONS.STEP7);
-    }).catch(error => {
-      alert('An error has ocurred');
-      setSection(SECTIONS.STEP7);
-    })
+    // }).catch(error => {
+    //   alert('An error has ocurred');
+    //   setSection(SECTIONS.STEP7);
+    // })
   }
 
   const handleLightACandleValues = (languages = [], sounds = [], totalPrayers = 0) => {
     if(languages.length === 1) {
       const [ { id: defaultLanguage } ] = languages
       setPrayer({...prayer, language: defaultLanguage });
-      setSection(SECTIONS.STEP2);
+      setSection(SECTIONS.STEP6);
     } else {
-      setSection(SECTIONS.STEP1);
+      setSection(SECTIONS.STEP6);
     }
 
     setLanguages(languages);
@@ -272,22 +272,18 @@ const LightACandle = () => {
   }
 
   useEffect(()=>{
-    axios.get('/api/light-a-candle').then( ({ data : {
-      languages,
-      totalPrayers,
-      sounds
-    } }) => {
-      handleLightACandleValues(languages, sounds, totalPrayers);
-    }).catch(error => {
-      alert('An error has ocurred');
-      handleLightACandleValues([], [], totalPrayers);
-    })
+    // axios.get('/api/light-a-candle').then( ({ data : {
+    //   languages,
+    //   totalPrayers,
+    //   sounds
+    // } }) => {
+    //   handleLightACandleValues(languages, sounds, totalPrayers);
+    // }).catch(error => {
+    //   alert('An error has ocurred');
+    //   handleLightACandleValues([], [], totalPrayers);
+    // })
+    setSection(SECTIONS.STEP6);
   },[])
-
-  const openNewWidow = () => {
-    const miniCandle = window.open('', '_blank', 'width=280,height=498,scrollbars=yes,resizable=yes');
-    miniCandle.document.write('<img src="/little-candle.gif"></img>')
-  }
 
   return (
     <Layout backgroundState={showSection === SECTIONS.STEP7 ? 'video': 'img'}>
