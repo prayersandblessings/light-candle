@@ -17,7 +17,7 @@ const openNewWidow = () => {
   miniCandle.document.write('<img src="/little-candle.gif"></img>')
 }
 
-const StayHereQuietly = ({ soundUrl }) => {
+const StayHereQuietly = ({ soundUrl, playVideo=false }) => {
   const audioRef = useRef();
   const firstVideoRef= useRef();
   const secondVideoRef = useRef();
@@ -34,6 +34,7 @@ const StayHereQuietly = ({ soundUrl }) => {
       setIsAudioPlaying(true);
     }
   }
+
   const onFirstVideoEnd = () => {
     // const internalPlayer = secondVideoRef.getInternalPlayer('hls');
     // secondVideoRef.current.play();
@@ -43,45 +44,30 @@ const StayHereQuietly = ({ soundUrl }) => {
   }
 
   useEffect(()=>{
-    
     setTimeout(
       () => {
         setIsShowingText(false);
         console.log(firstVideoRef.current);
-        // firstVideoRef.current.player.player.addCuePoint(8, {
-        //   customKey: 'customValue'
-        // }).then(function(id) {
-        //   // The cue point is added
-        //   console.log('Loading something')
-        // }).catch(function(error) {
-        //   switch (error.name) {
-        //       case 'UnsupportedError':
-        //           // Cue points aren't supported by the current player or browser
-        //           break;
-        
-        //       case 'RangeError':
-        //           // The time is less than 0 or greater than the video's duration
-        //           break;
-        
-        //       default:
-        //           // Some other error occurred
-        //           break;
-        //   }
-        // });
-
       }, 5000
     )
     //xseeked
   },[])
 
-  const URL = window.location.href;
+  useEffect(()=>{
+    if (playVideo){
+      firstVideoRef.current.player.player.play();
+    }
+  },[playVideo])
+
+
+  const URL = ''; //window.location.href;
 
   return (
     <div className={styles.container}>
       <ReactPlayer 
         ref={secondVideoRef}
         className={styles.video}
-        url='https://player.vimeo.com/video/434883189'
+        url='https://player.vimeo.com/video/441214959'
         width='100%'
         height='100%'
         config={{
@@ -93,23 +79,24 @@ const StayHereQuietly = ({ soundUrl }) => {
         }}
         />
       { isShowingFirstVideo && (
+        <>
         <ReactPlayer 
           ref={firstVideoRef}
           className={styles.video}
-          url='https://player.vimeo.com/video/434882338'
+          url='https://player.vimeo.com/video/441214686'
           onEnded={onFirstVideoEnd}
           width='100%'
           height='100%'
           config={{
             vimeo: {
               playerOptions:{
-                autoplay: true,
                 loop: false,
                 // background: true
               }
             }
           }}
           />
+          </>
       )}
       
 

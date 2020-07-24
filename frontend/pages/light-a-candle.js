@@ -286,7 +286,8 @@ const LightACandle = () => {
   },[])
 
   return (
-    <Layout backgroundState={showSection === SECTIONS.STEP7 ? 'video': 'img'}>
+    <Layout>
+      <>
       {showSection === SECTIONS.STEP1 && (
         <SelectLanguageSection onLanguageSelected={handleLanguageSelected} languages={languagesList} />
       )}
@@ -350,9 +351,16 @@ const LightACandle = () => {
         </>
       )}
 
-      {showSection === SECTIONS.STEP7 && (
-        <StayHereQuietly soundUrl={urlSoundSelected} />
-      )}
+        <div style={{ 
+          display: showSection === SECTIONS.STEP7 ? 'block': 'none',
+          height: '100%'
+          }}>
+          <StayHereQuietly
+            soundUrl={urlSoundSelected}
+            playVideo={showSection === SECTIONS.STEP7}
+          />
+        </div> 
+      </>
     </Layout>
   );
 };
