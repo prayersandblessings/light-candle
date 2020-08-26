@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Link from 'next/link'
-import PAGES from '../constants/routes'
-import styles from './about-us.module.scss'
 
-const AboutUs = () => {
+import styles from './our-story.module.scss'
+import LightCandleLink from '../components/LightACandleLink'
+
+const OurStory = () => {
   return (
     <Layout backgroundState = 'color'>
         <div className={styles.container}>
@@ -29,19 +29,7 @@ const AboutUs = () => {
             <p>We had long held the thought that a place accessible to everyone, where people could focus their sweet intentions no matter what the reason was needed in the world.</p>
             <p>This became more relevant as the fires came to an end and the world was gripped by Covid-19 and all public places of ritual and prayer were closed due to lockdowns.</p>
             <p>We decided to create this virtual sacred hub to ensure in all places, times and circumstances, people could come together as a universal community and make offerings of prayers and blessings. And in doing so, contribute to a vibration of peace, love and positive action around the world.</p>
-            <div className="divider"></div>
-            <Link
-              as={`${PAGES.LIGHT_A_CANDLE.url}`}
-              href={PAGES.LIGHT_A_CANDLE.url}
-            >
-              <button>
-                <span className={'caption'}>Light</span>
-                <span className={styles.lightCandleButton}>
-                  A candle 
-                  <img src='/icon-arrow-right.svg' width='52px'></img>
-                </span>
-              </button>
-            </Link>
+            <LightCandleLink />
           </div>
         </div>
     </Layout>
@@ -49,4 +37,4 @@ const AboutUs = () => {
 }
 
 
-export default AboutUs
+export default OurStory

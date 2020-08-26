@@ -3,9 +3,9 @@ const PAGES = {
     name: 'Home',
     url: '/'
   },
-  ABOUT_US: {
+  OUR_STORY: {
     name: 'Our Story',
-    url: '/about-us'
+    url: '/our-story'
   },
   LIGHT_A_CANDLE:{
     name: 'Light a Candle',
