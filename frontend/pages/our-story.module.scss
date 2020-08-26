@@ -82,30 +82,6 @@
         text-align: justify;
         width: 70%;
     }
-
-    button {
-        background: transparent;
-        border: 0;
-        color: white;
-        cursor: pointer;
-        display: flex;
-        flex-wrap: wrap;
-
-        span {
-            width: 100%;
-        }
-
-        .lightCandleButton {
-            display: flex;
-            font-family: $main-font;
-            font-size: 4rem;
-            justify-content: center;
-
-            img {
-                margin-left: 1rem;
-            }
-        }
-    }
 }
 
 @keyframes fadeIn {

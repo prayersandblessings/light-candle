@@ -5,13 +5,14 @@ import PAGES from '../constants/routes'
 
 const LightCandleLink = () => {
   return (
-    <div className="divider">
+    <div className={styles.LightACandleLink}>
+      <div className={styles.Divider}></div>
       <Link as={`${PAGES.LIGHT_A_CANDLE.url}`} href={PAGES.LIGHT_A_CANDLE.url}>
         <button>
-          <span className="caption">Light</span>
+          <span className={"caption"}>Light</span>
           <span className={styles.lightCandleButton}>
             A candle
-            <img src="/icon-arrow-right.svg" width="36px"></img>
+            <img src="/icon-arrow-right.svg" width="52px"></img>
           </span>
         </button>
       </Link>

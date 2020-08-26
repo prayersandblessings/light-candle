@@ -4,7 +4,7 @@ import SubscribeComponent from '../components/subscribe'
 import styles from './subscribe.module.scss'
 
 
-const LibraryOfResources = () => {
+const Subscribe = () => {
   return (
     <Layout>
         <div className={styles.container}>
@@ -15,4 +15,4 @@ const LibraryOfResources = () => {
 }
 
 
-export default LibraryOfResources
+export default Subscribe
