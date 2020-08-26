@@ -23,16 +23,6 @@
   }
 }
 
-.menuBackground {
-  background: url(/bg-menu.png);
-  background-repeat: repeat-y;
-  background-position: right;
-  margin-left: auto;
-  height: 84%;
-  opacity: .4;
-  width: 2px;
-}
-
 .open {
   background: $main-color;
   display: flex;
@@ -80,10 +70,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
-  .menuBackground {
-    display: none;
-  }
 
   .open {
     display: initial;

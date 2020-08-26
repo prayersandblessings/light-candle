@@ -13,10 +13,19 @@ const BackgroundVideo = ({children}) => {
 
     return (
         <div className={classes.Container} >
-            <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
+            <iframe
+                src="https://player.vimeo.com/video/323570256?autoplay=1&background=1&muted=1"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                >
+            </iframe>
+            {/* <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
                 <source src={videoSource} type="video/mp4" />
                 Your browser does not support the video tag.
-            </video>
+            </video> */}
 
             <div className={classes.Content}>
                 {children}

@@ -24,13 +24,11 @@ const Home = () => {
     <Layout backgroundState='img'>
       <div className={styles.container}>
         <div className={styles.showText}>
-          <span className="caption">Offer your prayers and blessings</span>
-          <h1 className="title">To the world</h1>
+          <span className="caption">Offer your</span>
+          <h1 className="title">Prayers and Blessings</h1>
         </div>
         <div className={styles.candles}>
-          <LinkCandle url={PAGES.ABOUT_US.url} name={PAGES.ABOUT_US.name} />
           <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
-          <LinkCandle url={PAGES.LIBRARY.url} name={PAGES.LIBRARY.name} />
         </div>
       </div>
     </Layout>
