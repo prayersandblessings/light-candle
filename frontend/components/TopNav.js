@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from './topNav.module.scss'
+import styles from './TopNav.module.scss'
 import Link from 'next/link'
 import { ARRAY_PAGES } from '../constants/routes'
 
 const Nav = () => {
   
   return (
-    <div className={styles.topNav}>
+    <div className={styles.TopNav}>
       <div className={styles.navContainer}>
         <ul className={styles.navbar}>
           {ARRAY_PAGES.map((page) => {
