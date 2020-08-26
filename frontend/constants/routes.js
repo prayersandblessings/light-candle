@@ -4,24 +4,25 @@ const PAGES = {
     url: '/'
   },
   ABOUT_US: {
-    name: 'About Us',
+    name: 'Our Story',
     url: '/about-us'
-  },
-  LIBRARY:{
-    name: 'Library',
-    url: '/library-of-resources'
   },
   LIGHT_A_CANDLE:{
     name: 'Light a Candle',
     url: '/light-a-candle'
   },
-  A_BLESSING_DAY: {
-    name: 'A Blessing a Day',
-    url: '/a-blessing-a-day'
+  RECEIVE_A_BLESSING: {
+    name: 'Receive a blessing',
+    url: '/receive-a-blessing'
   },
-  SUSCRIBE: {
-    name: 'Subscribe',
-    url: '/subscribe',
+  A_PRAYER_FOR_HUMANITY: {
+    name: 'A prayer for humanity',
+    url: '/a-prayer-for-humanity'
+  },
+
+  WHO_WE_ARE: {
+    name: 'Who we are',
+    url: '/who-we-are',
   }
 }
 export const ARRAY_PAGES = Object.keys(PAGES).map(page => PAGES[page]);

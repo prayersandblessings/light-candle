@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Nav from './nav'
+import TopNav from './TopNav'
 import styles from './layout.module.scss'
 import BackgroundVideo from './BackgroundVideo/BackgroundVideo';
 
@@ -16,7 +17,8 @@ const Layout = ({ children, backgroundState = 'img' }) => {
   };
 
   return (
-    <> 
+    <>
+      <TopNav />
       {backgroundState === 'img' && (
         <>
           <div className={styles.image} />

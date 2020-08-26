@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
-import styles from './a-blessing-a-day.module.scss'
+import styles from './receive-a-blessing.module.scss'
 
 
-const ABlessingADay = () => {
+const ReceiveABlessing = () => {
   return (
     <Layout>
       <div className={styles.container}>
@@ -23,4 +23,4 @@ const ABlessingADay = () => {
 }
 
 
-export default ABlessingADay
+export default ReceiveABlessing

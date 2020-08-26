@@ -1,0 +1,95 @@
+@import '../assets/scss/variables.scss';
+
+.container {
+    animation: fadeIn ease 2s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 20% 0 12% 0;
+    -webkit-animation: fadeIn ease 2s;
+}
+
+.caption {
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    margin: 0 0 10rem 0;
+}
+
+.aboutUsText {
+    margin-bottom: 4rem;
+    margin-left: auto;
+    width: 55%;
+
+    p {
+        text-align: justify;
+    }
+}
+
+.aboutUsImage {
+    border-radius: .4rem;
+    margin-bottom: 4rem;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.aboutUsDescription {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    p {
+        text-align: justify;
+    }
+
+    button {
+        background: transparent;
+        border: 0;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+
+        span {
+            font-family: $main-font;
+            width: 100%;
+        }
+
+        .lightCandleButton {
+            display: flex;
+            font-size: 2.5rem;
+            justify-content: center;
+
+            img {
+                margin-left: .5rem;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        margin-bottom: 2rem;
+    }
+
+    .aboutUsText {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0 8% 0 8%;
+    }
+}
