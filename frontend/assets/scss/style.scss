@@ -19,6 +19,10 @@ h1 {
   font-size: 80px;
 }
 
+h2 {
+  font-weight: lighter;
+}
+
 body {
   color: white;
   font-family: $main-font;
@@ -45,13 +49,14 @@ button {
 
 .caption {
   font-family: $secondary-font;
+  font-size: 1.25rem;
   letter-spacing: 6px;
   text-align: center;
   text-transform: uppercase;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0;
   text-align: center;
   width: 100%;
