@@ -1,0 +1,15 @@
+@import '../assets/scss/variables.scss';
+
+.topNav {
+
+  width: 100%;
+  display: flex;
+}
+
+.navContainer {
+  margin: 0 auto;
+
+  a {
+    color: white;    
+  }
+}
