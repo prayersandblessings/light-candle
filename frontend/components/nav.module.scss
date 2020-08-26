@@ -1,46 +1,41 @@
 @import '../assets/scss/variables.scss';
 
-.openCloseMenu {
-  width: 50px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0px;
-  top: 0px;
+.openMenuButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
 
-  button {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    margin-top: 48px;
-    margin-left: 28px;
-    margin-bottom: 20px;
-
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
   }
 }
 
+.closeMenuButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .open {
-  background: $main-color;
+  align-items: flex-start;
+  background: rgba($color: #11132d, $alpha: 0.8);
   display: flex;
+  flex-direction: column;
   height: 100%;
   left: 0px;
+  min-width: 240px;
+  padding-left: 3rem;
+  padding-top: 3rem;
   position: fixed;
   top: 0px;
-  width: 100%;
+  width: 20%;
   z-index: 2;
-  overflow-y: scroll;
 
-  .openCloseMenu {
-    margin-right: 5%;
-    position: initial;
-  }
-
-  button {
-    margin-left: 32px;
+  > button {
+    margin-bottom: 3rem;
   }
 }
 
@@ -59,7 +54,7 @@
   
       a {
         color: white;
-        font-size: 3rem;
+        font-size: 1.75rem;
       }
     }
   }
@@ -73,17 +68,6 @@
 
   .open {
     display: initial;
-
-    .openCloseMenu {
-      display: initial;
-    }
-  }
-
-  .openCloseMenu {
-    button {
-      margin-top: 28px;
-      margin-left: 24px;
-    }
   }
 
   .navContainer {
@@ -114,13 +98,6 @@
 
   .open {
     width: 105%;
-
-    .openCloseMenu {
-
-      button {
-        margin-left: 1rem;
-      }
-    }
   }
 
   .navContainer {
