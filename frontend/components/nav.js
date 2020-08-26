@@ -8,20 +8,15 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
   return (
     <>
       {!isOpen && (
-        <div className={styles.openCloseMenu}>
-          <button onClick={handleOpen}>
-            <img src="/icon-hamburguer.svg" width="33px" height="16px"></img>
-          </button>
-        </div>
+        <button onClick={handleOpen} className={styles.openMenuButton}>
+          <img src="/icon-hamburguer.svg" width="33px" height="16px"></img>
+        </button>
       )}
       {isOpen && (
         <div className={styles.open}>
-          <div className={styles.openCloseMenu}>
-            <button onClick={handleClose}>
-              <img src="/icon-close.svg" width="20px" height="20px"></img>
-            </button>
-            <div className={styles.menuBackground}></div>
-          </div>
+          <button onClick={handleClose} className={styles.closeMenuButton}>
+            <img src="/icon-close.svg" width="20px" height="20px"></img>
+          </button>
           <div className={styles.navContainer}>
             <ul className={styles.navbar}>
               {ARRAY_PAGES.map((page) => {
