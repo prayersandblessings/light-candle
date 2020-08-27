@@ -7,11 +7,23 @@ const ReceiveABlessing = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <span className="caption">A Blessing</span>
-        <h2 className={styles.title + ' title'}>A Day</h2>
-        <p className={styles.paragraph}>A blessing a day is a word that reflects a noble quality. You will receive this word every day, and by implementing it into your life you will add to the positive energy in the world.</p>
+        <span className="caption">Receive</span>
+        <h2 className={styles.title + ' title'}>A blessing</h2>
+        <p>Subscribe to receive a daily blessing in the form of an inspiring word to contemplate represented by an uplifting visual image. You can contemplate the blessing throughout the day or share it with whoever you wish.</p>
         <form className={styles.subscribeForm}>
-          <input type="email" placeholder="Your email" className="secondary"></input>
+          <input type="text" placeholder="Your Name" className="secondary"></input>
+          <input type="text" placeholder="Your Surname" className="secondary"></input>
+          <input type="email" placeholder="Your Email" className="secondary"></input>
+          <div>
+            <div>
+              <input type="checkbox"></input>
+              <label>Subscribe me to A Blessing a Day</label>
+            </div>
+            <div>
+              <input type="checkbox"></input>
+              <label>Subscribe me to the regular mailing list</label>
+            </div>
+          </div>
           <button type="submit" className="next-button">
             <img src="/icon-arrow-right.svg" width="44px"></img>
             Subscribe
