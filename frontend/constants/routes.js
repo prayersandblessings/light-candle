@@ -1,3 +1,20 @@
+
+export const SECONDARY_PAGES = {
+  CONTACT: {
+    name: 'Contact',
+    url: '/contact'
+  },
+  SUBSCRIBE: {
+    name: 'Susbscribe',
+    url: '/subscribe'
+  },
+  PRIVACY_POLICY: {
+    name: 'Privacy policy',
+    url: '/privacy-policy'
+  },
+}
+export const ARRAY_SECONDARY_PAGES = Object.keys(SECONDARY_PAGES).map(page => SECONDARY_PAGES[page]);
+
 const PAGES = {
   HOME: {
     name: 'Home',

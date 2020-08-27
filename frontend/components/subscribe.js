@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './subscribe.module.scss'
 
 const SubscribeComponent = () => {
