@@ -1,4 +1,4 @@
-export const NEXT_BUTTON__TEXT = 'View my candle';
+export const NEXT_BUTTON_TEXT = 'View my candle';
 
 export const SELECT_YOUR_LANGUAGE_TEXT = {
   TITLE: 'SELECT YOUR LANGUAGE'
@@ -20,6 +20,13 @@ export const FORM_TEXT = {
   WRITE_RECEIPENT_NAME: 'Write the name of the recepient',
   WRITE_EMAIL: 'Write the email of the person you wish to send your candle to (optional)',
   WRITE_PRAYER: 'Write your prayer',
+}
+
+export const CONTACT_FORM_TEXT = {
+  NAME: 'Your Name',
+  EMAIL: 'Your Email',
+  HOW_CAN_HELP: 'How can we help?',
+  READ_AND_UNDERSTOOD: 'I have read and understood the ',
 }
 
 export const SELECT_SOUND_TEXT = {

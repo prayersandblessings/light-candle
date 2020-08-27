@@ -8,7 +8,7 @@ import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
 import Dropdown from 'react-dropdown';
 
 import {
-  NEXT_BUTTON__TEXT,
+  NEXT_BUTTON_TEXT,
   SELECT_YOUR_LANGUAGE_TEXT,
   INTRODUCTION_TEXT,
   FORM_TEXT,
@@ -129,7 +129,7 @@ const SelectLanguageSection = ({ onLanguageSelected, languages})  => {
 
         <br />
         <button onClick={onClickNext}>
-          ----- {NEXT_BUTTON__TEXT}
+          ----- {NEXT_BUTTON_TEXT}
         </button>
       </div>
     </>
@@ -189,7 +189,7 @@ const SelectSoundSection = ({ onSoundSelected, sounds})  => {
         <br />
         <button onClick={onClickNext} className="next-button">
           <img src='/icon-arrow-right.svg' width='52'></img>
-          <span>{NEXT_BUTTON__TEXT}</span>
+          <span>{NEXT_BUTTON_TEXT}</span>
         </button>
       </div>
     </>

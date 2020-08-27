@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './nav.module.scss'
 import Link from 'next/link'
-import { ARRAY_PAGES } from '../constants/routes'
+import { ARRAY_PAGES, ARRAY_SECONDARY_PAGES } from '../constants/routes'
 
 const Nav = ({isOpen, handleClose, handleOpen}) => {
   
@@ -30,6 +30,21 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
               })}
             </ul>
           </div>
+            -----
+          <div className={styles.navContainer}>
+            <ul className={styles.navbar}>
+              {ARRAY_SECONDARY_PAGES.map((page) => {
+                return (
+                  <li key={page.url}>
+                    <Link as={`${page.url}`} href={page.url}>
+                      <a onClick={handleClose}>{page.name}</a>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
         </div>
       )}
     </>

@@ -5,7 +5,7 @@ import axios from '../lib/axios'
 import styles from './view-candle.module.scss'
 import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
 import {
-  NEXT_BUTTON__TEXT
+  NEXT_BUTTON_TEXT
 } from '../constants/text';
 
 const SECTIONS = {
@@ -61,7 +61,7 @@ const ViewCandle = ({candleId}) => {
             </p>
             <button onClick={handleNextSection(SECTIONS.STEP2)} className={'next-button'}>
               <img src="/icon-arrow-right.svg" width="44px"/>
-              <span>{NEXT_BUTTON__TEXT}</span>
+              <span>{NEXT_BUTTON_TEXT}</span>
             </button>
           </div>
         </div>
