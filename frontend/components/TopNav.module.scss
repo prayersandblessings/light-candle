@@ -1,15 +1,42 @@
 @import '../assets/scss/variables.scss';
 
 .TopNav {
-
   width: 100%;
   display: flex;
+  position: absolute;
+  top: 3rem;
 }
 
 .navContainer {
   margin: 0 auto;
 
   a {
-    color: white;    
+    color: white;
+  }
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+
+    a {
+      border-right: 1px solid white;
+      font-family: $secondary-font;
+      font-size: .85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .1rem 1rem;
+    }
+
+    &:last-child {
+
+      a {
+        border-right: 0;
+      }
+    }
   }
 }
