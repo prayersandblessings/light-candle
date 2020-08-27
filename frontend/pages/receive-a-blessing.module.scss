@@ -10,17 +10,34 @@
     margin: 0 12% 0 12%;
     padding: 20% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
+
+    > p {
+        text-align: center;
+        line-height: 2.5rem;
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        width: 70%;
+    }
 }
 
 .title {
     margin: 0 0 1rem 0;
 }
 
-.paragraph {
-    text-align: center;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    width: 50%;
+.subscribeForm {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+
+    input[type="text"], input[type="email"] {
+        width: 42%;
+        margin: 0 1% 1rem 1%;
+    }
+
+    button {
+        width: 100%;
+    }
 }
 
 // .subscribeForm {
