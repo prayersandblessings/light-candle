@@ -19,7 +19,7 @@ const WhoWeAre = () => {
           </div>
 
 
-          <div className={styles.whoWeAreText}>
+          <div className={styles.whoWeAreText + ' ' + styles.director}>
             <span className='caption'>PHIL - DIRECTOR</span>
             <p>  Phil lives with wife and two boys in Sydney,  Australia.  He loves his family, the ocean and being a filmmaker.  With a deep interest in spirituality since childhood Phil has travelled the world in pursuit of a deeper understanding of this much loved topic and delights in any opportunity to further his own inner exploration. It’s his wish for people everywhere to experience the change they long for in the world as an expression of the peace they seek within themselves.</p>
           </div>
@@ -31,7 +31,7 @@ const WhoWeAre = () => {
             <p> Thank you to our dear friend, Jacqueline, for contributing her good will, time and editing skills to the development of this website. It was an opportunity to open to the dimension of prayer, intention, and clarity of vision.</p>
           </div>
 
-          <div className={styles.whoWeAreText}>
+          <div className={styles.whoWeAreText + ' ' + styles.effects}>
           <span className='caption'>EFFECT OR FILMS - WEBSITE DESIGN AND ANIMATION</span>
             <p> We extend our gratitude to Annia, Cristina, Franz, Eduardo and the whole team at Effects or Films in Mexico, who have masterfully manifested our vision in the design of this website.</p>
           </div>
