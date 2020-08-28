@@ -1,11 +1,14 @@
 import React from 'react'
-import Layout from '../components/layout'
-import LightACandleLink from '../components/LightACandleLink'
-import styles from './a-prayer-for-humanity.module.scss'
+
+import Layout from '../../components/layout'
+import LightACandleLink from '../../components/LightACandleLink'
+import PAGES from '../../constants/routes'
+
+import styles from './index.module.scss'
 
 const WhoWeAre = () => {
   return (
-    <Layout backgroundState = 'color'>
+    <Layout classNameSection={PAGES.A_PRAYER_FOR_HUMANITY.className}>
         <div className={styles.container}>
           <span className={styles.caption + ' caption'}>A PRAYER</span>
           <h2 className={styles.title + ' title'}>For humanity</h2>

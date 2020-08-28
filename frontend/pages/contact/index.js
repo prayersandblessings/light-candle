@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import Layout from '../../components/layout'
 import ContactForm from './ContactForm'
 import styles from './index.module.scss'
+import { SECONDARY_PAGES } from '../../constants/routes'
 
 const SECTIONS = {
   STEP1: 'FORM',
@@ -16,7 +17,7 @@ const Contact = () => {
   }
 
   return (
-    <Layout>
+    <Layout classNameSection={SECONDARY_PAGES.CONTACT.className}>
       <div className={styles.container}>
         <span className="caption">GENERAL INQUIRIES</span>
         <h1 className="title">Contact us</h1>

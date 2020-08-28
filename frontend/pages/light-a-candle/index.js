@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Layout from '../components/layout';
-import axios from '../lib/axios'
-import styles from './light-a-candle.module.scss';
 import Link from 'next/link'
-import PAGES from '../constants/routes'
-import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
 import Dropdown from 'react-dropdown';
+
+import Layout from '../../components/layout';
+import StayHereQuietly from '../../components/StayHereQuietly/StayHereQuietly'
+import axios from '../../lib/axios'
+import PAGES from '../../constants/routes'
+
+
+import styles from './index.module.scss';
 
 import {
   NEXT_BUTTON_TEXT,
@@ -14,7 +17,7 @@ import {
   FORM_TEXT,
   SELECT_SOUND_TEXT,
   TOUCH_TEXT
-} from '../constants/text';
+} from '../../constants/text';
 
 
 const SECTIONS = {
@@ -290,7 +293,7 @@ const LightACandle = () => {
   }
 
   return (
-    <Layout backgroundState={showSection === SECTIONS.STEP7 ? 'video': 'img'}>
+    <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
       {showSection === SECTIONS.STEP1 && (
         <SelectLanguageSection onLanguageSelected={handleLanguageSelected} languages={languagesList} />
       )}
