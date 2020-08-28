@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Layout from '../components/layout'
 import styles from './receive-a-blessing.module.scss'
+import Checkbox from '../components/form/Checkbox'
 
 
 const ReceiveABlessing = () => {
+  const [blessingDayAccepted, setBlessingDayAccepted] = useState(false)
+  const [regularMailingAccepted, setRegularMailingAccepted] = useState(false)
+  
+  const handleBlessingDayAccepted = (value) => {
+    setBlessingDayAccepted(value)
+  }
+
+  const handleRegularMailingAccepted = (value) => {
+    setRegularMailingAccepted(value)
+  }
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -15,18 +27,24 @@ const ReceiveABlessing = () => {
           <input type="text" placeholder="Your Surname" className="secondary"></input>
           <input type="email" placeholder="Your Email" className="secondary"></input>
           <div>
+              <Checkbox
+                id="subscribe-blessing-day"
+                label={ 'Subscribe me to A Blessing a Day'}
+                checked = { blessingDayAccepted }
+                onClick = { handleBlessingDayAccepted }
+              />
             <div>
-              <input type="checkbox"></input>
-              <label>Subscribe me to A Blessing a Day</label>
-            </div>
-            <div>
-              <input type="checkbox"></input>
-              <label>Subscribe me to the regular mailing list</label>
+              <Checkbox
+                id="regular-mailing"
+                label={ 'Subscribe me to the regular mailing list'}
+                checked = { regularMailingAccepted }
+                onClick = { handleRegularMailingAccepted }
+              />
             </div>
           </div>
           <button type="submit" className="next-button">
-            <img src="/icon-arrow-right.svg" width="44px"></img>
-            Subscribe
+            <span className='caption'>Subscribe me</span>
+            <img src="/icon-arrow-right.svg" width="52px"></img>
           </button>
         </form>
       </div>
