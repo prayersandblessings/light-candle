@@ -8,8 +8,13 @@ import styles from './index.module.scss'
 
 const Subscribe = () => {
   return (
-    <Layout classNameSection={SECONDARY_PAGES.CONTACT.className}>
+    <Layout classNameSection={SECONDARY_PAGES.SUBSCRIBE.className}>
         <div className={styles.container}>
+          <span className="caption">Latest News</span>
+          <h1 className="title">Subscribe</h1>
+          <p>
+            You can register and stay up to date with the latest news from Prayers & Blessings.
+          </p>
           <SubscribeComponent/>
         </div>
     </Layout>

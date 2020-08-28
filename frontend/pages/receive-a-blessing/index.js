@@ -34,14 +34,12 @@ const ReceiveABlessing = () => {
                 checked = { blessingDayAccepted }
                 onClick = { handleBlessingDayAccepted }
               />
-            <div>
               <Checkbox
                 id="regular-mailing"
                 label={ 'Subscribe me to the regular mailing list'}
                 checked = { regularMailingAccepted }
                 onClick = { handleRegularMailingAccepted }
               />
-            </div>
           </div>
           <button type="submit" className="next-button">
             <span className='caption'>Subscribe me</span>

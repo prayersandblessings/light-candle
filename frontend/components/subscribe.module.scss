@@ -2,7 +2,6 @@
 
 .subscribeComponent {
   text-align: center;
-  width: 50%;
 
   > p {
     font-weight: 300;
@@ -12,75 +11,26 @@
   form {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
+    width: 75%;
 
-    p {
-      display: flex;
-      width: 100%;
-
-      input[type="text"] {
-        margin: 0 0 0 .8rem;
-        width: 50%;
-      }
-
-      input[type="email"] {
-        margin: 0 0 0 .8rem;
-        width: 50%;
-      }
-
-      button {
-        font-family: $text-font;
-        height: inherit;
-        margin-left: .8rem;
-        width: 50%;
-      }
-    } 
-  }
-}
-
-@media screen and (max-width: 1024px) {
-
-  .subscribeComponent {
-
-    form {
-
-      p {
-        input[type="email"] {
-          width: 46%;
-        }
-      }
+    input[type="text"], input[type="email"], > div {
+      width: 38%;
+      margin: 0 2% 1rem 2%;
     }
-  }
-}
 
-@media screen and (max-width: 768px) {
-
-  .subscribeComponent {
-    margin-left: inherit;
-    width: 100%;
-
-    form {
-      flex-wrap: wrap;
-
-      p {
-        margin: 0;
-        flex-wrap: wrap;
-
-        input[type="text"], input[type="email"], button {
-          margin-bottom: 1rem;
-          margin-left: 0;
-          width: 100%;
-        }
-      } 
+    > div {
+        margin-bottom: 0;
     }
-  }
-}
 
-@media screen and (max-width: 375px) {
-
-  .subscribeComponent {
-
-    h1 {
-      font-size: 2rem;
+    button {
+        margin-top: 2rem;
+        width: 100%;
     }
+
+    label {
+        margin-bottom: 1rem;
+    }
+
   }
 }
