@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Layout from '../../components/layout'
 import ContactForm from './ContactForm'
-import styles from './contact.module.scss'
+import styles from './index.module.scss'
 
 const SECTIONS = {
   STEP1: 'FORM',
