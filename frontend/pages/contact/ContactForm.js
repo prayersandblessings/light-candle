@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 import Checkbox from '../../components/form/Checkbox'
-import styles from './contact.module.scss'
+import styles from './index.module.scss'
 import Link from 'next/link'
 import { SECONDARY_PAGES } from '../../constants/routes'
 
