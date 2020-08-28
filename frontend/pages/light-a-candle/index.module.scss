@@ -2,238 +2,55 @@
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     margin: 0 12% 0 12%;
     padding: 0;
     height: 100%;
-}
-
-.stepOne {
-    animation: fadeIn ease 2s;
-    -webkit-animation: fadeIn ease 2s;
-
-    button {
-        background-color: transparent;
-        border: 0;
-    }
-}
-
-.stepTwo {
-    animation: fadeIn ease 4s;
-    -webkit-animation: fadeIn ease 4s;
-
-    p {
-        font-family: $text-font;
-        text-align: center;
-        margin: 0;
-        width: 100%;
-
-        a {
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-        }
-    }
-
-    .lit {
-        font-weight: 600;
-        margin-bottom: 2rem;
-    }
-
-    button {
-        background: transparent;
-        border: 0;
-        color: white;
-        margin: 0 auto;
-        width: 200px;
-
-        p {
-            font-size: 1.15rem;
-            margin-bottom: .5rem;
-        }
-    }
-}
-
-.title {
-    line-height: 5rem;
-    margin: 0 auto 2rem auto;
-    width: 100%;
-}
-
-.prayerContainter {
-    animation: fadeIn ease 3s;
-    padding: 0;
-    -webkit-animation: fadeIn ease 3s;
-}
-
-.prayerForm {
-    background: rgba($color: #000000, $alpha: 0.4);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 1rem 0;
-    width: 80%;
-
-    button {
-        background: none;
-        border: 0;
-        margin-left: auto;
-        margin-right: 1rem;
-        color: white;
-        font-family: $main-font;
-
-        span {
-            margin-left: .5rem;
-        }
-    }
-
-    h3 {
-        margin: 0 0 2rem 0;
-    }
-
-    input[type="text"], input[type="email"] {
-        border: 0;
-        border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.5);
-        border-radius: 0;
-        font-family: $text-font;
-        font-style: italic;
-        margin: 0 4rem 1rem 4rem;
-        padding: 20px 24px 12px 24px;
-    }
-
-    input[type="email"] {
-        margin-bottom: 2rem;
-    }
-
-    textarea {
-        background: url(/background-textarea.png);
-        background-position: 50% 68%;
-        background-repeat: repeat-x;
-        border: 0;
-        color: white;
-        font-family: $text-font;
-        font-style: italic;
-        height: 88px;
-        line-height: 25px;
-        margin: 0 4rem 2rem 4rem;
-        overflow: hidden;
-        padding: 0 24px;
-        resize: none;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    button[type="submit"] {
-        margin-left: initial;
-        margin-right: initial;
-    }
-}
-
-.selectMusic {
-    animation: fadeIn ease 4s;
     align-items: center;
-    flex-direction: column;
-    -webkit-animation: fadeIn ease 4s;
+}
 
-    > span {
-        margin-bottom: 1rem;
-        width: 100%;
-    }
 
-    select {
-        margin-bottom: 1.5rem;
+.candleLink {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    &:focus,
+    &:hover,
+    &:active {
+        border: none;
+        outline: none;
     }
 }
 
-.touchCandle {
-    animation: fadeIn ease 4s;
-    -webkit-animation: fadeIn ease 4s;
+.icon {
+    width: 100%;
+    height: 50px;
+    background: red;
+    display: block;
 }
 
-.candleButton {
-    background: none;
-    border: 0;
-    bottom: 32px;
-    left: 0;
-    margin: 0 auto;
-    max-width: 140px;
-    position: absolute;
-    right: 0;
-
-    img {
-        width: 100%;
+.sendAPrayer > .icon {
+    &:focus,
+    &:hover,
+    &:active {
+        background: yellow;
     }
 }
 
-.audio {
-    bottom: 24px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
+.meditate > .icon {
+    &:focus,
+    &:hover,
+    &:active {
+        background: blueviolet;
+    }
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@media screen and (max-width: 768px) {
-
-    .title {
-        line-height: 4rem;
-        width: 100%;
-    }
-
-    .prayerForm {
-        width: 100%;
-        
-        h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            margin: 0 2rem 1rem 2rem;
-        }
-
-        button {
-            margin-bottom: 1rem;
-        }
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-
-    .container {
-        margin: 0 8% 0 8%;
-
-        audio {
-            width: 100%;
-        }
-    }
-
-    .title {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-    }
-
-    .prayerForm {
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: .5rem;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            padding-left: 12px;
-            padding-right: 12px;
-        }
+.postACandle > .icon {
+    &:focus,
+    &:hover,
+    &:active {
+        background: green;
     }
 }

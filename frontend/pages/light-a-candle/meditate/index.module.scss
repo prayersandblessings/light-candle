@@ -1,0 +1,11 @@
+@import '../../../assets/scss/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 12% 0 12%;
+    padding: 0;
+    height: 100%;
+}
