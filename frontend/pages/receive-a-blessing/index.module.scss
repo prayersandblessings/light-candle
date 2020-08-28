@@ -24,27 +24,3 @@
 .title {
     margin: 0 0 4rem 0;
 }
-
-.subscribeForm {
-    display: flex;
-    flex-wrap: wrap;
-    width: 75%;
-
-    input[type="text"], input[type="email"], > div {
-        width: 38%;
-        margin: 0 2% 1rem 2%;
-    }
-
-    > div {
-        margin-bottom: 0;
-    }
-
-    button {
-        margin-top: 2rem;
-        width: 100%;
-    }
-
-    label {
-        margin-bottom: 1rem;
-    }
-}
