@@ -34,7 +34,7 @@ const Checkbox = ({
         aria-checked={checked}
         className={styles.checkbox}
         onClick={handleClick}
-        tabindex='0'
+        tabIndex='0'
       />
       {label}
     </label>
