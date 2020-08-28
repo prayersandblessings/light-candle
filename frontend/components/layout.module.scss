@@ -15,14 +15,14 @@
   z-index: -2;
 
   &.home, &.default { background-image: url(/backgrounds/default-background.jpg); }
-  &.ourStory { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.ourStory { background-image: url(/backgrounds/our-intention.jpg); }
   &.lightACandle { background-image: url(/backgrounds/receive-blessing.jpg); }
   &.receiveAblessing { background-image: url(/backgrounds/receive-blessing.jpg); }
-  &.aPrayerForHumanity { background-image: url(/backgrounds/receive-blessing.jpg);}
+  &.aPrayerForHumanity { background-image: url(/backgrounds/prayer-humanity.jpg);}
   &.whoWeAre { background-image: url(/backgrounds/who-we-are.jpg);}
 
-  &.contact { background-image: url(/backgrounds/receive-blessing.jpg); }
-  &.subscribe { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.contact { background-image: url(/backgrounds/contact.jpg); }
+  &.subscribe { background-image: url(/backgrounds/subscribe.jpg); }
   &.privacyPolicy{ background-image: url(/backgrounds/receive-blessing.jpg); }
 }
 
