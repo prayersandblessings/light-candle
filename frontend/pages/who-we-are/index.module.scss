@@ -4,7 +4,6 @@
     animation: fadeIn ease 2s;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin: 0 12% 0 12%;
     padding: 20% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
@@ -22,29 +21,16 @@
 
 .whoWeAreText {
     margin-bottom: 4rem;
-    width: 45%;
+    width: 42%;
     display: inline-block;
+    padding: 0 1.5%;
+    text-align: center;
+
+    p {
+        text-align: left;
+    }
 }
 
-
-// @keyframes fadeIn {
-//     0% { opacity: 0; }
-//     100% { opacity: 1; }
-// }
-
-// @media screen and (max-width: 768px) {
-
-//     .title {
-//         margin-bottom: 2rem;
-//     }
-
-//     .aboutUsText {
-//         width: 100%;
-//     }
-// }
-
-// @media screen and (max-width: 480px) {
-//     .container {
-//         margin: 0 8% 0 8%;
-//     }
-// }
+.ligthCandleButton {
+    width: 100%;
+}
