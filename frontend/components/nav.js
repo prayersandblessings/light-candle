@@ -14,7 +14,7 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
       )}
       {isOpen && (
         <div className={styles.open}>
-          <button onClick={handleClose} className={styles.closeMenuButton}>
+          <button onClick={handleClose}>
             <img src="/icon-close.svg" width="20px" height="20px"></img>
           </button>
           <div className={styles.navContainer}>
@@ -30,9 +30,8 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
               })}
             </ul>
           </div>
-            -----
-          <div className={styles.navContainer}>
-            <ul className={styles.navbar}>
+          <div className={styles.divider}></div>
+            <ul className={styles.secondaryNav}>
               {ARRAY_SECONDARY_PAGES.map((page) => {
                 return (
                   <li key={page.url}>
@@ -43,8 +42,7 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
                 );
               })}
             </ul>
-          </div>
-
+            <span className={styles.legals}>© 2020 Lapis International Pty Ltd, All rights reserved.</span>
         </div>
       )}
     </>
