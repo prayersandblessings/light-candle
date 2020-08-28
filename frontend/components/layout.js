@@ -5,7 +5,7 @@ import styles from './layout.module.scss'
 import BackgroundVideo from './BackgroundVideo/BackgroundVideo';
 
 
-const Layout = ({ children, backgroundState = 'img' }) => {
+const Layout = ({ children, classNameSection = 'default' }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
@@ -19,36 +19,23 @@ const Layout = ({ children, backgroundState = 'img' }) => {
   return (
     <>
       <TopNav />
-      {backgroundState === 'img' && (
+      {classNameSection !== "video" && (
         <>
-          <div className={styles.image} />
-          <div className={styles.content}>
-            {children}
-          </div>
+          <div className={`${styles.image} ${styles[classNameSection]}`} />
+          <div className={styles.content}>{children}</div>
         </>
       )}
-      {
-        backgroundState === 'color' && (
-          <>
-            <div className={`${styles.content} ${styles.color}`}>
-              {children}
-            </div>
-          </>
+
+      {classNameSection === "video" && (
+        <>
+          <BackgroundVideo>
+            <div className={styles.content}>{children}</div>
+          </BackgroundVideo>
+        </>
       )}
-      {
-        backgroundState === 'video' && (
-          <>
-            <BackgroundVideo >
-              <div className={styles.content}>
-                {children}
-              </div>
-            </BackgroundVideo>
-          </>
-      )}
-      
       <Nav isOpen={isOpen} handleClose={handleClose} handleOpen={handleOpen} />
     </>
-  )
+  );
 }
 
 

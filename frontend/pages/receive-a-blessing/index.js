@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import Layout from '../components/layout'
-import styles from './receive-a-blessing.module.scss'
-import Checkbox from '../components/form/Checkbox'
+import Layout from '../../components/layout'
+import styles from './index.module.scss'
+import Checkbox from '../../components/form/Checkbox'
+import PAGES from '../../constants/routes';
 
 
 const ReceiveABlessing = () => {
@@ -17,7 +18,7 @@ const ReceiveABlessing = () => {
   }
 
   return (
-    <Layout>
+    <Layout classNameSection={PAGES.RECEIVE_A_BLESSING.className}>
       <div className={styles.container}>
         <span className="caption">Receive</span>
         <h2 className={styles.title + ' title'}>A blessing</h2>

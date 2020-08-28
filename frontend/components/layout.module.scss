@@ -2,15 +2,9 @@
 
 .content {
   height: 100%;
-
-  &.color {
-    background-color: $secondary-color;
-    height: auto;
-  }
 }
 
 .image {
-  background-image: url(/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
@@ -19,6 +13,17 @@
   right: 0;
   top: 0;
   z-index: -2;
+
+  &.home, &.default { background-image: url(/backgrounds/default-background.jpg); }
+  &.ourStory { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.lightACandle { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.receiveAblessing { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.aPrayerForHumanity { background-image: url(/backgrounds/receive-blessing.jpg);}
+  &.whoWeAre { background-image: url(/backgrounds/receive-blessing.jpg);}
+
+  &.contact { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.subscribe { background-image: url(/backgrounds/receive-blessing.jpg); }
+  &.privacyPolicy{ background-image: url(/backgrounds/receive-blessing.jpg); }
 }
 
 .secondaryNav {

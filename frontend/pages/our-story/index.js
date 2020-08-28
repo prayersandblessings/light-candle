@@ -1,12 +1,13 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
-import styles from './our-story.module.scss'
-import LightCandleLink from '../components/LightACandleLink'
+import styles from './index.module.scss'
+import LightCandleLink from '../../components/LightACandleLink'
+import PAGES from '../../constants/routes';
 
 const OurStory = () => {
   return (
-    <Layout backgroundState = 'color'>
+    <Layout classNameSection={PAGES.OUR_STORY.className}>
         <div className={styles.container}>
           <span className={styles.caption + ' caption'}>Our</span>
           <h2 className={styles.title + ' title'}>Intention</h2>

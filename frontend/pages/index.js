@@ -21,7 +21,7 @@ export const LinkCandle = ({url, name}) => {
 
 const Home = () => {
   return (
-    <Layout backgroundState='img'>
+    <Layout classNameSection={PAGES.HOME.className}>
       <div className={styles.container}>
         <div className={styles.showText}>
           <span className="caption">Offer your</span>

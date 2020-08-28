@@ -1,11 +1,14 @@
 import React from 'react'
-import Layout from '../components/layout'
-import LightCandleLink from '../components/LightACandleLink'
-import styles from './who-we-are.module.scss'
+
+import PAGES from '../../constants/routes'
+import LightCandleLink from '../../components/LightACandleLink'
+import Layout from '../../components/layout'
+
+import styles from './index.module.scss'
 
 const WhoWeAre = () => {
   return (
-    <Layout backgroundState = 'color'>
+    <Layout classNameSection={PAGES.WHO_WE_ARE.className}>
         <div className={styles.container}>
           <span className={styles.caption + ' caption'}>Who</span>
           <h2 className={styles.title + ' title'}>We are</h2>
