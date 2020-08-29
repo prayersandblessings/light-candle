@@ -25,6 +25,21 @@ input {
     }
 }
 
+textarea {
+    background-color: rgba($color: #000000, $alpha: 0.35);
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-family: $text-font;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 select {
 
     &:focus {

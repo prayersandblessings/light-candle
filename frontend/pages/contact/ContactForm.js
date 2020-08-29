@@ -30,32 +30,30 @@ const ContactForm = ({ onSubmitForm }) => {
       <form onSubmit={onHandleSubmit} className={styles.contactForm}>
         <p>We will love to hear from you and will reply as soon as we can.</p>
         <form>
-          <p>
-            <input
-              type="text"
-              required
-              placeholder={CONTACT_FORM_TEXT.NAME}
-              ref={inputName}
-              name="Name"
-            />
-            <input
-              type="email"
-              required
-              placeholder={CONTACT_FORM_TEXT.EMAIL}
-              ref={inputEmail}
-              name="Email"
-            />
-          </p>
-          <p>
-            <textarea
-              ref={inputMessage}
-              name="message"
-              type="text"
-              placeholder={CONTACT_FORM_TEXT.HOW_CAN_HELP}
-              rows="2"
-              required
-            />
-          </p>
+          <input
+            type="text"
+            required
+            placeholder={CONTACT_FORM_TEXT.NAME}
+            ref={inputName}
+            name="Name"
+            className="secondary"
+          />
+          <input
+            type="email"
+            required
+            placeholder={CONTACT_FORM_TEXT.EMAIL}
+            ref={inputEmail}
+            name="Email"
+            className="secondary"
+          />
+          <textarea
+            ref={inputMessage}
+            name="message"
+            type="text"
+            placeholder={CONTACT_FORM_TEXT.HOW_CAN_HELP}
+            rows="2"
+            required
+          />
           <p>
             <Checkbox
               id="privacy-checkbox"
@@ -74,11 +72,10 @@ const ContactForm = ({ onSubmitForm }) => {
               }
             />
           </p>
-          <p>
-            <button type="submit" className="main-button">
-              Submit
-            </button>
-          </p>
+          <button type="submit" className="next-button">
+            <span className='caption'>Subscribe me</span>
+            <img src="/icon-arrow-right.svg" width="52px"></img>
+          </button>
         </form>
       </form>
     );

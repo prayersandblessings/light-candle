@@ -8,3 +8,35 @@
     padding: 20% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
 }
+
+.contactForm {
+    text-align: center;
+
+    p {
+        margin-bottom: 4rem;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 75%;
+
+        input[type="text"], input[type="email"] {
+            width: 42.5%;
+            margin: 0 2% 1rem 2%;
+        }
+
+        input[type="text"] {
+            margin-left: 0;
+        }
+
+        input[type="email"] {
+            margin-right: 0;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}
