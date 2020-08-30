@@ -66,14 +66,14 @@ const ContactForm = ({ onSubmitForm }) => {
                     as={`${SECONDARY_PAGES.PRIVACY_POLICY.name}`}
                     href={SECONDARY_PAGES.PRIVACY_POLICY.url}
                   >
-                    <a>{SECONDARY_PAGES.PRIVACY_POLICY.name}</a>
+                    <a> {SECONDARY_PAGES.PRIVACY_POLICY.name}</a>
                   </Link>
                 </>
               }
             />
           </p>
           <button type="submit" className="next-button">
-            <span className='caption'>Subscribe me</span>
+            <span className='caption'>Submit</span>
             <img src="/icon-arrow-right.svg" width="52px"></img>
           </button>
         </form>
