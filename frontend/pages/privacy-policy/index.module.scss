@@ -1,3 +1,4 @@
+@import '../../assets/scss/variables.scss';
 
 .container {
     animation: fadeIn ease 2s;
@@ -7,4 +8,25 @@
     margin: 0 12% 0 12%;
     padding: 20% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
+
+    p {
+        font-size: 1.15rem;
+        line-height: 1.75rem;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    h5 {
+        font-family: $text-font;
+        font-size: 1.15rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.policies {
+    margin-top: 8rem;
+    width: 69%;
 }
