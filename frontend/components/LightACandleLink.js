@@ -9,10 +9,10 @@ const LightCandleLink = () => {
       <div className={styles.Divider}></div>
       <Link as={`${PAGES.LIGHT_A_CANDLE.url}`} href={PAGES.LIGHT_A_CANDLE.url}>
         <button>
-          <span className={"caption"}>Light</span>
+          <span className={styles.caption + ' caption'}>Light</span>
           <span className={styles.lightCandleButton}>
             A candle
-            <img src="/icon-arrow-right.svg" width="52px"></img>
+            <img src="/icon-arrow-right.svg" width="64px"></img>
           </span>
         </button>
       </Link>

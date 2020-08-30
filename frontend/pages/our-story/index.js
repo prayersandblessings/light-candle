@@ -12,7 +12,7 @@ const OurStory = () => {
           <span className={styles.caption + ' caption'}>Our</span>
           <h2 className={styles.title + ' title'}>Intention</h2>
           <div className={styles.ourIntention}>
-            <div className={styles.scroll}>
+            <div className={'scroll-button'}>
               <div></div>
               <span className={'caption'}>Scroll</span>
             </div>

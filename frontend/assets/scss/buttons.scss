@@ -42,6 +42,21 @@
     }
 }
 
+.scroll-button {
+    > div {
+        width: 2px;
+        height: 50px;
+        background: white;
+        margin: 0 auto 2rem auto;
+    }
+
+    span {
+        font-size: 11.24px;
+        font-family: $text-font;
+        letter-spacing: 3.37px;
+    }
+}
+
 button {
 
     &:focus {
