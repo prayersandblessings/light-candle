@@ -16,15 +16,19 @@
     span {
         width: 100%;
     }
+
+    .caption {
+      font-size: 25.29px;
+    }
   
     .lightCandleButton {
         display: flex;
         font-family: $main-font;
-        font-size: 4rem;
+        font-size: 84.31px;
         justify-content: center;
   
         img {
-            margin-left: 1rem;
+            margin-left: 2rem;
         }
     }
   }

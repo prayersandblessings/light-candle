@@ -12,17 +12,30 @@ const WhoWeAre = () => {
         <div className={styles.container}>
           <span className={styles.caption + ' caption'}>A PRAYER</span>
           <h2 className={styles.title + ' title'}>For humanity</h2>
-          <h3>LET US BE UNITED</h3>
-
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-          <p className={styles.prayerForHumanityText}> Lorem ipsum dolor sit amet</p>
-
-          <LightACandleLink />
+          <div className={styles.prayer}>
+            <div>
+              <span className={'caption'}>Let us be united</span>
+              <p>Let us be united;</p>
+              <p>Let us speak in harmony;</p>
+              <p>Let our minds apprehend alike.</p>
+              <p>Common be our resolution;</p>
+              <p>Common be our deliberations.</p>
+              <p>Alike be our feelings;</p>
+              <p>Unified be our hearts;</p>
+              <p>Common be our intentions;</p>
+              <p>Perfect be our unity.</p>
+              <p>- Rig Veda, dated between 1500-1200 BCE</p>
+            </div>
+            <div>
+              <div className={'scroll-button'}>
+                <div></div>
+                <span className={'caption'}>Scroll</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.lightCandleButton}>
+            <LightACandleLink />
+          </div>
         </div>
     </Layout>
   );

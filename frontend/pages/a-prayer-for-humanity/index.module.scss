@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 12% 0 12%;
-    padding: 20% 0 12% 0;
+    padding: 28% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
 }
 
@@ -17,6 +17,20 @@
 
 .title {
     margin: 0 0 10rem 0;
+}
+
+.prayer {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+    p {
+        line-height: 56.22px;
+    }
+}
+
+.lightCandleButton {
+    width: 100%;
 }
 
 .prayerForHumanityText {
