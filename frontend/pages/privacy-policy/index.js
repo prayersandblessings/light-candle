@@ -8,7 +8,7 @@ const PrivacyPolicy = () =>(
     <Layout classNameSection={SECONDARY_PAGES.PRIVACY_POLICY.className}>
       <div className={styles.container}>
         <span className="caption">OUR</span>
-        <h1 className="title">Privacy Policy</h1>
+        <h2 className="title">Privacy Policy</h2>
 
         <p>Last updated</p>
         <p><strong>INTRODUCTION</strong></p>
