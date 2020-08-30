@@ -45,6 +45,25 @@
         }
 
         textarea {
+            min-height: 100px;
+            resize: none;
+            width: 100%;
+        }
+
+        p {
+            margin: 0 auto 1.75rem auto;
+            text-align: center;
+
+            a {
+                color: white;
+                text-decoration: underline;
+                margin-left: 4px;
+                font-weight: 600;
+                font-style: normal;
+            }
+        }
+
+        button {
             width: 100%;
         }
     }
