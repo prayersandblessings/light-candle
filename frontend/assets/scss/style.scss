@@ -40,8 +40,8 @@ body {
 
 p {
   font-family: $text-font;
-  font-size: 31.62px;
-  line-height: 56.21px;
+  font-size: 26px;
+  line-height: 56px;
 }
 
 button {
@@ -50,16 +50,17 @@ button {
 
 .caption {
   font-family: $secondary-font;
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 5.6px;
   text-align: center;
   text-transform: uppercase;
 }
 
 .title {
-  font-size: 90px;
+  font-size: 80px;
   font-weight: lighter;
   letter-spacing: -1.35px;
+  line-height: 70px;
   margin: 0;
   text-align: center;
   width: 100%;
