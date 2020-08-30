@@ -57,6 +57,22 @@
     }
 }
 
+.candle-button {
+    background: transparent;
+    border: 0;
+    color: white;
+    display: flex;
+    font-family: $main-font;
+    font-size: 1.3rem;
+    align-items: center;
+
+    img {
+        height: 26px;
+        margin-right: 1rem;
+        width: 26px;
+    }
+}
+
 button {
 
     &:focus {

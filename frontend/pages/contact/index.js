@@ -3,6 +3,8 @@ import Layout from '../../components/layout'
 import ContactForm from './ContactForm'
 import styles from './index.module.scss'
 import { SECONDARY_PAGES } from '../../constants/routes'
+import PAGES from '../../constants/routes'
+import Link from 'next/link'
 
 const SECTIONS = {
   STEP1: 'FORM',
@@ -25,7 +27,15 @@ const Contact = () => {
           <ContactForm onSubmitForm={handleSumbitForm} />
         )}
         {showSection === SECTIONS.STEP2 && (
-          <p>Thank you for your message! We will reply as soon as possible.</p>
+          <div>
+            <p>Thank you for your message! We will reply as soon as possible.</p>
+            <Link as={PAGES.LIGHT_A_CANDLE.url} href={PAGES.LIGHT_A_CANDLE.name}>
+              <button className={styles.candleButton + ' candle-button'}>
+                <img src="/icon-more.png"></img>
+                Light a Candle
+              </button>
+            </Link>
+          </div>
         )}
       </div>
     </Layout>

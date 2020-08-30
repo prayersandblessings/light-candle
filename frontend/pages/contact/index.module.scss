@@ -7,6 +7,10 @@
     margin: 0 12% 0 12%;
     padding: 20% 0 12% 0;
     -webkit-animation: fadeIn ease 2s;
+
+    p {
+        margin-top: 6rem;
+    }
 }
 
 .title {
@@ -44,4 +48,10 @@
             width: 100%;
         }
     }
+}
+
+.candleButton {
+    position: absolute;
+    left: 2.75rem;
+    bottom: 2.75rem;
 }
