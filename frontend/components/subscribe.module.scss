@@ -2,10 +2,18 @@
 
 .subscribeComponent {
   text-align: center;
+  width: 100%;
 
   > p {
     font-weight: 300;
     margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .thanksText {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
   }
 
   form {
@@ -24,8 +32,8 @@
     }
 
     button {
-        margin-top: 2rem;
-        width: 100%;
+      margin: 2rem 0 7rem 0;
+      width: 100%;
     }
 
     label {
