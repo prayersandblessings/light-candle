@@ -20,7 +20,7 @@ const Contact = () => {
     <Layout classNameSection={SECONDARY_PAGES.CONTACT.className}>
       <div className={styles.container}>
         <span className="caption">GENERAL INQUIRIES</span>
-        <h1 className="title">Contact us</h1>
+        <h2 className="title">Contact us</h2>
         {showSection === SECTIONS.STEP1 && (
           <ContactForm onSubmitForm={handleSumbitForm} />
         )}

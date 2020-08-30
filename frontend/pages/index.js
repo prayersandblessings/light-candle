@@ -25,7 +25,7 @@ const Home = () => {
       <div className={styles.container}>
         <div className={styles.showText}>
           <span className="caption">Offer your</span>
-          <h1 className="title">Prayers and Blessings</h1>
+          <h2 className={"title"}>Prayers and Blessings</h2>
         </div>
         <div className={styles.candles}>
           <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
