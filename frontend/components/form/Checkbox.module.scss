@@ -15,7 +15,6 @@
   }
 
   .checkbox {
-    // TODO change by svg
     background: transparent;
     border: 1px solid white;
     cursor: pointer;
@@ -25,11 +24,9 @@
     display: inline-block;
 
     &[aria-checked=true] {
-      // TODO change by svg
-      background: black;
+      background: white;
       &::after {
         content:quote;
-  
       }
     }
   }
