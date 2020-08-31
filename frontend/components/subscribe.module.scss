@@ -32,7 +32,7 @@
     }
 
     button {
-      margin: 2rem 0 7rem 0;
+      margin: 2rem 0 0 0;
       width: 100%;
     }
 
@@ -41,4 +41,10 @@
     }
 
   }
+}
+
+.candleButton {
+  position: absolute;
+  left: 2.75rem;
+  bottom: 2.75rem;
 }

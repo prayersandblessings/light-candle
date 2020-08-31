@@ -2,6 +2,8 @@
 import React, {useState, useRef} from 'react'
 import styles from './subscribe.module.scss'
 import Checkbox from '../components/form/Checkbox'
+import PAGES from '../constants/routes'
+import Link from 'next/link'
 
 const SECTIONS = {
   STEP1: 'FORM',
@@ -91,7 +93,15 @@ const SubscribeComponent = ({onSubscribe}) => {
         </form>
       )}
       {showSection === SECTIONS.STEP2 && (
-        <p className={styles.thanksText}>Thank you for subscribing!</p>
+        <>
+          <p className={styles.thanksText}>Thank you for subscribing!</p>
+          <Link as={PAGES.LIGHT_A_CANDLE.url} href={PAGES.LIGHT_A_CANDLE.name}>
+            <button className={styles.candleButton + ' candle-button'}>
+              <img src="/icon-more.png"></img>
+              Light a Candle
+            </button>
+          </Link>
+        </>
       )}
     </div>
   );
