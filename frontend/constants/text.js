@@ -14,12 +14,13 @@ export const INTRODUCTION_TEXT = {
   WRITE_PRAYER: 'Write your prayer'
 }
 export const FORM_TEXT = {
-  TITLE_1: 'WRITE YOUR',
-  TITLE_2: 'Prayer or Blessing',
-  WRITE_NAME: 'Write your name or initials',
-  WRITE_RECEIPENT_NAME: 'Write the name of the recepient',
-  WRITE_EMAIL: 'Write the email of the person you wish to send your candle to (optional)',
-  WRITE_PRAYER: 'Write your prayer',
+  TITLE_1: 'LIGHT A CANDLE',
+  TITLE_2: 'Send a prayer',
+  SEND_A_PRAYER: 'SEND A PRAYER WITH YOUR CANDLE',
+  WRITE_NAME: 'Write your name',
+  WRITE_EMAIL: 'Write your email',
+  WRITE_RECEIPENT_NAME: 'Recipient\'s name',
+  WRITE_RECEIPENT_EMAIL: 'Recipient\'s email address',
 }
 
 export const CONTACT_FORM_TEXT = {
