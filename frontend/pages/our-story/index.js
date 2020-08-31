@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import Layout from '../../components/layout'
 
 import styles from './index.module.scss'
@@ -6,19 +6,25 @@ import LightCandleLink from '../../components/LightACandleLink'
 import PAGES from '../../constants/routes';
 
 const OurStory = () => {
+  const categoriesSectionRef = useRef('');
+
+  const scrollTo = () =>{
+    categoriesSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  }
+
   return (
     <Layout classNameSection={PAGES.OUR_STORY.className}>
         <div className={styles.container}>
           <span className={styles.caption + ' caption'}>Our</span>
           <h2 className={styles.title + ' title'}>Intention</h2>
           <div className={styles.ourIntention}>
-            <div className={'scroll-button'}>
+            <div className={'scroll-button'} onClick={scrollTo}>
               <div></div>
               <span className={'caption'}>Scroll</span>
             </div>
             <p> The intention behind the Prayers and Blessings website is for people everywhere to experience peace, inspiration and solace through the power of prayer and the offering of blessings. May people everywhere readily access their own inner strength through cultivating the practice of offering prayers and blessings.</p>
           </div>
-          <div className={styles.ourStory}>
+          <div className={styles.ourStory} ref={categoriesSectionRef}>
             <div>
               <h2 className={'title'}>Our Story</h2>
               <p>During the devastating bushfires in Australia during 2019 and into 2020 we noticed that many communities around the world started to gather and offer their prayers for Australia. We heard stories of the Australian Indigenous people performing corroborees, Buddhists around the world offering mantras, people gathering in churches, temples, mosques to call on a sacred, benevolent power to end the fires through the manifestation of rain. Others less inclined to believe in a divine power, visualised the dowsing of the fires by a widespread falling of gentle, penetrating and nurturing rain.</p>

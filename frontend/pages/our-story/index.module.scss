@@ -22,7 +22,6 @@
 .ourIntention {
     align-items: center;
     display: flex;
-    margin-bottom: 4rem;
     margin-left: auto;
 
     p {
@@ -35,6 +34,7 @@
 .ourStory {
     align-items: flex-start;
     display: flex;
+    padding-top: 4rem;
 
     > div {
         margin-top: 4rem;
