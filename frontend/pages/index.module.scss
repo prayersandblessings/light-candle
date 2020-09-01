@@ -89,28 +89,3 @@
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
-@media screen and (max-width: 768px) {
-
-  .candles {
-
-    a {
-
-      &:nth-child(1), &:nth-child(3) {
-        display: none;
-      } 
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-
-  .container {
-    margin: 0 8% 0 8%;
-    padding-top: 28%;
-  }
-
-  .showText {
-    align-self: flex-start;
-  }
-}

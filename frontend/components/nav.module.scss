@@ -90,25 +90,17 @@
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 768px) {
-
+@media screen and ( max-width: 1280px ) {
   .open {
-    display: initial;
-  }
 
+    > button {
+      margin-bottom: 2rem;
+    }
+  }
   .navContainer {
-    align-items: inherit;
-    background: $main-color;
-    padding-top: 2rem;
-    display: inherit;
-    flex-wrap: inherit;
-    margin: 0;
-    width: 85%;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-bottom: 2rem;
 
     .navbar {
-      margin-bottom: 3rem;
 
       li {
 
@@ -118,15 +110,39 @@
       }
     }
   }
-}
 
-@media screen and (max-width: 375px) {
-
-  .open {
-    width: 105%;
+  .divider {
+    margin-bottom: 2rem;
   }
 
-  .navContainer {
-    padding-top: 1rem;
+  .secondaryNav {
+
+    li {
+
+      a {
+        font-size: .75rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .open {
+    background: rgba($color: #11132d, $alpha: 0.9);
+    right: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .openMenuButton {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .open {
+    padding-left: 2rem;
+    padding-top: 2rem;
   }
 }
