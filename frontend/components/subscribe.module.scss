@@ -48,3 +48,40 @@
   left: 2.75rem;
   bottom: 2.75rem;
 }
+
+@media screen and (max-width: 1280px) {
+
+  .subscribeComponent {
+
+    form {
+      width: 100%;
+
+      input[type="text"], input[type="email"], > div {
+        width: 37%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .subscribeComponent {
+
+    form {
+
+      input[type="text"], input[type="email"], > div {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      input[type="email"] {
+        margin-bottom: 2rem;
+      }
+
+      button {
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+    }
+  }
+}

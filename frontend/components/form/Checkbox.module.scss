@@ -32,3 +32,12 @@
   }
   
 }
+
+@media screen and (max-width: 768px) {
+  .checkboxContainer {
+
+    .checkbox {
+      margin-right: 1rem;
+    }
+  }
+}
