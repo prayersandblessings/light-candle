@@ -40,3 +40,43 @@
     margin: 6rem 0;
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .LightACandleLink{
+    button {
+      .caption {
+        font-size: 20px;
+      }
+
+      .lightCandleButton {
+        font-size: 68px;
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .LightACandleLink {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .LightACandleLink {
+
+    button {
+
+      .caption {
+        font-size: 16px;
+      }
+
+      .lightCandleButton {
+        font-size: 44px;
+      }
+    }
+
+    .Divider {
+      margin: 3rem 0;
+    }
+  }
+}

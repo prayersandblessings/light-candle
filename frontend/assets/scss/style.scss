@@ -73,6 +73,22 @@ button {
   margin: 6rem 0;
 }
 
+@media screen and (max-width: 1280px) {
+
+  p {
+    font-size: 20px;
+    line-height: 44px;
+  }
+
+  .caption {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 68px;
+  }
+}
+
 @media screen and (max-width: 480px) {
 
   .caption  {
@@ -85,5 +101,10 @@ button {
 
   .divider {
     margin: 4rem 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 36px;
   }
 }

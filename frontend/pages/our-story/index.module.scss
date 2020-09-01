@@ -78,11 +78,43 @@
 
     .ourIntention {
         width: 100%;
+
+        > div {
+            display: none;
+        }
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .ourStory {
+        width: 100%;
+        flex-wrap: wrap;
+
+        img {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    }
+
+    .complementary {
+
+        p {
+            width: 100%;
+        }
     }
 }
 
 @media screen and (max-width: 480px) {
     .container {
         margin: 0 8% 0 8%;
+    }
+
+    .ourStory {
+
+        > div {
+            margin-top: 0;
+        }
     }
 }
