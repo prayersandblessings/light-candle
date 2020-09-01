@@ -11,35 +11,45 @@ import {
   WhatsappIcon
 } from "react-share";
 
-const StayHereQuietly = ({ videoURL }) => {
+const StayHereQuietly = ({ videoURL, className }) => {
     const secondVideoRef = useRef();
+    const [playing, setPlaying] = useState(false)
+    const [cnOnPlay, setcnOnPlay] = useState(styles.playVideo)
+
     useEffect(() => {
       console.log(secondVideoRef);
     }, [secondVideoRef]);
 
+    const onClickPlay = () => {
+      console.log(secondVideoRef.current.getInternalPlayer());
+      setPlaying(true);
+      // styles.playVideo classNames()
+    }
+
     return (
-    <div className={styles.container}>
-      {/* <ReactPlayer 
+    <div className={`${styles.container} ${className}`}> 
+      <ReactPlayer 
         ref={secondVideoRef}
         className={styles.video}
-        url='https://player.vimeo.com/video/441214959'
-        // width='100%'
-        height='100%'
+        url='https://player.vimeo.com/video/453162488'
+        playing={playing}
         config={{
           vimeo: {
             playerOptions:{
               loop: true,
-              height: '100%'
             }
           }
         }}
-        /> */}
-        <iframe 
-          ref={secondVideoRef}
-          src="https://player.vimeo.com/video/449572291"
-          frameborder="0"
-          className={styles.video}
-           />
+        />
+
+        <div className={`${styles.prayerSent} ${(playing===true ? `${styles.showing} ${styles.shown}` : '')}`}>
+          <span className={styles.caption + ' caption'}>YOUT CANDLE AND PRAYER</span>
+          <h2 className={styles.title + ' title'}>Have been sent</h2>
+        </div>
+        <button className={`${cnOnPlay} ${(playing===true ? `${styles.hidding} ${styles.hidden}`  : '')}`} type="button" onClick={onClickPlay}>
+          <span className={styles.caption + ' caption'}>TOUCH THE CANDLE</span>
+          <h2 className={styles.title + ' title'}>To send your prayer</h2>
+        </button>
       </div>
     );
   };

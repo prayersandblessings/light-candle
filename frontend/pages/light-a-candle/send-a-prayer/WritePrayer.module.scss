@@ -2,16 +2,10 @@
 
 .container {
     justify-content: center;
-    margin: 25% 12% 0 12%;
-    padding: 0;
     height: 100%;
-}
-
-
-.prayerContainter {
     animation: fadeIn ease 3s;
-    padding: 0;
     -webkit-animation: fadeIn ease 3s;
+    padding: 12% 0 12% 0; 
 }
 
 .prayerForm {

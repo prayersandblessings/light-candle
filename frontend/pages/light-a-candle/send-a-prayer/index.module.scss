@@ -1,5 +1,10 @@
 @import '../../../assets/scss/variables.scss';
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -8,4 +13,16 @@
     margin: 0 12% 0 12%;
     padding: 0;
     height: 100%;
+}
+
+.StayHereQuietly {
+    position: absolute;
+    bottom: 0;
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+}
+
+.hidden {
+    display: none;
+    bottom: 100%;
 }

@@ -33,7 +33,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
       const { current : { value: receipentEmail = '' }} = inputReceipentEmail;
       const { current : { value: email = '' }} = inputEmail;
       const { current : { value: message = '' }} = inputMessage;
-      onPrayerWritten(name, receipentName,email, message);
+      onPrayerWritten(name, receipentName, receipentEmail, email, message);
     }
 
     return (
@@ -108,7 +108,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
 
             <p>ADD TEXT HERE</p>
 
-            <button type="submit" className={styles.emailIcon}>
+            <button type="button" onClick={onHandleSubmit} className={styles.emailIcon}>
               <div />
               <span>TAP TO LIGHT A CANDLE, AND SEND YOUR PRAYER</span>
             </button>

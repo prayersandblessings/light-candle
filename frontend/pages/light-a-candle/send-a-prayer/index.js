@@ -18,9 +18,9 @@ const SECTIONS = {
  * @param {*} param 
  */
 const SendAPrayer = () => {
-  const [showSection, setSection] = useState('');
+  const [showSection, setSection] = useState(SECTIONS.STEP1);
   const handlePrayerWritten = (name, nameReceipent, email, message) => {
-    setPrayer({...prayer, name, nameReceipent, email, message});
+    // setPrayer({...prayer, name, nameReceipent, email, message});
     setSection(SECTIONS.STEP2);
   }
 
@@ -42,10 +42,10 @@ const SendAPrayer = () => {
 
   return (
     <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
-      <StayHereQuietly />
+      <StayHereQuietly className={`${styles.StayHereQuietly}  ${showSection === SECTIONS.STEP1 ? styles.hidden : ''}`}/>
       {showSection === SECTIONS.STEP1 && (
         <WritePrayer onPrayerWritten={handlePrayerWritten} />
-      )};
+      )}
       
     </Layout>
   );
