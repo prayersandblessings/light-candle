@@ -26,7 +26,7 @@ const WhoWeAre = () => {
               <p>Perfect be our unity.</p>
               <p>- Rig Veda, dated between 1500-1200 BCE</p>
             </div>
-            <div>
+            <div className={styles.scrollButton}>
               <div className={'scroll-button'}>
                 <div></div>
                 <span className={'caption'}>Scroll</span>
