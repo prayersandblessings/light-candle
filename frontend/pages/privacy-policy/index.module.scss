@@ -30,3 +30,22 @@
     margin-top: 8rem;
     width: 69%;
 }
+
+@media screen and (max-width: 768px) {
+
+    .policies {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        margin: 0 10% 0 10%;
+        padding-top: 28%;
+    }
+
+    .policies {
+        margin-top: 3rem;
+    }
+}
