@@ -43,3 +43,34 @@
 .ligthCandleButton {
     width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .whoWeAreText {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0 9% 0 9%;
+    }
+    .director {
+        margin-top: 0;
+    }
+    
+    .effects {
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+    }
+
+    .whoWeAreText {
+
+        span {
+            display: inline-block;
+            line-height: 1.2rem;
+            width: 100%;
+        }
+    }
+
+}
