@@ -74,3 +74,62 @@
     left: 2.75rem;
     bottom: 2.75rem;
 }
+
+@media screen and (max-width: 1280px) {
+
+    .contactForm {
+
+        form {
+            width: 100%;
+
+            input[type="email"], input[type="text"] {
+                width: 43%;
+            }
+
+            input[type="email"] {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .contactForm {
+
+        form {
+
+            input[type="email"], input[type="text"] {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0 10% 0 10%;
+        padding-top: 28%;
+    }
+    .contactForm {
+
+        p {
+            margin: 2rem 0;
+        }
+
+        form {
+
+            p {
+
+                a {
+                    width: 100%;
+                    text-align: left;
+                    margin-left: 29px !important;
+                    line-height: initial;
+                }
+            } 
+        }
+    }
+}
