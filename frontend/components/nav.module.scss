@@ -129,6 +129,8 @@
 @media screen and (max-width: 768px) {
   .open {
     background: rgba($color: #11132d, $alpha: 0.9);
+    background: url('/backgrounds/home-mobile.jpg') no-repeat;
+    background-size: 100% 98%;
     right: 0;
     width: 100%;
   }
