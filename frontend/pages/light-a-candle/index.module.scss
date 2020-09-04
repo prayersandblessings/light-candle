@@ -9,6 +9,8 @@
     padding: 0;
     height: 100%;
     align-items: center;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
 }
 
 
@@ -64,6 +66,11 @@
     &:active {
         background-image: url('/icon-candle-post.png');
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @media screen and (max-width: 768px) {
