@@ -56,7 +56,7 @@ const StayHereQuietly = ({ videoURL, className }) => {
       <ReactPlayer 
         ref={secondVideoRef}
         className={styles.video}
-        url='https://player.vimeo.com/video/453162488'
+        url={videoURL}
         playing={playing}
         config={{
           vimeo: {

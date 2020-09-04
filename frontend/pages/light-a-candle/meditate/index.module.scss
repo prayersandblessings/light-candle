@@ -1,11 +1,40 @@
 @import '../../../assets/scss/variables.scss';
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 .container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
-    margin: 0 12% 0 12%;
-    padding: 0;
+    padding: 20% 12% 0 12%;
     height: 100%;
+}
+
+.audioPause,
+.audioPlay {
+    width: 40px;
+    height: 80px;
+    cursor: pointer;
+    color: red;
+}
+.audioPause {
+    background-color: yellow;
+}
+.audioPlay {
+    background-color: greenyellow;
+}
+
+.StayHereQuietly {
+    position: absolute;
+    bottom: 0;
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+}
+
+.hidden {
+    display: none;
+    bottom: 100%;
 }

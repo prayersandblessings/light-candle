@@ -13,6 +13,7 @@ const SECTIONS = {
   STEP2: 'LIGHT_CANDLE_VIDEO',
 }
 
+const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
 /**
  * Main Component
  * @param {*} param 
@@ -42,7 +43,10 @@ const SendAPrayer = () => {
 
   return (
     <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
-      <StayHereQuietly className={`${styles.StayHereQuietly}  ${showSection === SECTIONS.STEP1 ? styles.hidden : ''}`}/>
+      <StayHereQuietly
+        className={`${styles.StayHereQuietly}  ${showSection === SECTIONS.STEP1 ? styles.hidden : ''}`}
+        videoURL={URL_VIDEO_SILENCE}
+      />
       {showSection === SECTIONS.STEP1 && (
         <WritePrayer onPrayerWritten={handlePrayerWritten} />
       )}
