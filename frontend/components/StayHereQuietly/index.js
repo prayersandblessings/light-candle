@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './index.module.scss';
 import ReactPlayer  from 'react-player';
-
+import Router from 'next/router'
+            
 import {
   TwitterShareButton,
   TwitterIcon,
@@ -11,20 +12,44 @@ import {
   WhatsappIcon
 } from "react-share";
 
+const SHOWING_TITLE_CLASSES = `${styles.prayerSent} ${styles.showing} ${styles.shown}`;
+const HIDDING_TITLE_CLASSES = `${styles.hidding} ${styles.hidden}`;
+const SHOWING_TIME_MILI_SECONDS = 4000;
+const MILI_SECONDS_BEFORE_GO_TO_HOME = 20000;
+
 const StayHereQuietly = ({ videoURL, className }) => {
     const secondVideoRef = useRef();
-    const [playing, setPlaying] = useState(false)
-    const [cnOnPlay, setcnOnPlay] = useState(styles.playVideo)
+    const [playing, setPlaying] = useState(false);
+    const [onPlayClass, setcnOnPlay] = useState(styles.playVideo);
+    const [cnHaveSent, setCnHaveSent] = useState(`${styles.prayerSent} ${styles.hidden}`);
 
     useEffect(() => {
-      console.log(secondVideoRef);
-    }, [secondVideoRef]);
+      if(cnHaveSent === SHOWING_TITLE_CLASSES) {
+        setTimeout(() => {
+          setCnHaveSent(HIDDING_TITLE_CLASSES);
+        }, SHOWING_TIME_MILI_SECONDS * 2.5);
+      }
+    }, [cnHaveSent]);
 
     const onClickPlay = () => {
-      console.log(secondVideoRef.current.getInternalPlayer());
-      setPlaying(true);
-      // styles.playVideo classNames()
+      if(playing===false) {
+        setPlaying(true);
+        setTimeout(() => {
+          setCnHaveSent(SHOWING_TITLE_CLASSES);
+        }, SHOWING_TIME_MILI_SECONDS);
+      }
     }
+
+    const onProgress = ({ playedSeconds }) => {
+      console.log(playedSeconds);
+      if(playedSeconds >= MILI_SECONDS_BEFORE_GO_TO_HOME/1000){
+        console.log('Reloading');
+        Router.push('/light-a-candle')
+      }
+    }
+    
+
+    const cnOnPlay = `${onPlayClass} ${(playing===true ? `${styles.hidding} ${styles.hidden}`  : '')}`;
 
     return (
     <div className={`${styles.container} ${className}`}> 
@@ -40,13 +65,14 @@ const StayHereQuietly = ({ videoURL, className }) => {
             }
           }
         }}
+        onProgress={onProgress}
         />
 
-        <div className={`${styles.prayerSent} ${(playing===true ? `${styles.showing} ${styles.shown}` : '')}`}>
+        <div className={cnHaveSent}>
           <span className={styles.caption + ' caption'}>YOUT CANDLE AND PRAYER</span>
           <h2 className={styles.title + ' title'}>Have been sent</h2>
         </div>
-        <button className={`${cnOnPlay} ${(playing===true ? `${styles.hidding} ${styles.hidden}`  : '')}`} type="button" onClick={onClickPlay}>
+        <button className={cnOnPlay} type="button" onClick={onClickPlay}>
           <span className={styles.caption + ' caption'}>TOUCH THE CANDLE</span>
           <h2 className={styles.title + ' title'}>To send your prayer</h2>
         </button>
