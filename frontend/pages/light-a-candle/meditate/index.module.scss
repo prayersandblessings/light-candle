@@ -13,17 +13,62 @@
     height: 100%;
 }
 
-.audioPause,
+input.soundSelected {
+    height: 0;
+    width: 0;
+    position: relative;
+    top: 0;
+    display: block;
+    right: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0 auto;    
+}
+
+.downloadCandleIcon {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    &:before {
+        content:'';
+        width: 18px;
+        height: 18px;
+        background-image: url(/icon-download.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+    &:hover:before {
+        background-position-y: 1px;
+    }
+}
+
+.receiveABlessingIcon {
+    color: white;
+    &:after {
+        content:'';
+        width: 20px;
+        height: 20px;
+        background-color: yellow;
+        display: inline-block;
+    }
+    &:hover:after {
+        background-color: greenyellow;
+    }
+}
+
+.audioPause {
+    width: 40px;
+    height: 80px;
+    cursor: pointer;
+    color: red;
+    background-color: yellow;
+}
 .audioPlay {
     width: 40px;
     height: 80px;
     cursor: pointer;
     color: red;
-}
-.audioPause {
-    background-color: yellow;
-}
-.audioPlay {
     background-color: greenyellow;
 }
 

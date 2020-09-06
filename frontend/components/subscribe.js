@@ -12,10 +12,6 @@ const SECTIONS = {
 
 const SubscribeComponent = ({onSubscribe}) => {
 
-  const onSubmit = () => {
-    alert('Submiting');
-  }
-
   const [blessingDayAccepted, setBlessingDayAccepted] = useState(false)
   const [regularMailingAccepted, setRegularMailingAccepted] = useState(false)
   
@@ -86,7 +82,7 @@ const SubscribeComponent = ({onSubscribe}) => {
               onClick = { handleRegularMailingAccepted }
             />
           </div>
-          <button type="submit" className="next-button" onClick={onSubmit}>
+          <button type="submit" className="next-button" >
             <span className='caption'>Subscribe me</span>
             <img src="/icon-arrow-right.svg" width="52px"></img>
           </button>

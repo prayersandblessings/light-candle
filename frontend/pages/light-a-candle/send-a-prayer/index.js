@@ -44,13 +44,30 @@ const SendAPrayer = () => {
   return (
     <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
       <StayHereQuietly
-        className={`${styles.StayHereQuietly}  ${showSection === SECTIONS.STEP1 ? styles.hidden : ''}`}
+        className={`${styles.StayHereQuietly}  ${
+          showSection === SECTIONS.STEP1 ? styles.hidden : ""
+        }`}
         videoURL={URL_VIDEO_SILENCE}
+        firstFrame={
+          <>
+            <span className={styles.caption + " caption"}>
+              TOUCH THE CANDLE
+            </span>
+            <h2 className={styles.title + " title"}>To send your prayer</h2>
+          </>
+        }
+        secondFrame={
+          <>
+            <span className={styles.caption + " caption"}>
+              YOUR CANDLE AND PRAYER
+            </span>
+            <h2 className={styles.title + " title"}>Have been sent</h2>
+          </>
+        }
       />
       {showSection === SECTIONS.STEP1 && (
         <WritePrayer onPrayerWritten={handlePrayerWritten} />
       )}
-      
     </Layout>
   );
 };
