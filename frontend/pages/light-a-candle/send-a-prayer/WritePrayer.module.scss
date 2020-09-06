@@ -20,6 +20,7 @@
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 auto;
     padding: 1rem 0;
 
@@ -33,7 +34,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 5rem;
-      width: 80%;
+      width: 76%;
 
       > div {
         width: 45%;
@@ -93,6 +94,7 @@
   border: none;
   outline: none;
   color: white;
+  margin-top: 3rem;
   width: 20%;
 
   span {
@@ -113,6 +115,63 @@
   &:hover {
     div {
       background-image: url('/icon-candle-send.png');
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .prayerForm {
+
+    > div {
+      width: 100%;
+
+      > div {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .emailIcon {
+    margin: 0 auto 4rem auto;
+    width: 380px;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    padding-top: 28%;
+    margin: 0 8%;
+  }
+
+  .title {
+    margin-bottom: 4rem;
+  }
+
+  .prayerForm {
+    width: 100%;
+
+    > div {
+      span {
+        line-height: 1.5rem;
+        text-align: left;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
+    }
+
+    .description {
+      margin-top: 2rem;
+      font-size: 1.25rem;
+      line-height: 2rem;
     }
   }
 }
