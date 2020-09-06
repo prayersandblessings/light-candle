@@ -121,8 +121,8 @@ const WritePrayer = ({ onPrayerWritten })  => {
             </div>
 
             <button type="button" onClick={onHandleSubmit} className={styles.emailIcon}>
-              <div />
-              <span>TAP TO LIGHT A CANDLE, AND SEND YOUR PRAYER</span>
+              <div/>
+              <span className="caption">Click to light a candle and send a prayer</span>
             </button>
           </form>
         </div>

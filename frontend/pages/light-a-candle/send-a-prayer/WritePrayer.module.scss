@@ -92,17 +92,27 @@
   background: transparent;
   border: none;
   outline: none;
+  color: white;
+  width: 20%;
+
+  span {
+    font-size: .75rem;
+  }
 
   div {
     display: block;
-    width: 20px;
-    height: 45px;
-    background: white;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1rem auto;
+    background: {
+      image: url('/icon-candle.png');
+      size: 100%;
+    }
   }
 
   &:hover {
     div {
-      background: yellow;
+      background-image: url('/icon-candle-send.png');
     }
   }
 }
