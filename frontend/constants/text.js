@@ -18,9 +18,10 @@ export const FORM_TEXT = {
   TITLE_2: 'Send a prayer',
   SEND_A_PRAYER: 'SEND A PRAYER WITH YOUR CANDLE',
   WRITE_NAME: 'Write your name',
-  WRITE_EMAIL: 'Write your email',
+  WRITE_EMAIL: 'Write your email address',
   WRITE_RECEIPENT_NAME: 'Recipient\'s name',
   WRITE_RECEIPENT_EMAIL: 'Recipient\'s email address',
+  WRITE_PRAYER: 'Write your Prayer'
 }
 
 export const CONTACT_FORM_TEXT = {

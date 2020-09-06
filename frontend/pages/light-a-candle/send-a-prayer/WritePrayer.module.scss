@@ -1,76 +1,91 @@
 @import '../../../assets/scss/variables.scss';
 
 .container {
-    justify-content: center;
-    height: 100%;
-    animation: fadeIn ease 3s;
-    -webkit-animation: fadeIn ease 3s;
-    padding: 12% 0 12% 0; 
+  align-items: center;
+  animation: fadeIn ease 3s;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  margin: 0 12% 0 12%;
+  padding: 20% 0 4% 0; 
+  -webkit-animation: fadeIn ease 3s;
+}
+
+.title {
+  margin-bottom: 10rem;
 }
 
 .prayerForm {
+    align-items: flex-start;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 1rem 0;
-    width: 80%;
 
-    // button {
-    //     background: none;
-    //     border: 0;
-    //     margin-left: auto;
-    //     margin-right: 1rem;
-    //     color: white;
-    //     font-family: $main-font;
+    > span {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
 
-    //     span {
-    //         margin-left: .5rem;
-    //     }
-    // }
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+      width: 80%;
 
-    // h3 {
-    //     margin: 0 0 2rem 0;
-    // }
+      > div {
+        width: 45%;
+      }
+    }
 
-    // input[type="text"], input[type="email"] {
-    //     border: 0;
-    //     border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.5);
-    //     border-radius: 0;
-    //     font-family: $text-font;
-    //     font-style: italic;
-    //     margin: 0 4rem 1rem 4rem;
-    //     padding: 20px 24px 12px 24px;
-    // }
+    textarea, input[type="text"], input[type="email"]{
+      font-style: italic;
+      font-size: .8rem;
+      padding: 1rem;
+    }
 
-    // input[type="email"] {
-    //     margin-bottom: 2rem;
-    // }
+    textarea {
+      background: transparent;
+      border: 1px solid white;
+      border-radius: .75rem;
+      margin-top: 1.25rem;
+      min-height: 140px;
+      padding: 1rem;
+      width: 100%;
+    }
 
-    // textarea {
-    //     background: url(/background-textarea.png);
-    //     background-position: 50% 68%;
-    //     background-repeat: repeat-x;
-    //     border: 0;
-    //     color: white;
-    //     font-family: $text-font;
-    //     font-style: italic;
-    //     height: 88px;
-    //     line-height: 25px;
-    //     margin: 0 4rem 2rem 4rem;
-    //     overflow: hidden;
-    //     padding: 0 24px;
-    //     resize: none;
+    input[type="text"], input[type="email"] {
+      border: 0;
+      border-bottom: 1px solid white;
+      border-radius: 0;
+      margin-bottom: .75rem;
+      padding: .75rem;
+      width: 90%;
+    }
 
-    //     &:focus {
-    //         outline: none;
-    //     }
-    // }
+    p {
+      font-size: 1rem;
+      margin: 0;
+      width: 100%;
 
-    // button[type="submit"] {
-    //     margin-left: initial;
-    //     margin-right: initial;
-    // }
+      span {
+        font-style: italic;
+      }
+
+      a {
+        color: white;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+
+    .description {
+      font-size: 26px;
+      line-height: 44px;
+      margin-top: 4rem;
+    }
 }
 
 .emailIcon{
@@ -86,7 +101,7 @@
   }
 
   &:hover {
-    div {    
+    div {
       background: yellow;
     }
   }
