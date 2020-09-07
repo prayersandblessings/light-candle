@@ -70,7 +70,7 @@
     }
 }
 
-.emailIcon{
+.emailIcon {
     background: transparent;
     border: none;
     outline: none;
@@ -144,3 +144,45 @@
     display: none;
     bottom: 100%;
 }
+
+@media screen and (max-width: 768px) {
+
+    .soundForm {
+
+        > div {
+            flex-wrap: wrap;
+        }
+    
+        div {
+    
+            section {
+                width: 100%;
+            }
+        }
+    }
+
+    .emailIcon {
+        width: 280px;
+    }
+
+    .audioPause {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 28% 8% 0 8%;
+
+        > p {
+            font-size: .8rem;
+            line-height: 1.5rem;
+            text-align: left;
+        }
+    }
+
+    .controlDropDown {
+        min-width: 240px;
+    }
+
+} 
