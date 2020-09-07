@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import Router from 'next/router'
 import axios from '../lib/axios'
 import styles from './view-candle.module.scss'
-import StayHereQuietly from '../components/StayHereQuietly/StayHereQuietly'
+import StayHereQuietly from '../components/StayHereQuietly'
 import {
   NEXT_BUTTON_TEXT
 } from '../constants/text';
