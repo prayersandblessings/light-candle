@@ -56,7 +56,7 @@ const Meditate = () => {
   }
   
   return (
-    <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
+    <>
       <StayHereQuietly
         className={`${styles.StayHereQuietly}  ${
           showSection === SECTIONS.STEP1 ? styles.hidden : ""
@@ -93,6 +93,8 @@ const Meditate = () => {
         hideSecondFrame={false}
       />
 
+      <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
+
       <div className={styles.container + " " + styles.prayerContainter}>
         {showSection === SECTIONS.STEP1 && (
           <>
@@ -109,7 +111,8 @@ const Meditate = () => {
           </>
         )}
       </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

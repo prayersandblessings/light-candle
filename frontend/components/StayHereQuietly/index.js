@@ -91,9 +91,9 @@ const StayHereQuietly = ({
         </div>
 
         {cnHaveSent === TITLE_CLASSES_HIDDEN && (
-          <button className={cnOnPlay} type="button" onClick={onClickPlay}>
+          <div className={cnOnPlay} role="button" onClick={onClickPlay}>
             {firstFrame}
-          </button>
+          </div>
         )}
       </div>
     );
