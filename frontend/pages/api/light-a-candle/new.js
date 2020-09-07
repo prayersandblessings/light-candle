@@ -62,7 +62,7 @@ import { fetchAPI } from '../../../lib/api';
 
 const nodemailer = require("nodemailer");
 
-const PRAYERS_EMAIL = rocess.env.PRAYERS_EMAIL;
+const PRAYERS_EMAIL = process.env.PRAYERS_EMAIL;
 const PRAYERS_PASS = process.env.PRAYERS_PASS;
 const urlNEXT = process.env.NEXT_PUBLIC_URL;
 
