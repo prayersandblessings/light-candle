@@ -15,10 +15,10 @@ import styles from './WritePrayer.module.scss';
  * @param {callback} onCloseForm
  */
 const WritePrayer = ({ onPrayerWritten })  => {
-    const inputName = useRef(null);
+    const inputSenderName = useRef(null);
+    const inputSenderEmail = useRef(null);
     const inputReceipentName = useRef(null);
     const inputReceipentEmail = useRef(null);
-    const inputEmail = useRef(null);
     const inputMessage = useRef(null);
     const [regularMailingAccepted, setRegularMailingAccepted] = useState(false);
 
@@ -28,12 +28,12 @@ const WritePrayer = ({ onPrayerWritten })  => {
 
     const onHandleSubmit = (event) => {
       event.preventDefault();
-      const { current : { value: name = '' }} = inputName;
+      const { current : { value: senderName = '' }} = inputSenderName;
+      const { current : { value: senderEmail = '' }} = inputSenderEmail;
       const { current : { value: receipentName = '' }} = inputReceipentName;
       const { current : { value: receipentEmail = '' }} = inputReceipentEmail;
-      const { current : { value: email = '' }} = inputEmail;
       const { current : { value: message = '' }} = inputMessage;
-      onPrayerWritten(name, receipentName, receipentEmail, email, message);
+      onPrayerWritten(senderName, senderEmail, receipentName, receipentEmail, message);
     }
 
     return (
@@ -55,15 +55,15 @@ const WritePrayer = ({ onPrayerWritten })  => {
 
               <div>
                 <input
-                  ref={inputName}
+                  ref={inputSenderName}
                   type="text"
-                  name="Sender"
+                  name="sender_name"
                   placeholder={FORM_TEXT.WRITE_NAME}
                   required
                 />
                 <input
-                  ref={inputEmail}
-                  name="receiver_email"
+                  ref={inputSenderEmail}
+                  name="sender_email"
                   type="email"
                   placeholder={FORM_TEXT.WRITE_EMAIL}
                   required
@@ -72,9 +72,9 @@ const WritePrayer = ({ onPrayerWritten })  => {
               <div>
                 <p>Who do you wish to send the prayer to?</p>
                 <input
-                  ref={inputEmail}
-                  name="receiver_email"
-                  type="email"
+                  ref={inputReceipentName}
+                  name="RecipientName"
+                  type="text"
                   placeholder={FORM_TEXT.WRITE_RECEIPENT_NAME}
                   required
                 />
@@ -120,7 +120,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
               </p>
             </div>
 
-            <button type="button" onClick={onHandleSubmit} className={styles.emailIcon}>
+            <button type="submit" className={styles.emailIcon}>
               <div/>
               <span className="caption">Click to light a candle and send a prayer</span>
             </button>

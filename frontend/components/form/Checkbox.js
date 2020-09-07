@@ -6,6 +6,7 @@ const Checkbox = ({
   id = 'checkboxId',
   onClick = () => {},
   label = <></>,
+  required = false,
   ...otherProps
 }) => {
   const handleClick = () => {
@@ -26,7 +27,7 @@ const Checkbox = ({
         id={id}
         checked={checked}
         onChange={handleInputChange}
-        required
+        required={required}
       />
       <span
         {...otherProps}
