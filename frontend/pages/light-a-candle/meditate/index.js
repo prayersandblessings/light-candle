@@ -64,10 +64,10 @@ const Meditate = () => {
         videoURL={URL_VIDEO_SILENCE}
         firstFrame={
           <>
-            <span className={styles.caption + " caption"}>
-              TOUCH THE CANDLE
+            <span className={"caption"}>
+              Touch the candle
             </span>
-            <h2 className={styles.title + " title"}>To send your prayer</h2>
+            <h2 className={"title"}>To send your prayer</h2>
           </>
         }
         secondFrame={
