@@ -62,8 +62,8 @@ import { fetchAPI } from '../../../lib/api';
 
 const nodemailer = require("nodemailer");
 
-const PRAYERS_EMAIL = 'contact@prayersandblessings.com';
-const PRAYERS_PASS = "^g#-Q5H'}(g?:{?4&5";
+const PRAYERS_EMAIL = rocess.env.PRAYERS_EMAIL;
+const PRAYERS_PASS = process.env.PRAYERS_PASS;
 const urlNEXT = process.env.NEXT_PUBLIC_URL;
 
 // async..await is not allowed in global scope, must use a wrapper
