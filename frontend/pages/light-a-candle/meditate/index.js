@@ -96,8 +96,9 @@ const Meditate = () => {
       <div className={styles.container + " " + styles.prayerContainter}>
         {showSection === SECTIONS.STEP1 && (
           <>
-            <span className="caption">LIGHT YOUR CANDLE</span>
+            <span className="caption">Light your candle</span>
             <h3 className="title">And meditate</h3>
+            <p className="caption">Select the music you wish to listen to</p>
             {!loading && (
               <SelectSound
                 onSoundSelected={handleSoundSelected}

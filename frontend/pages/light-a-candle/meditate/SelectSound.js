@@ -58,34 +58,45 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
     const playingLabel = isPlaying ? 'Pause' : 'Play';
 
     return (
-      <form onSubmit={handleSubmit}>
-        <Dropdown
-          options={selectOptions}
-          onChange={onSelectChange}
-          value={selectedValue}
-          controlClassName="controlDropDown"
-          menuClassName="menuDropDown"
-        />
+      <form onSubmit={handleSubmit} className={styles.soundForm}>
+        <div>
+          <div className={styles.dropdownComponent}>
+            <Dropdown
+              options={selectOptions}
+              onChange={onSelectChange}
+              value={selectedValue}
+              controlClassName="controlDropDown"
+              menuClassName="menuDropDown"
+            />
+            <input type="text" className={styles.soundSelected} value={!!selectedValue ? selectedValue : undefined} required />
+          </div>
 
-        <input type="text" className={styles.soundSelected} value={!!selectedValue ? selectedValue : undefined} required />
+          <button
+            className={cnControlIcon}
+            onClick={disableAudio}
+            type="button"
+            disabled={!soundUrl}
+          >
+            {playingLabel}
+          </button>
 
-        <button
-          className={cnControlIcon}
-          onClick={disableAudio}
-          type="button"
-          disabled={!soundUrl}
-        >
-          {playingLabel}
-        </button>
+          {soundUrl && <audio src={soundUrl} ref={audioRef} autoPlay />}
+        </div>
 
-        {soundUrl && <audio src={soundUrl} ref={audioRef} autoPlay />}
-
-        <br />
-
-        <button type="submit" className="next-button">
-          <img src="/icon-arrow-right.svg" width="52"></img>
-          <span>CLICK TO A CANDLE AND MEDITATE</span>
-        </button>
+        <div>
+          <section>
+            <p>As you light your candle, take some time to be with yourself.</p>
+            <p>An easy way to do this is to focus on your breath.</p>
+            <p>Connect with the silence within.</p>
+            <p>Light your candle and sit quietly.</p>
+            <p>Listen to the flute or the soothing sounds of nature.</p>
+            <p>Watch your candle float on the golden sea beneath the Milky Way.</p>
+          </section>
+          <button type="submit" className={styles.emailIcon}>
+            <div/>
+            <span className="caption">Click to light a candle and meditate</span>
+          </button>
+        </div>
       </form>
     );
   } 
