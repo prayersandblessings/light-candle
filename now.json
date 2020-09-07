@@ -2,13 +2,11 @@
   "builds": [{ "src": "frontend/package.json", "use": "@now/next" }],
   "build": {
     "env": {
-      "NEXT_PUBLIC_API_URL": "@api-url",
-      "NEXT_PUBLIC_URL": "@next-url"
+      "NEXT_PUBLIC_API_URL": "@api-url"
     }
   },
   "env": {
-    "NEXT_PUBLIC_API_URL": "@api-url",
-    "NEXT_PUBLIC_URL": "@next-url"
+    "NEXT_PUBLIC_API_URL": "@api-url"
   },
   "routes": [
     {
