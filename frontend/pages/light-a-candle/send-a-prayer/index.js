@@ -4,6 +4,7 @@ import Layout from '../../../components/layout';
 import StayHereQuietly from '../../../components/StayHereQuietly';
 
 import PAGES from '../../../constants/routes'
+import axios from '../../../lib/axios'
 
 import styles from './index.module.scss';
 import WritePrayer from './WritePrayer';
@@ -24,26 +25,19 @@ const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
  */
 const SendAPrayer = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
-  const handlePrayerWritten = (senderName, senderEmail, receipentName, receipentEmail, message) => {
-    console.log(senderName, senderEmail, receipentName, receipentEmail, message)
-    // setPrayer({...prayer, name, nameReceipent, email, message});
-    getMailChimp();
-    // setSection(SECTIONS.STEP2);
-  }
 
-  const handleLightCandle = () => {
-    const { language, sound, name, email, message } = prayer 
-    
-    if(!language || !name || !email || !message ) {
+  const handlePrayerWritten = (senderName, senderEmail, receipentName, receipentEmail, message) => {
+    if(!senderName || !senderEmail || !receipentName || !receipentEmail || !message ) {
       alert('An error has ocurred, files are missing');
       return;
     }
 
-    axios.post('/api/light-a-candle/new', prayer).then( (result) => {
-      setSection(SECTIONS.STEP7);
+    axios.post('/api/light-a-candle/new', {senderName, senderEmail, receipentName, receipentEmail, message}).then( (result) => {
+      alert('Sent');
+      console.log(result);
+      // setSection(SECTIONS.STEP2);
     }).catch(error => {
       alert('An error has ocurred');
-      setSection(SECTIONS.STEP7);
     })
   }
 
