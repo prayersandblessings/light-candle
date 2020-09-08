@@ -76,7 +76,7 @@ const Meditate = () => {
               className={`${styles.icon} ${styles.downloadCandleIcon}`}
               onClick={openNewWidow}
             >
-              Download candle
+              Save your candle
             </button>
 
             <Link

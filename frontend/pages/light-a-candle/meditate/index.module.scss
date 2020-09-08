@@ -104,8 +104,15 @@
 .downloadCandleIcon {
     background: none;
     border: none;
-    outline: none;
+    bottom: 2rem;
     color: white;
+    display: flex;
+    font-family: $main-font;
+    font-size: 1.25rem;
+    left: 2rem;
+    outline: none;
+    position: absolute;
+
     &:before {
         content:'';
         width: 18px;
@@ -113,6 +120,7 @@
         background-image: url(/icon-download.svg);
         background-repeat: no-repeat;
         display: inline-block;
+        margin-right: .5rem;
     }
     &:hover:before {
         background-position-y: 1px;
@@ -120,7 +128,14 @@
 }
 
 .receiveABlessingIcon {
+    bottom: 2rem;
     color: white;
+    display: flex;
+    font-family: $main-font;
+    font-size: 1.25rem;
+    position: absolute;
+    right: 2rem;
+
     &:after {
         content:'';
         width: 20px;

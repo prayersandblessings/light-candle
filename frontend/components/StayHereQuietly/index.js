@@ -76,6 +76,7 @@ const StayHereQuietly = ({
           vimeo: {
             playerOptions:{
               loop: true,
+              playsinline: false
             }
           }
         }}
