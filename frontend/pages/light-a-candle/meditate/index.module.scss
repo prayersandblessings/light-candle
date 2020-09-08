@@ -196,6 +196,20 @@
     .audioPause {
         margin-left: 0;
     }
+
+    .downloadCandleIcon {
+        
+        span {
+            display: none;
+        }
+    }
+
+    .receiveABlessingIcon {
+
+        span {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {

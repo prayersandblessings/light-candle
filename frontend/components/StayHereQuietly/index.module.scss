@@ -155,3 +155,9 @@
 //     line-height: 3.5rem;
 //   }
 // }
+
+@media screen and (max-width: 480px) {
+  .playVideo {
+    padding-top: 28%;
+  }
+}

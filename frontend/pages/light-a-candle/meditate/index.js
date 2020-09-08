@@ -76,7 +76,7 @@ const Meditate = () => {
               className={`${styles.icon} ${styles.downloadCandleIcon}`}
               onClick={openNewWidow}
             >
-              Save your candle
+              <span>Save your candle</span>
             </button>
 
             <Link
@@ -84,7 +84,7 @@ const Meditate = () => {
               href={PAGES.RECEIVE_A_BLESSING.url}
             >
               <a className={`${styles.icon} ${styles.receiveABlessingIcon}`}>
-                {PAGES.RECEIVE_A_BLESSING.name}
+                <span>{PAGES.RECEIVE_A_BLESSING.name}</span>
               </a>
             </Link>
           </>
