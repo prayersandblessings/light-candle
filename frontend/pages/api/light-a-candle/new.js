@@ -87,32 +87,39 @@ async function main({senderName, receipentName, receipentEmail, message }) {
   let info = await transporter.sendMail({
     from: PRAYERS_EMAIL, // sender address
     to: `${receipentEmail}, ${PRAYERS_EMAIL}`, // list of receivers
-    subject: `${senderName} has sent you a prayer`, // Subject line
+    subject: `${senderName} has sent you a prayer 🕯️`, // Subject line
     html: `
-      <div style="max-width: 620px">
-        <p style="margin-left: 32px; margin-top: 40px">Dear ${receipentName}, </p>
-        <p style="margin-left: 32px; margin-bottom: 40px">${senderName} has lit a candle for you:</p>
-        <img src='${urlNEXT}/candle-email.gif' >
-        <br />
-        ${message}
-        <div style="text-align: center;">
-          <a style="background:#c2a25f;
-            text-decoration:none;
-            color:white;
-            text-align: center;
-            border-radius: 20px;
-            padding: 10px 24px;
-            display: inline-block;
-            margin: 0 auto;
-            "
-            href="${urlNEXT}"
-          >
-            ${urlNEXT}
-          </a>
+      <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
+        <div style="max-width: 620px; background-color: #FFFFFF; margin: 0 auto; padding: 1rem; text-align: center;">
+          <p style="margin-left: 32px; margin-top: 40px; font-size: 1.25rem; color: #181f40; text-align: left;">Dear ${receipentName}, </p>
+          <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #181f40; text-align: left;">${senderName} has lit a candle for you:</p>
+          <img src='${urlNEXT}/candle-email2.gif' >
+          <p style="font-size: 1.25rem;  color: #181f40; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
+            "${message}"
+          </p>
+          <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #181f40; margin-bottom: 2rem; font-style: italic;">
+            - ${senderName}
+          </p>
+          <div style="text-align: center;">
+            <a style="background: #181f40;
+              text-decoration:none;
+              color:white;
+              text-align: center;
+              border-radius: 24px;
+              padding: 10px 32px;
+              display: inline-block;
+              margin: 0 auto 2rem auto;
+              font-size: 1.25rem;
+              "
+              href="${urlNEXT}"
+            >
+              Visit Prayers & Blessings
+            </a>
+          </div>
+          <p style="text-align: center; margin-bottom: 60px; color: #181f40;">
+            Copyright © 2020 Prayers & Blessings, All rights reserved.
+          </p>
         </div>
-        <p style="text-align: center; margin-bottom: 60px">
-          Copyright © 2020 Prayers & Blessings, All rights reserved.
-        </p>
       </div>
     `, // html body
   });
