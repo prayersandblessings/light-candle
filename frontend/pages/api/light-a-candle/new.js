@@ -67,7 +67,7 @@ const PRAYERS_PASS = process.env.PRAYERS_PASS;
 const urlNEXT = process.env.NEXT_PUBLIC_URL;
 
 // async..await is not allowed in global scope, must use a wrapper
-async function main({senderName, senderEmail, receipentName, receipentEmail, message }) {
+async function main({senderName, receipentName, receipentEmail, message }) {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   let testAccount = await nodemailer.createTestAccount();
@@ -87,10 +87,33 @@ async function main({senderName, senderEmail, receipentName, receipentEmail, mes
   let info = await transporter.sendMail({
     from: PRAYERS_EMAIL, // sender address
     to: `${receipentEmail}, ${PRAYERS_EMAIL}`, // list of receivers
-    subject: "You has received a prayer", // Subject line
+    subject: `${senderName} has sent you a prayer`, // Subject line
     html: `
-      Hello world  sss?
-      Sending from: ${urlNEXT}
+      <div style="max-width: 620px">
+        <p style="margin-left: 32px; margin-top: 40px">Dear ${receipentName}, </p>
+        <p style="margin-left: 32px; margin-bottom: 40px">${senderName} has lit a candle for you:</p>
+        <img src='${urlNEXT}/candle-email.gif' >
+        <br />
+        ${message}
+        <div style="text-align: center;">
+          <a style="background:#c2a25f;
+            text-decoration:none;
+            color:white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 10px 24px;
+            display: inline-block;
+            margin: 0 auto;
+            "
+            href="${urlNEXT}"
+          >
+            ${urlNEXT}
+          </a>
+        </div>
+        <p style="text-align: center; margin-bottom: 60px">
+          Copyright © 2020 Prayers & Blessings, All rights reserved.
+        </p>
+      </div>
     `, // html body
   });
 
