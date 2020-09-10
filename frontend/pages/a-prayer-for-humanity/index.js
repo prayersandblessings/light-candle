@@ -7,6 +7,7 @@ import PAGES from '../../constants/routes'
 import styles from './index.module.scss'
 
 const WhoWeAre = () => {
+
   return (
     <Layout classNameSection={PAGES.A_PRAYER_FOR_HUMANITY.className}>
         <div className={styles.container}>
