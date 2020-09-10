@@ -45,14 +45,18 @@
 
 .prayerSent {
   display: block;
+  padding-top: 20%;
   position: absolute;
+  text-align: center;
   top: 0;
   width: 100%;
-  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
 }
 .shown {
   display: 0;
@@ -157,7 +161,8 @@
 // }
 
 @media screen and (max-width: 480px) {
-  .playVideo {
+
+  .playVideo, .prayerSent {
     padding-top: 28%;
   }
 }

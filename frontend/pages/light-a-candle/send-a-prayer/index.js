@@ -33,9 +33,9 @@ const SendAPrayer = () => {
     }
 
     axios.post('/api/light-a-candle/new', {senderName, senderEmail, receipentName, receipentEmail, message}).then( (result) => {
-      alert('Sent');
+      //alert('Sent');
       console.log(result);
-      // setSection(SECTIONS.STEP2);
+      setSection(SECTIONS.STEP2);
     }).catch(error => {
       alert('An error has ocurred');
     })
@@ -51,7 +51,7 @@ const SendAPrayer = () => {
         firstFrame={
           <>
             <span className={styles.caption + " caption"}>
-              TOUCH THE CANDLE
+              Touch the candle
             </span>
             <h2 className={styles.title + " title"}>To send your prayer</h2>
           </>
@@ -59,7 +59,7 @@ const SendAPrayer = () => {
         secondFrame={
           <>
             <span className={styles.caption + " caption"}>
-              YOUR CANDLE AND PRAYER
+              Your candle and prayer
             </span>
             <h2 className={styles.title + " title"}>Have been sent</h2>
           </>
