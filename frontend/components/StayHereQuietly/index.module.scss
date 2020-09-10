@@ -84,7 +84,7 @@
 
 .overlayLeft {
   background: rgb(255,255,255);
-  background: linear-gradient(270deg, rgba(255,255,255,0) 40%, rgba(2,16,32,0.95) 90%);
+  background: linear-gradient(270deg, rgba(255,255,255,0) 5%, rgba(2,16,32,0.95) 90%);
   width: 280px;
   height: 100%;
   position: absolute;
@@ -185,5 +185,15 @@
 
   .playVideo, .prayerSent {
     padding-top: 28%;
+  }
+
+  .overlayRight {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 40%, rgba(2,16,32,0.95) 90%);
+    width: 120px;
+  }
+  
+  .overlayLeft {
+    background: linear-gradient(270deg, rgba(255,255,255,0) 40%, rgba(2,16,32,0.95) 90%);
+    width: 120px;
   }
 }
