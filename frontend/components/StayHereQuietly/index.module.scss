@@ -72,6 +72,27 @@
   -webkit-animation: fadeOut ease 4s;
 }
 
+.overlayRight {
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 5%, rgba(2,16,32,0.95) 90%);
+  width: 280px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.overlayLeft {
+  background: rgb(255,255,255);
+  background: linear-gradient(270deg, rgba(255,255,255,0) 40%, rgba(2,16,32,0.95) 90%);
+  width: 280px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
 
 
 

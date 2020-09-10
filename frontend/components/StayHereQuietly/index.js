@@ -83,6 +83,9 @@ const StayHereQuietly = ({
         onProgress={onProgress}
         />
 
+        <div className={styles.overlayLeft}></div>
+        <div className={styles.overlayRight}></div>
+
         {soundUrl && (
           <audio src={soundUrl} ref={audioRef} />
         )}
