@@ -5,7 +5,8 @@ import Dropdown from 'react-dropdown';
 import Layout from '../../components/layout';
 // import StayHereQuietly from '../../components/StayHereQuietly/StayHereQuietly'
 import axios from '../../lib/axios'
-import PAGES from '../../constants/routes'
+import PAGES from '../../constants/routes';
+import { TwitterShareButton, FacebookShareButton } from "react-share";
 
 import styles from './index.module.scss';
 
@@ -25,7 +26,7 @@ const TYPES = {
     className: 'postACandle'
   }
 }
-const CandleIcon = ({ type: {title, className, url}}) => {
+const CandleIcon = ({ type: {title, className, url }}) => {
   
   return (
     <Link
@@ -48,14 +49,35 @@ const CandleIcon = ({ type: {title, className, url}}) => {
  * @param {*} param 
  */
 const LightACandle = () => {
+  const URL = window.location.href;
   const [showSection, setSection] = useState('');
+  let [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenClose = () => {
+    setIsOpen(true);
+  };
 
   return (
     <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
       <div className={styles.container} >
         <CandleIcon type={TYPES.SEND_A_PRAYER} />
         <CandleIcon type={TYPES.MEDITATE} />
-        <CandleIcon type={TYPES.POST_CANDLE} />
+
+        <div className={`${styles.candleLink} ${styles.postACandle}`} onClick={handleOpenClose}>
+          <div className={styles.icon} />
+          <div className={styles.title} >Post a candle</div>
+          {isOpen && (
+            <label>
+              <TwitterShareButton url={URL} title="Send your candle.">
+                <img src="/icon-twitter.svg" width="32px"></img>
+              </TwitterShareButton>
+
+              <FacebookShareButton url={URL} quote={"Send your candle."}>
+                <img src="/icon-facebook.svg" width="32px"></img>
+              </FacebookShareButton>
+            </label>
+          )}
+        </div>
       </div>
     </Layout>
   );
