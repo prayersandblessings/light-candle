@@ -29,9 +29,11 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       if (isPlaying) {
         audioRef.current.pause();
         setisPlaying(false);
+        setcnControlIcon(styles.audioPlay);
       } else {
         audioRef.current.play();
         setisPlaying(true);
+        setcnControlIcon(styles.audioPause);
       }
     };
   

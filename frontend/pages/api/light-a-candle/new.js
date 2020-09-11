@@ -90,20 +90,20 @@ async function main({senderName, receipentName, receipentEmail, message }) {
     subject: `${senderName} has sent you a prayer 🕯️`, // Subject line
     html: `
       <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
-        <div style="max-width: 620px; background-color: #FFFFFF; margin: 0 auto; padding: 1rem; text-align: center;">
-          <p style="margin-left: 32px; margin-top: 40px; font-size: 1.25rem; color: #181f40; text-align: left;">Dear ${receipentName}, </p>
-          <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #181f40; text-align: left;">${senderName} has lit a candle for you:</p>
+        <div style="max-width: 620px; background-color: #28292a;; margin: 0 auto; padding: 1rem; text-align: center;">
+          <p style="margin-left: 32px; margin-top: 40px; font-size: 1.25rem; color: #d0d5ed; text-align: left;">Dear ${receipentName}, </p>
+          <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #d0d5ed; text-align: left;">${senderName} has lit a candle for you:</p>
           <img src='${urlNEXT}/candle-email.gif' >
-          <p style="font-size: 1.25rem;  color: #181f40; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
+          <p style="font-size: 1.25rem;  color: #d0d5ed; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
             "${message}"
           </p>
-          <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #181f40; margin-bottom: 2rem; font-style: italic;">
+          <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #d0d5ed; margin-bottom: 2rem; font-style: italic;">
             - ${senderName}
           </p>
           <div style="text-align: center;">
-            <a style="background: #181f40;
+            <a style="background: #d0d5ed;
               text-decoration:none;
-              color:white;
+              color: #181f40;
               text-align: center;
               border-radius: 24px;
               padding: 10px 32px;
@@ -116,7 +116,7 @@ async function main({senderName, receipentName, receipentEmail, message }) {
               Visit Prayers & Blessings
             </a>
           </div>
-          <p style="text-align: center; margin-bottom: 60px; color: #181f40;">
+          <p style="text-align: center; margin-bottom: 60px; color: #d0d5ed;">
             Copyright © 2020 Prayers & Blessings, All rights reserved.
           </p>
         </div>

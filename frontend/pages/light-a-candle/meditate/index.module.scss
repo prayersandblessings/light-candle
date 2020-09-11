@@ -56,17 +56,33 @@
 }
 
 .audioPause {
-    width: 44px;
+    width: 16px;
     height: 28px;
     cursor: pointer;
     border: 0;
     text-indent: -9999px;
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     background: {
-        image: url('/icon-play-pause.png');
+        image: url('/icon-pause.svg');
         color: transparent;
         size: 100%;
+    }
+}
+
+.audioPlay {
+    border: 0;
+    color: red;
+    cursor: pointer;
+    height: 28px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    text-indent: -9999px;
+    width: 16px;
+    background: {
+        image: url('/icon-play.svg');
+        color: transparent;
+        size: 100% 100%;
     }
 }
 
