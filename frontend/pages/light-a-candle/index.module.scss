@@ -84,6 +84,26 @@
     }
 }
 
+.shareTwitter {
+    width: 32px;
+    height: 32px;
+    background: url('/icon-twitter.svg');
+
+    &:hover {
+        background: url('/icon-twitter-hover.svg');
+    }
+}
+
+.shareFacebook {
+    width: 32px;
+    height: 32px;
+    background: url('/icon-facebook.svg');
+
+    &:hover {
+        background: url('/icon-facebook-hover.svg');
+    }
+}
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }

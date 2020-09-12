@@ -69,11 +69,11 @@ const LightACandle = () => {
           {isOpen && (
             <label>
               <TwitterShareButton url={URL} title="Send your candle.">
-                <img src="/icon-twitter.svg" width="32px"></img>
+                <div className={styles.shareTwitter}></div>
               </TwitterShareButton>
 
               <FacebookShareButton url={URL} quote={"Send your candle."}>
-                <img src="/icon-facebook.svg" width="32px"></img>
+              <div className={styles.shareFacebook}></div>
               </FacebookShareButton>
             </label>
           )}
