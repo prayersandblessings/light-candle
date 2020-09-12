@@ -33,7 +33,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       } else {
         audioRef.current.play();
         setisPlaying(true);
-        setcnControlIcon(styles.audioPause);
+        setcnControlIcon(styles.audioPlay);
       }
     };
   
