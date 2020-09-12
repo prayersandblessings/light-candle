@@ -32,7 +32,7 @@ const SendAPrayer = () => {
       return;
     }
 
-    axios.post('/api/light-a-candle/new', {senderName, senderEmail, receipentName, receipentEmail, message}).then( (result) => {
+    axios.post('/api/send-email', {senderName, senderEmail, name: receipentName, email: receipentEmail, message}).then( (result) => {
       //alert('Sent');
       console.log(result);
       setSection(SECTIONS.STEP2);

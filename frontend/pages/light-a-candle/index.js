@@ -49,12 +49,17 @@ const CandleIcon = ({ type: {title, className, url }}) => {
  * @param {*} param 
  */
 const LightACandle = () => {
-  const URL = window.location.href;
+  let URL = '';
+
+  if (global.window) {
+    URL = window.location.href;
+  }
+
   const [showSection, setSection] = useState('');
   let [isOpen, setIsOpen] = useState(false);
 
   const handleOpenClose = () => {
-    setIsOpen(true);
+    setIsOpen( !isOpen );
   };
 
   return (
