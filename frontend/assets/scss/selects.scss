@@ -41,11 +41,13 @@ select {
 }
 
 .menuDropDown {
-    background-color: rgba(0,0,0, 0.8);
+    background-color: rgba(#080A22, 0.9);
     border-radius: 0px 0px 4px 4px;
     font-family: $text-font;
     z-index: 10;
-    min-width: 326px;
+    min-width: 240px;
+    position: absolute;
+    width: 100%;
 
     .Dropdown-option {
         padding: 20px 24px;
