@@ -155,13 +155,16 @@
 
     &:after {
         content:'';
-        width: 20px;
-        height: 20px;
-        background-color: yellow;
+        width: 18px;
+        height: 18px;
+        background: url('/icon-heart.svg');
+        background-repeat: no-repeat;
         display: inline-block;
+        margin-left: .5rem;
+        margin-top: .2rem;
     }
     &:hover:after {
-        background-color: greenyellow;
+        background-image: url('/icon-heart.svg');
     }
 }
 
