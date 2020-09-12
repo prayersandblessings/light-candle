@@ -65,9 +65,9 @@ const Meditate = () => {
         firstFrame={
           <>
             <span className={"caption"}>
-              Touch the candle
+              Touch to light your candle
             </span>
-            <h2 className={"title"}>To send your prayer</h2>
+            <h2 className={"title"}>And meditate</h2>
           </>
         }
         secondFrame={
