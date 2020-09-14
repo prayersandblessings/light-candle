@@ -172,11 +172,14 @@
 }
 
 .StayHereQuietly {
+    width: 100%;
+    position: fixed;
+    /*
     position: absolute;
     bottom: 0;
     animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;
-    color: white;
+    color: white;*/
 
     span, h2 {
         color: white;
