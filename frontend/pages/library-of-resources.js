@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Layout from '../components/layout'
 import useScrollPosition from '../components/CustomHooks/useScrollPosition'
-import SubscribeComponent from '../components/subscribe'
+import SubscribeComponent from '../components/Subscribe'
 import axios from '../lib/axios'
 import styles from './library-of-resources.module.scss'
 

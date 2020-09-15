@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../../components/layout'
 import styles from './index.module.scss'
 import PAGES from '../../constants/routes';
-import SubscribeComponent from '../../components/subscribe'
+import SubscribeComponent from '../../components/Subscribe'
 
 
 
