@@ -37,4 +37,3 @@ const sendEmail = async ({ name, email }) => {
 }
 
 export { sendEmail };
-© 2020 GitHub, Inc.
