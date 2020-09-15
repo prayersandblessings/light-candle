@@ -67,21 +67,22 @@ const StayHereQuietly = ({
 
     return (
     <div className={`${styles.container} ${className}`}> 
+
       <ReactPlayer 
         ref={secondVideoRef}
         className={styles.video}
         url={videoURL}
         playing={playing}
         config={{
-          vimeo: {
+            vimeo: {
             playerOptions:{
-              loop: true,
-              playsinline: false
+                loop: true,
+                playsinline: false
             }
-          }
+            }
         }}
         onProgress={onProgress}
-        />
+      />
 
         <div className={styles.overlayLeft}></div>
         <div className={styles.overlayRight}></div>
