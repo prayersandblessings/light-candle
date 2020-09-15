@@ -22,6 +22,8 @@
     left: 0;
     width: 100%;
     height: 100%;
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
 
     iframe {
       height: 56.25vw;
@@ -71,9 +73,11 @@
 
 .hidden {
   display: none;
+  animation: fadeOut ease 4s;
+  -webkit-animation: fadeOut ease 4s;
 }
 .shown {
-  display: 0;
+  display: block;
 }
 
 .showing {
