@@ -14,10 +14,6 @@ const SECTIONS = {
   STEP2: 'LIGHT_CANDLE_VIDEO',
 }
 
-const getMailChimp = (params) => {
-  !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/dfce319091d7722bb7f1f4d7d/fb5a3b22b4259d278e20dbbc6.js")
-}
-
 const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
 /**
  * Main Component
@@ -26,15 +22,20 @@ const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
 const SendAPrayer = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
 
-  const handlePrayerWritten = (senderName, senderEmail, receipentName, receipentEmail, message) => {
+  const handlePrayerWritten = ({senderName, senderEmail, receipentName, receipentEmail, message, regularMailingAccepted}) => {
     if(!senderName || !senderEmail || !receipentName || !receipentEmail || !message ) {
       alert('An error has ocurred, files are missing');
       return;
     }
 
-    axios.post('/api/send-email', {senderName, senderEmail, name: receipentName, email: receipentEmail, message}).then( (result) => {
-      //alert('Sent');
-      console.log(result);
+    axios.post('/api/send-email', {
+      regularMailingAccepted,
+      senderName,
+      senderEmail,
+      name: receipentName,
+      email: receipentEmail,
+      message
+    }).then( (result) => {
       setSection(SECTIONS.STEP2);
     }).catch(error => {
       alert('An error has ocurred');

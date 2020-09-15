@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
 
-const SENDGRID_API = process.env.SENDGRID_API;
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+const { SENDGRID_API, SENDGRID_API_KEY, PRAYERS_EMAIL } = process.env;
 
-const sendEmail = async ({ name, email }) => {
+const sendEmail = async (body) => {
+    const { subject, email, emailContent } = body;
     const result = await fetch(SENDGRID_API, {
         method: 'POST',
         headers: {
@@ -18,22 +18,22 @@ const sendEmail = async ({ name, email }) => {
                   email
                 }
               ],
-              subject: 'Demo success :)'
+              subject: subject
             }
           ],
           from: {
-            email: 'noreply@demo.com',
-            name: 'Test SendGrid'
+            email: PRAYERS_EMAIL,
+            name: 'Prayers and blessings'
           },
           content: [
             {
               type: 'text/html',
-              value: `Congratulations <b>${name}</b>, you just sent an email with sendGrid`
+              value: emailContent
             }
           ]
         })
     });
-    console.log(result);
+    return result;
 }
 
 export { sendEmail };

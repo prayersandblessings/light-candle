@@ -23,8 +23,7 @@ const ContactForm = ({ onSubmitForm }) => {
         const { current : { value: name = '' }} = inputName;
         const { current : { value: email = '' }} = inputEmail;
         const { current : { value: message = '' }} = inputMessage;
-        console.log(email, name, message);
-        onSubmitForm();
+        onSubmitForm({name, email, message});
     }
     return (
       <form onSubmit={onHandleSubmit} className={styles.contactForm}>

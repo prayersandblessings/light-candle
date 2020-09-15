@@ -21,6 +21,58 @@ const getErrorResponse = (res,message) => {
   });
 }
 
+export const subscribeUser = async ({
+  data,
+  blessingDayAccepted = false,
+  regularMailingAccepted = false,
+  email,
+  res,
+  }
+) => {
+  try {
+    const subscriberHash = md5(email.toLowerCase());
+    let response = await mailchimp.lists.setListMember(
+      MAILCHIMP_LIST_ID,
+      subscriberHash,
+      data
+    );
+
+    const body = { tags: [] };
+
+    if (blessingDayAccepted) {
+      body.tags.push({
+        name: "BlessingADay",
+        status: "active",
+      });
+    }
+
+    if (regularMailingAccepted) {
+      body.tags.push({
+        name: "RegularMailingList",
+        status: "active",
+      });
+    }
+
+    response = await mailchimp.lists.updateListMemberTags(
+      MAILCHIMP_LIST_ID,
+      subscriberHash,
+      {
+        body,
+      }
+    );
+
+    return res.status(200).json({ sent: true, response });
+  } catch (e) {
+    if (e.status === 404) {
+      const message = "This email is not subscribed to this list";
+      console.error(message, e);
+      return getErrorResponse(res, message);
+    }
+    console.error(e);
+    return getErrorResponse(res, "Unnespected error");
+  }
+}
+
 export default async (req, res) => {
   if (req.method === "POST") {
     const { email, name, surname, blessingDayAccepted, regularMailingAccepted } = req.body;
@@ -37,51 +89,8 @@ export default async (req, res) => {
       },
       status_if_new: "subscribed",
     };
-    let response = {};
-    try {
-      const subscriberHash = md5(email.toLowerCase());
-      response = await mailchimp.lists.setListMember(
-        MAILCHIMP_LIST_ID,
-        subscriberHash,
-        data
-      );
 
-      const body = {tags: []};
-
-      if(blessingDayAccepted) {
-        body.tags.push({
-          name: "BlessingADay",
-          status: "active",
-        })
-      }
-
-      if(regularMailingAccepted) {
-        body.tags.push({
-          name: "RegularMailingList",
-          status: "active",
-        })
-      }
-
-      response = await mailchimp.lists.updateListMemberTags(
-        MAILCHIMP_LIST_ID,
-        subscriberHash,
-        {
-          body
-        });
-
-      response = await mailchimp.lists.getListMemberTags(MAILCHIMP_LIST_ID, subscriberHash);
-
-  
-      return res.status(200).json({ sent: true, response });
-    } catch (e) {
-      if (e.status === 404) {
-        const message = 'This email is not subscribed to this list';
-        console.error(message, e);
-        return getErrorResponse(res, message);
-      }
-
-      return getErrorResponse(res, 'Unnespected error');
-    }
+    return subscribeUser({data, blessingDayAccepted, regularMailingAccepted, email, res});
   }
 
   return getErrorResponse(res, 'The requested endpoint was not found or doesn\'t support this method.');

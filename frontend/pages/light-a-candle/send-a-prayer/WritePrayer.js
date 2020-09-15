@@ -20,7 +20,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
     const inputReceipentName = useRef(null);
     const inputReceipentEmail = useRef(null);
     const inputMessage = useRef(null);
-    const [regularMailingAccepted, setRegularMailingAccepted] = useState(false);
+    const [regularMailingAccepted, setRegularMailingAccepted] = useState(true);
 
     const handleRegularMailingAccepted = (value) => {
       setRegularMailingAccepted(value)
@@ -33,7 +33,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
       const { current : { value: receipentName = '' }} = inputReceipentName;
       const { current : { value: receipentEmail = '' }} = inputReceipentEmail;
       const { current : { value: message = '' }} = inputMessage;
-      onPrayerWritten(senderName, senderEmail, receipentName, receipentEmail, message);
+      onPrayerWritten({senderName, senderEmail, receipentName, receipentEmail, message, regularMailingAccepted});
     }
 
     return (
