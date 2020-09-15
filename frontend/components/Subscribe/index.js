@@ -1,8 +1,9 @@
 
 import React, {useState, useRef} from 'react'
-import styles from './subscribe.module.scss'
-import Checkbox from '../components/form/Checkbox'
-import PAGES from '../constants/routes'
+import axios from '../../lib/axios'
+import styles from './index.module.scss'
+import Checkbox from '../form/Checkbox'
+import PAGES from '../../constants/routes'
 import Link from 'next/link'
 
 const SECTIONS = {
@@ -10,11 +11,14 @@ const SECTIONS = {
   STEP2: 'SUBMITED',
 }
 
-const SubscribeComponent = ({onSubscribe}) => {
+const SubscribeComponent = ({onSubscribe= ()=>{}, blessingDayProp = false, regularMailingProp = false}) => {
+  const inputName = useRef(null);
+  const inputEmail = useRef(null);
+  const inputSurname = useRef(null);
+  const [blessingDayAccepted, setBlessingDayAccepted] = useState(blessingDayProp)
+  const [regularMailingAccepted, setRegularMailingAccepted] = useState(regularMailingProp)
+  const [showSection, setSection] = useState(SECTIONS.STEP1);
 
-  const [blessingDayAccepted, setBlessingDayAccepted] = useState(false)
-  const [regularMailingAccepted, setRegularMailingAccepted] = useState(false)
-  
   const handleBlessingDayAccepted = (value) => {
     setBlessingDayAccepted(value)
   }
@@ -23,24 +27,18 @@ const SubscribeComponent = ({onSubscribe}) => {
     setRegularMailingAccepted(value)
   }
 
-  const inputName = useRef(null);
-  const inputEmail = useRef(null);
-  const inputSurname = useRef(null);
-
-  const [showSection, setSection] = useState(SECTIONS.STEP1);
-
-  const handleSumbitForm = () => {
-    setSection(SECTIONS.STEP2);
-    onSubscribe();
-  }
-
   const onHandleSubmit = (event) => {
     event.preventDefault();
     const { current : { value: name = '' }} = inputName;
     const { current : { value: surname = '' }} = inputSurname;
     const { current : { value: email = '' }} = inputEmail;
-    console.log( name, surname, email);
-    handleSumbitForm();
+    axios.post('/api/subscribe', {name, surname, email, regularMailingAccepted, blessingDayAccepted}).then( (result) => {
+      setSection(SECTIONS.STEP2);
+      onSubscribe(true);
+    }).catch(error => {
+      setSection(SECTIONS.STEP2);
+      onSubscribe(false);
+    })
   }
 
   return (
@@ -52,6 +50,7 @@ const SubscribeComponent = ({onSubscribe}) => {
             placeholder="Your Name"
             name="Name"
             className="secondary"
+            required
             ref={inputName}
           />
           <input
@@ -59,6 +58,7 @@ const SubscribeComponent = ({onSubscribe}) => {
             placeholder="Your Surname"
             surname="Surname"
             className="secondary"
+            required
             ref={inputSurname}
           />
           <input
@@ -66,20 +66,24 @@ const SubscribeComponent = ({onSubscribe}) => {
             placeholder="Your Email"
             email="Email"
             className="secondary"
+            required
             ref={inputEmail}
           />
           <div>
             <Checkbox
               id="subscribe-blessing-day"
               label={ 'Subscribe me to A Blessing a Day'}
-              checked = { blessingDayAccepted }
+              checked = { blessingDayAccepted }              
               onClick = { handleBlessingDayAccepted }
+              required = { blessingDayProp === true }
             />
+
             <Checkbox
               id="regular-mailing"
               label={ 'Subscribe me to the regular mailing list'}
               checked = { regularMailingAccepted }
               onClick = { handleRegularMailingAccepted }
+              required = { regularMailingProp === true }
             />
           </div>
           <button type="submit" className="next-button" >

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './index.module.scss';
 import ReactPlayer  from 'react-player';
-import Router from 'next/router'
+import Router from 'next/router';
             
 import {
   TwitterShareButton,
@@ -56,9 +56,7 @@ const StayHereQuietly = ({
     }
 
     const onProgress = ({ playedSeconds }) => {
-      console.log(playedSeconds);
       if(playedSeconds >= MILI_SECONDS_BEFORE_GO_TO_HOME/1000){
-        console.log('Reloading');
         Router.push('/light-a-candle')
       }
     }

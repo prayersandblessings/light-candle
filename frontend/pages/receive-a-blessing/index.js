@@ -24,7 +24,7 @@ const ReceiveABlessing = () => {
             <p>Subscribe to receive a daily blessing in the form of an inspiring word to contemplate represented by an uplifting visual image. You can contemplate the blessing throughout the day or share it with whoever you wish.</p>
           </>
         )}
-        <SubscribeComponent onSubscribe={handleSubscribe}/>
+        <SubscribeComponent blessingDayProp={true} onSubscribe={handleSubscribe}/>
         { !showTitle && (
           <>
             <p>Your first blessing will arrive to your inbox shortly.</p>
