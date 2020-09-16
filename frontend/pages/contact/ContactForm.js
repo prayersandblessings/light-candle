@@ -58,6 +58,7 @@ const ContactForm = ({ onSubmitForm }) => {
               id="privacy-checkbox"
               checked={privacyAccepted}
               onClick={handleAcceptPrivacyPolicy}
+              required
               label={
                 <>
                   {CONTACT_FORM_TEXT.READ_AND_UNDERSTOOD}

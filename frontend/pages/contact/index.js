@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 import { SECONDARY_PAGES } from '../../constants/routes'
 import PAGES from '../../constants/routes'
 import Link from 'next/link'
+import axios from '../../lib/axios'
 
 const SECTIONS = {
   STEP1: 'FORM',
@@ -14,8 +15,17 @@ const SECTIONS = {
 const Contact = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
 
-  const handleSumbitForm = () => {
-    setSection(SECTIONS.STEP2);
+  const handleSumbitForm = ({name, email, message}) => {
+
+    axios.post('/api/contact', {
+      name,
+      email,
+      message
+    }).then( (result) => {
+      setSection(SECTIONS.STEP2);
+    }).catch(error => {
+      alert('An error has ocurred');
+    })
   }
 
   return (
