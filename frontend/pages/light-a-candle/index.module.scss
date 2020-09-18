@@ -87,20 +87,20 @@
 .shareTwitter {
     width: 32px;
     height: 32px;
-    background: url('/icon-twitter.svg');
+    background: url('/icon-twitter-hover.svg');
 
     &:hover {
-        background: url('/icon-twitter-hover.svg');
+        background: url('/icon-twitter.svg');
     }
 }
 
 .shareFacebook {
     width: 32px;
     height: 32px;
-    background: url('/icon-facebook.svg');
+    background: url('/icon-facebook-hover.svg');
 
     &:hover {
-        background: url('/icon-facebook-hover.svg');
+        background: url('/icon-facebook.svg');
     }
 }
 
