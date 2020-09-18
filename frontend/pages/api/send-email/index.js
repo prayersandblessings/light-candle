@@ -10,19 +10,19 @@ export default async (req, res) => {
         const emailContent = `
             <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
             <div style="max-width: 620px; margin: 0 auto; padding: 1rem; text-align: center; background-color: #2a1928;">
-                <p style="margin-left: 32px; margin-top: 40px; font-size: 1.5rem; color: #d0d5ed; text-align: left; font-weight: bold;">Dear ${name}, </p>
-                <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #d0d5ed; text-align: left;">${senderName} has lit a candle for you:</p>
+                <p style="margin-left: 32px; margin-top: 40px; font-size: 1.5rem; color: #ffffff; text-align: left; font-weight: bold;">Dear ${name}, </p>
+                <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #ffffff; text-align: left;">${senderName} has lit a candle for you:</p>
                 <img src='${urlNEXT}/candle-email.gif' >
-                <p style="font-size: 1.25rem;  color: #d0d5ed; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
+                <p style="font-size: 1.25rem;  color: #ffffff; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
                 "${message}"
                 </p>
-                <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #d0d5ed; margin-bottom: 2rem; font-style: italic;">
+                <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #ffffff; margin-bottom: 2rem; font-style: italic;">
                 - ${senderName}
                 </p>
                 <div style="text-align: center;">
-                <a style="background: #d0d5ed;
+                <a style="border: 1px solid #ffffff;
                     text-decoration:none;
-                    color: #181f40;
+                    color: #ffffff;
                     text-align: center;
                     border-radius: 24px;
                     padding: 10px 32px;
@@ -35,7 +35,7 @@ export default async (req, res) => {
                     Visit Prayers & Blessings
                 </a>
                 </div>
-                <p style="text-align: center; margin-bottom: 60px; color: #d0d5ed;">
+                <p style="text-align: center; margin-bottom: 60px; color: #ffffff;">
                 Copyright © 2020 Prayers & Blessings, All rights reserved.
                 </p>
             </div>
