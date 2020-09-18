@@ -20,15 +20,15 @@ const Layout = ({ children, classNameSection = 'default' }) => {
   return (
     <>
       <Head>
-        <title>Prayers and blessings</title>
+        <title>Prayers & Blessings</title>
         <meta charSet="utf-8" />
-        <meta name="description" content="The ritual of lighting a candle is ancient and sacred. When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
-        <meta property="og:title" content="Prayers and blessings"/>
-        <meta property="og:description" content="The ritual of lighting a candle is ancient and sacred. When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
-        <meta property="og:image" content="https://images.unsplash.com/photo-1528351655744-27cc30462816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
-        <meta property="twitter:title" content="Prayers and blessings"/>
-        <meta property="twitter:description" content="The ritual of lighting a candle is ancient and sacred. When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
-        <meta property="twitter:image" content="https://images.unsplash.com/photo-1528351655744-27cc30462816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
+        <meta name="description" content="When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
+        <meta property="og:title" content="Prayers & Blessings"/>
+        <meta property="og:description" content="When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
+        <meta property="og:image" content="/social-candle.jpg"/>
+        <meta property="twitter:title" content="Prayers & Blessings"/>
+        <meta property="twitter:description" content="When we light a candle, we can connect with the light in our own heart. This ritual is a prayer in itself."/>
+        <meta property="twitter:image" content="/social-candle.jpg"/>
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <TopNav />
