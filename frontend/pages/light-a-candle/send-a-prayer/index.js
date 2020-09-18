@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import Layout from '../../../components/layout';
+import Spinner from '../../../components/Spinner'
 import StayHereQuietly from '../../../components/StayHereQuietly';
 
 import PAGES from '../../../constants/routes'
 import axios from '../../../lib/axios'
+
 
 import styles from './index.module.scss';
 import WritePrayer from './WritePrayer';
@@ -20,6 +22,7 @@ const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
  * @param {*} param 
  */
 const SendAPrayer = () => {
+  const [showSpinner, setShowSpinner] = useState(false);
   const [showSection, setSection] = useState(SECTIONS.STEP1);
 
   const handlePrayerWritten = ({senderName, senderEmail, receipentName, receipentEmail, message, regularMailingAccepted}) => {
@@ -27,6 +30,7 @@ const SendAPrayer = () => {
       alert('An error has ocurred, files are missing');
       return;
     }
+    setShowSpinner(true);
 
     axios.post('/api/send-email', {
       regularMailingAccepted,
@@ -36,8 +40,10 @@ const SendAPrayer = () => {
       email: receipentEmail,
       message
     }).then( (result) => {
+      setShowSpinner(false);
       setSection(SECTIONS.STEP2);
     }).catch(error => {
+      setShowSpinner(false);
       alert('An error has ocurred');
     })
   }
@@ -69,6 +75,8 @@ const SendAPrayer = () => {
       {showSection === SECTIONS.STEP1 && (
         <WritePrayer onPrayerWritten={handlePrayerWritten} />
       )}
+
+      {showSpinner && <Spinner />}
     </Layout>
   );
 };

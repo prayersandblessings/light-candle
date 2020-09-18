@@ -4,7 +4,6 @@ import Dropdown from 'react-dropdown';
 
 import Layout from '../../components/layout';
 // import StayHereQuietly from '../../components/StayHereQuietly/StayHereQuietly'
-import axios from '../../lib/axios'
 import PAGES from '../../constants/routes';
 import { TwitterShareButton, FacebookShareButton } from "react-share";
 

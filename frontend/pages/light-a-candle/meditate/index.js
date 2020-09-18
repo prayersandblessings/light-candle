@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Layout from '../../../components/layout';
 import PAGES from '../../../constants/routes'
 import SelectSound from './SelectSound';
-// import axios from '../../../lib/axios'
 import StayHereQuietly from '../../../components/StayHereQuietly';
 
 import styles from './index.module.scss';

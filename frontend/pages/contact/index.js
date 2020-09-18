@@ -6,6 +6,7 @@ import { SECONDARY_PAGES } from '../../constants/routes'
 import PAGES from '../../constants/routes'
 import Link from 'next/link'
 import axios from '../../lib/axios'
+import Spinner from '../../components/Spinner'
 
 const SECTIONS = {
   STEP1: 'FORM',
@@ -14,16 +15,22 @@ const SECTIONS = {
 
 const Contact = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const handleSumbitForm = ({name, email, message}) => {
+    setShowSpinner(true);
 
     axios.post('/api/contact', {
       name,
       email,
       message
     }).then( (result) => {
+      setShowSpinner(false)
+
       setSection(SECTIONS.STEP2);
     }).catch(error => {
+      setShowSpinner(false)
+
       alert('An error has ocurred');
     })
   }
@@ -48,6 +55,8 @@ const Contact = () => {
           </div>
         )}
       </div>
+
+      {showSpinner && <Spinner />}
     </Layout>
   );
 }

@@ -4,6 +4,7 @@ import axios from '../../lib/axios'
 import styles from './index.module.scss'
 import Checkbox from '../form/Checkbox'
 import PAGES from '../../constants/routes'
+import Spinner from '../Spinner'
 import Link from 'next/link'
 
 const SECTIONS = {
@@ -18,6 +19,8 @@ const SubscribeComponent = ({onSubscribe= ()=>{}, blessingDayProp = false, regul
   const [blessingDayAccepted, setBlessingDayAccepted] = useState(blessingDayProp)
   const [regularMailingAccepted, setRegularMailingAccepted] = useState(regularMailingProp)
   const [showSection, setSection] = useState(SECTIONS.STEP1);
+  const [showSpinner, setShowSpinner] = useState(false);
+
 
   const handleBlessingDayAccepted = (value) => {
     setBlessingDayAccepted(value)
@@ -32,17 +35,22 @@ const SubscribeComponent = ({onSubscribe= ()=>{}, blessingDayProp = false, regul
     const { current : { value: name = '' }} = inputName;
     const { current : { value: surname = '' }} = inputSurname;
     const { current : { value: email = '' }} = inputEmail;
+    
+    setShowSpinner(true);
     axios.post('/api/subscribe', {name, surname, email, regularMailingAccepted, blessingDayAccepted}).then( (result) => {
       setSection(SECTIONS.STEP2);
       onSubscribe(true);
+      setShowSpinner(false)
     }).catch(error => {
       setSection(SECTIONS.STEP2);
       onSubscribe(false);
+      setShowSpinner(false)
     })
   }
 
   return (
     <div className={styles.subscribeComponent}>
+      {showSpinner && <Spinner />}
       {showSection === SECTIONS.STEP1 && (
         <form onSubmit={onHandleSubmit}>
           <input
