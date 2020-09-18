@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../../../components/layout';
 import PAGES from '../../../constants/routes'
 import SelectSound from './SelectSound';
-import axios from '../../../lib/axios'
+// import axios from '../../../lib/axios'
 import StayHereQuietly from '../../../components/StayHereQuietly';
 
 import styles from './index.module.scss';
@@ -14,6 +14,26 @@ const SECTIONS = {
   STEP2: 'MEDITATE',
 }
 
+const sounds = [
+  {
+      value: 'flute',
+      label: 'Flute' ,
+      enabled: true,
+      sound: {
+        url: '/sound-flute.mp3'
+      }
+    },
+    {
+      value: 'piano',
+      label: 'Piano' ,
+      enabled: true,
+      sound: {
+        url: '/sound-piano.mp3'
+      }
+    },
+    { value: 'silence', label: "Silence" },
+];
+
 const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
 
 /**
@@ -22,8 +42,7 @@ const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
  */
 const Meditate = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
-  const [soundsList, setSounds] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [soundsList, setSounds] = useState(sounds);
   const [urlSoundSelected, seturlSoundSelected] = useState('')
 
   const handleSoundSelected = (sound) => {
@@ -35,19 +54,19 @@ const Meditate = () => {
   }
 
 
-  useEffect(()=>{
+  // useEffect(()=>{
     
-    axios.get('/api/light-a-candle').then( ({ data : {
-      sounds
-    } }) => {
-      setloading(false);
-      setSounds(sounds);
-    }).catch(error => {
-      alert('An error has ocurred');
-      setSounds([]);
-      setloading(false);
-    })
-  },[]);
+  //   axios.get('/api/light-a-candle').then( ({ data : {
+  //     sounds
+  //   } }) => {
+  //     setloading(false);
+  //     setSounds(sounds);
+  //   }).catch(error => {
+  //     alert('An error has ocurred');
+  //     setSounds([]);
+  //     setloading(false);
+  //   })
+  // },[]);
 
   const openNewWidow = () => {
     const miniCandle = window.open('', '_blank', 'width=280,height=498,scrollbars=yes,resizable=yes');
@@ -64,9 +83,7 @@ const Meditate = () => {
         videoURL={URL_VIDEO_SILENCE}
         firstFrame={
           <>
-            <span className={"caption"}>
-              Touch to light your candle
-            </span>
+            <span className={"caption"}>Touch to light your candle</span>
             <h2 className={"title"}>And meditate</h2>
           </>
         }
@@ -94,23 +111,19 @@ const Meditate = () => {
       />
 
       <Layout classNameSection={PAGES.LIGHT_A_CANDLE.className}>
-
-      <div className={styles.container + " " + styles.prayerContainter}>
-        {showSection === SECTIONS.STEP1 && (
-          <>
-            <span className="caption">Light your candle</span>
-            <h3 className="title">And meditate</h3>
-            <p className="caption">Select the music you wish to listen to</p>
-            {!loading && (
+        <div className={styles.container + " " + styles.prayerContainter}>
+          {showSection === SECTIONS.STEP1 && (
+            <>
+              <span className="caption">Light your candle</span>
+              <h3 className="title">And meditate</h3>
+              <p className="caption">Select the music you wish to listen to</p>
               <SelectSound
                 onSoundSelected={handleSoundSelected}
                 sounds={soundsList}
               />
-            )}
-            {loading && <>Loading</>}
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
       </Layout>
     </>
   );

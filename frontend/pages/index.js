@@ -21,18 +21,17 @@ export const LinkCandle = ({url, name}) => {
 
 const Home = () => {
   return (
-    <>Comming soon</>
-    // <Layout classNameSection={PAGES.HOME.className}>
-    //   <div className={styles.container}>
-    //     <div className={styles.showText}>
-    //       <span className="caption">Offer your</span>
-    //       <h2 className={"title"}>Prayers and Blessings</h2>
-    //     </div>
-    //     <div className={styles.candles}>
-    //       <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
-    //     </div>
-    //   </div>
-    // </Layout>
+    <Layout classNameSection={PAGES.HOME.className}>
+      <div className={styles.container}>
+        <div className={styles.showText}>
+          <span className="caption">Offer your</span>
+          <h2 className={"title"}>Prayers and Blessings</h2>
+        </div>
+        <div className={styles.candles}>
+          <LinkCandle url={PAGES.LIGHT_A_CANDLE.url} name={PAGES.LIGHT_A_CANDLE.name} />
+        </div>
+      </div>
+    </Layout>
   )
 }
 

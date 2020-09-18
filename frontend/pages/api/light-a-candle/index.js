@@ -41,24 +41,7 @@ export default async (req, res)  => {
   //   `,
   //   { variables: { } }
   // )
-  const sounds = [
-    {
-      	id: 'flute',
-        name: 'Flute' ,
-        enabled: true,
-        sound: {
-          url: '/sound-flute.mp3'
-        }
-      },
-      {
-      	id: 'piano',
-        name: 'Piano' ,
-        enabled: true,
-        sound: {
-          url: '/sound-piano.mp3'
-        }
-      }
-  ];
+  
 
 
   res.status(200).json({ languages: [], totalPrayers: [], sounds })

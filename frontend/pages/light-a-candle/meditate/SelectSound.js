@@ -14,7 +14,7 @@ import {
  * @param {Array} sounds list of languages
  */
 const SelectSound = ({ onSoundSelected, sounds = [] })  => {
-    const [selectedValue, setSelectedValue] = useState(0);
+    const [selectedValue, setSelectedValue] = useState('silence');
     const [soundUrl, setSoundUrl] = useState(null);
     const [cnControlIcon, setcnControlIcon] = useState(styles.audioPause);
     const [isPlaying, setisPlaying] = useState(true)
@@ -22,7 +22,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      onSoundSelected(selectedValue.value);
+      onSoundSelected(selectedValue);
     }
 
     const disableAudio = () => {
@@ -40,7 +40,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
     const onSelectChange = (selectedOption) => {
       setSelectedValue(selectedOption)
   
-      const [{sound: {url : soundUrl } = {} } = {}] = sounds.filter( ({id}) => id == selectedOption.value);
+      const [{sound: {url : soundUrl } = {} } = {}] = sounds.filter( ({value}) => value == selectedOption.value);
       if(!soundUrl){
         setSoundUrl(null);
         return;
@@ -49,13 +49,6 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       setSoundUrl(soundUrl);
     }
 
-    const selectOptions = [
-      {value: 0, label:'Silence'}, 
-      ...sounds.map(({id: value, name: label }) => (
-        { value, label }
-      )
-      )
-    ];
     
     const playingLabel = isPlaying ? 'Pause' : 'Play';
 
@@ -64,13 +57,13 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
         <div>
           <div className={styles.dropdownComponent}>
             <Dropdown
-              options={selectOptions}
+              options={sounds}
               onChange={onSelectChange}
-              value={selectedValue}
               controlClassName="controlDropDown"
               menuClassName="menuDropDown"
+              value={selectedValue}
             />
-            <input type="text" className={styles.soundSelected} value={!!selectedValue ? selectedValue : undefined} required />
+            <input type="text" className={styles.soundSelected} value={!!selectedValue ? selectedValue : null} required />
           </div>
 
           <button
