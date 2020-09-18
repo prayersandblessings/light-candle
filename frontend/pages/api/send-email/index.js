@@ -9,7 +9,7 @@ export default async (req, res) => {
 
         const emailContent = `
             <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
-            <div style="max-width: 620px; background-color: #2a1928; margin: 0 auto; padding: 1rem; text-align: center; background-image: '${urlNEXT}/backgrounds/prayer-email.jpg';">
+            <div style="max-width: 620px; margin: 0 auto; padding: 1rem; text-align: center; background-color: #2a1928;">
                 <p style="margin-left: 32px; margin-top: 40px; font-size: 1.5rem; color: #d0d5ed; text-align: left; font-weight: bold;">Dear ${name}, </p>
                 <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #d0d5ed; text-align: left;">${senderName} has lit a candle for you:</p>
                 <img src='${urlNEXT}/candle-email.gif' >
