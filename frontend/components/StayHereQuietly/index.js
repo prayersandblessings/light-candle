@@ -9,11 +9,16 @@ const HIDDING_TITLE_CLASSES = `${styles.secondFrame} ${styles.hidding} ${styles.
 const TITLE_CLASSES_HIDDEN = `${styles.secondFrame} ${styles.prayerSent} ${styles.hidden}`;
 const SHOWING_TIME_MILI_SECONDS = 4000;
 const MINUTES_BEFORE_GO_TO_HOME = process.env.PARAM_MINUTES_BEFORE_GO_HOME;
+const  TYPE_OF_REDIRECT = {
+  TIME: 'Redirect after some seconds',  
+  AFTER_TITLE_HIDDING: 'Redirect after hide the title',
+}
 
 const StayHereQuietly = ({ 
   className,
   firstFrame,
   hideSecondFrame = true,
+  redirectMethod = TYPE_OF_REDIRECT.TIME,
   secondFrame,
   soundUrl,
   videoURL,
@@ -30,6 +35,12 @@ const StayHereQuietly = ({
         setTimeout(() => {
           if(hideSecondFrame) {
             setCnHaveSent(HIDDING_TITLE_CLASSES);
+            if (redirectMethod === TYPE_OF_REDIRECT.AFTER_TITLE_HIDDING) {
+              const redirectionTimeMiliSeconds = 1000;
+              setTimeout(() => {
+                Router.push('/light-a-candle')
+              },redirectionTimeMiliSeconds);
+            }
           }
         }, SHOWING_TIME_MILI_SECONDS * 2.5);
       }
@@ -48,7 +59,7 @@ const StayHereQuietly = ({
     }
 
     const onProgress = ({ playedSeconds }) => {
-      if(playedSeconds >= MINUTES_BEFORE_GO_TO_HOME*60){
+      if ((redirectMethod === TYPE_OF_REDIRECT.TIME) && playedSeconds >= MINUTES_BEFORE_GO_TO_HOME*60 ){
         Router.push('/light-a-candle')
       }
     }
@@ -97,5 +108,6 @@ const StayHereQuietly = ({
       </div>
     );
   };
+  StayHereQuietly.TYPE_OF_REDIRECT = TYPE_OF_REDIRECT;
 
   export default StayHereQuietly

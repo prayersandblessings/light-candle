@@ -54,6 +54,7 @@ const SendAPrayer = () => {
         className={`${styles.StayHereQuietly}  ${
           showSection === SECTIONS.STEP1 ? styles.hidden : ""
         }`}
+        redirectMethod= {StayHereQuietly.TYPE_OF_REDIRECT.AFTER_TITLE_HIDDING}
         videoURL={URL_VIDEO_SILENCE}
         firstFrame={
           <>

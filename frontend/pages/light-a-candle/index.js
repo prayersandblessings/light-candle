@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link'
-import Dropdown from 'react-dropdown';
 
 import Layout from '../../components/layout';
-// import StayHereQuietly from '../../components/StayHereQuietly/StayHereQuietly'
 import PAGES from '../../constants/routes';
 import { TwitterShareButton, FacebookShareButton } from "react-share";
 
