@@ -1,5 +1,13 @@
 @import '../assets/scss/variables.scss';
 
+.menuCloseUp {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
 .openMenuButton {
   background: transparent;
   border: 0;
