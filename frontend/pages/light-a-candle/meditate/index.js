@@ -8,6 +8,7 @@ import SelectSound from './SelectSound';
 import StayHereQuietly from '../../../components/StayHereQuietly';
 
 import styles from './index.module.scss';
+const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
 
 const SECTIONS = {
   STEP1: 'SELECT_SOUND',
@@ -34,39 +35,21 @@ const sounds = [
     { value: 'silence', label: "Silence" },
 ];
 
-const URL_VIDEO_SILENCE = 'https://player.vimeo.com/video/453162488';
-
 /**
  * Main Component
  * @param {*} param 
  */
 const Meditate = () => {
   const [showSection, setSection] = useState(SECTIONS.STEP1);
-  const [soundsList, setSounds] = useState(sounds);
   const [urlSoundSelected, seturlSoundSelected] = useState('')
 
   const handleSoundSelected = (sound) => {
     
-    const {sound: {url : soundUrl } = {} } = soundsList.find(({id}) => id === sound) || {};
+    const {sound: {url : soundUrl } = {} } = sounds.find(({value}) => value === sound.value) || {};
     
     seturlSoundSelected(soundUrl)
     setSection(SECTIONS.STEP2);
   }
-
-
-  // useEffect(()=>{
-    
-  //   axios.get('/api/light-a-candle').then( ({ data : {
-  //     sounds
-  //   } }) => {
-  //     setloading(false);
-  //     setSounds(sounds);
-  //   }).catch(error => {
-  //     alert('An error has ocurred');
-  //     setSounds([]);
-  //     setloading(false);
-  //   })
-  // },[]);
 
   const openNewWidow = () => {
     const miniCandle = window.open('', '_blank', 'width=280,height=498,scrollbars=yes,resizable=yes');
@@ -119,7 +102,7 @@ const Meditate = () => {
               <p className="caption">Select the music you wish to listen to</p>
               <SelectSound
                 onSoundSelected={handleSoundSelected}
-                sounds={soundsList}
+                sounds={sounds}
               />
             </>
           )}

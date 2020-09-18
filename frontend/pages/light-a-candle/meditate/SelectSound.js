@@ -16,7 +16,6 @@ import {
 const SelectSound = ({ onSoundSelected, sounds = [] })  => {
     const [selectedValue, setSelectedValue] = useState('silence');
     const [soundUrl, setSoundUrl] = useState(null);
-    const [cnControlIcon, setcnControlIcon] = useState(styles.audioPause);
     const [isPlaying, setisPlaying] = useState(true)
     const audioRef = useRef();
 
@@ -29,11 +28,9 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       if (isPlaying) {
         audioRef.current.pause();
         setisPlaying(false);
-        setcnControlIcon(styles.audioPlay);
       } else {
         audioRef.current.play();
         setisPlaying(true);
-        setcnControlIcon(styles.audioPlay);
       }
     };
   
@@ -47,6 +44,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       }
 
       setSoundUrl(soundUrl);
+      setisPlaying(true);
     }
 
     
@@ -63,17 +61,14 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
               menuClassName="menuDropDown"
               value={selectedValue}
             />
-            <input type="text" className={styles.soundSelected} value={!!selectedValue ? selectedValue : null} required />
           </div>
 
-          <button
-            className={cnControlIcon}
+          {soundUrl && <button
+            className={isPlaying ? styles.audioPause : styles.audioPlay}
             onClick={disableAudio}
             type="button"
             disabled={!soundUrl}
-          >
-            {playingLabel}
-          </button>
+          />}
 
           {soundUrl && <audio src={soundUrl} ref={audioRef} autoPlay />}
         </div>

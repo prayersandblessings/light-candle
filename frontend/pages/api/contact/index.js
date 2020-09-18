@@ -12,8 +12,6 @@ export default async (req, res) => {
             <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
             <div style="max-width: 620px; background-color: #28292a;; margin: 0 auto; padding: 1rem; text-align: center;">
                 <p style="margin-left: 32px; margin-top: 40px; font-size: 1.25rem; color: #d0d5ed; text-align: left;">A new contact from ${name}, email: ${email} </p>
-                
-        
                 <p style="font-size: 1.25rem;  color: #d0d5ed; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
                 Message: "${message}"
                 </p>

@@ -3,8 +3,6 @@ import Head from 'next/head'
 import Nav from './nav'
 import TopNav from './TopNav'
 import styles from './layout.module.scss'
-import BackgroundVideo from './BackgroundVideo/BackgroundVideo';
-
 
 const Layout = ({ children, classNameSection = 'default' }) => {
   let [isOpen, setIsOpen] = useState(false);
@@ -32,20 +30,11 @@ const Layout = ({ children, classNameSection = 'default' }) => {
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <TopNav />
-      {classNameSection !== "video" && (
-        <>
-          <div className={`${styles.image} ${styles[classNameSection]}`} />
-          <div className={styles.content}>{children}</div>
-        </>
-      )}
+      <>
+        <div className={`${styles.image} ${styles[classNameSection]}`} />
+        <div className={styles.content}>{children}</div>
+      </>
 
-      {classNameSection === "video" && (
-        <>
-          <BackgroundVideo>
-            <div className={styles.content}>{children}</div>
-          </BackgroundVideo>
-        </>
-      )}
       <Nav isOpen={isOpen} handleClose={handleClose} handleOpen={handleOpen} />
     </>
   );
