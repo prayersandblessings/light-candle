@@ -29,6 +29,12 @@ const StayHereQuietly = ({
     const [playing, setPlaying] = useState(false);
     const [onPlayClass, setcnOnPlay] = useState(styles.playVideo);
     const [cnHaveSent, setCnHaveSent] = useState(TITLE_CLASSES_HIDDEN);
+    useEffect(()=>{
+      let vh = window.innerHeight * 0.01;
+      let vw = window.innerWidth * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty('--vw', `${vw}px`);
+    })
 
     useEffect(() => {
       if(cnHaveSent === SHOWING_TITLE_CLASSES) {

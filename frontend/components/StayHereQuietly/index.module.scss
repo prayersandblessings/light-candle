@@ -12,6 +12,7 @@
   100% { opacity: 0; }
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -26,14 +27,25 @@
     -webkit-animation: fadeIn ease 4s;
 
     iframe {
-      height: 56.25vw;
       left: 50%;
+      height: 56.25vw;
       min-height: 100vh;
       min-width: 177.77vh;
       position: absolute;
       top: 50%;
       width: 100vw;
       transform: translate(-50%, -50%);
+      @media screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0) {
+        /*
+          Define here the CSS styles applied only to the Safari 6 and 7 versions when
+          running them in any device (computers, iPhone, iPad, ...)
+         */
+         height: calc(var(--vw, 1vw) * 56.25);
+         min-height: calc(var(--vh, 1vh) * 100);
+         min-width: calc(var(--vh, 1vh) * 177.77);
+         width: calc(var(--vw, 1vw) * 100);
+    }
+
     }
 }
 
