@@ -3,11 +3,6 @@ import React, { useState, useRef } from 'react';
 import styles from './index.module.scss';
 import Dropdown from 'react-dropdown';
 
-import {
-    NEXT_BUTTON_TEXT
-  } from '../../../constants/text';
-
-
 /**
  * Component to select the language
  * @param {callback} onSoundSelected  

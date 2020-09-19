@@ -3,14 +3,15 @@ import React from 'react'
 import Layout from '../../components/layout'
 import LightACandleLink from '../../components/LightACandleLink'
 import PAGES from '../../constants/routes'
-
+import useAutoScrolling from '../../lib/Scrolling'
 import styles from './index.module.scss'
 
 const WhoWeAre = () => {
+  const onWheelContainer = useAutoScrolling();
 
   return (
     <Layout classNameSection={PAGES.A_PRAYER_FOR_HUMANITY.className}>
-        <div className={styles.container}>
+        <div className={styles.container} onWheel={onWheelContainer}>
           <span className={styles.caption + ' caption'}>A PRAYER</span>
           <h2 className={styles.title + ' title'}>For humanity</h2>
           <div className={styles.prayer}>
