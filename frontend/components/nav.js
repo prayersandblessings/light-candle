@@ -22,6 +22,9 @@ const Nav = ({isOpen, handleClose, handleOpen}) => {
             <div className={styles.navContainer}>
               <ul className={styles.navbar}>
                 {ARRAY_PAGES.map((page) => {
+                  if(page.disabled == true) {
+                    return;
+                  }
                   return (
                     <li key={page.url}>
                       <Link as={`${page.url}`} href={page.url}>

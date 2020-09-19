@@ -39,11 +39,12 @@ const PAGES = {
     url: '/receive-a-blessing',
     className: 'receiveAblessing',
   },
-  // A_PRAYER_FOR_HUMANITY: {
-  //   name: 'A prayer for humanity',
-  //   url: '/a-prayer-for-humanity',
-  //   className: 'aPrayerForHumanity',
-  // },
+  A_PRAYER_FOR_HUMANITY: {
+    name: 'A prayer for humanity',
+    url: '/a-prayer-for-humanity',
+    className: 'aPrayerForHumanity',
+    disabled: true
+  },
   WHO_WE_ARE: {
     name: 'Who we are',
     url: '/who-we-are',
