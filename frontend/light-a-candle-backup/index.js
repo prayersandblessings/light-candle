@@ -289,7 +289,7 @@ const LightACandle = () => {
 
   const openNewWidow = () => {
     const miniCandle = window.open('', '_blank', 'width=280,height=498,scrollbars=yes,resizable=yes');
-    miniCandle.document.write('<img src="/little-candle.gif"></img>')
+    miniCandle.document.write('<img src="/candle-email.gif"></img>')
   }
 
   return (
