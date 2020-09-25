@@ -11,7 +11,7 @@ import Dropdown from 'react-dropdown';
 const SelectSound = ({ onSoundSelected, sounds = [] })  => {
     const [selectedValue, setSelectedValue] = useState('silence');
     const [soundUrl, setSoundUrl] = useState(null);
-    const [isPlaying, setisPlaying] = useState(true)
+    const [isPlaying, setisPlaying] = useState(false)
     const audioRef = useRef();
 
     const handleSubmit = (e) => {
@@ -39,11 +39,8 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
       }
 
       setSoundUrl(soundUrl);
-      setisPlaying(true);
+      setisPlaying(false);
     }
-
-    
-    const playingLabel = isPlaying ? 'Pause' : 'Play';
 
     return (
       <form onSubmit={handleSubmit} className={styles.soundForm}>
@@ -65,7 +62,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
             disabled={!soundUrl}
           />}
 
-          {soundUrl && <audio src={soundUrl} ref={audioRef} autoPlay />}
+          {soundUrl && <audio src={soundUrl} ref={audioRef} />}
         </div>
 
         <div>
