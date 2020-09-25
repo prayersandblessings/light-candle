@@ -80,6 +80,7 @@ const StayHereQuietly = ({
     <div className={`${styles.container} ${className}`}> 
        <ReactPlayer 
         className={styles.video}
+        style="z-index: -1;"
         url={videoURL}
         config={{
             vimeo: {
