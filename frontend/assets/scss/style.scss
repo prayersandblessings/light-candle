@@ -31,8 +31,17 @@ body {
   height: 100%;
   padding: 0;
   position: relative;
-  background: black;
+
+  &::after {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    content: url(/backgrounds/default.jpg) url(/backgrounds/our-intention.jpg) url(/backgrounds/light-a-candle.jpg) url(/backgrounds/receive-blessing.jpg) url(/backgrounds/prayer-humanity.jpg) url(/backgrounds/who-we-are.jpg) url(/backgrounds/contact.jpg) url(/backgrounds/privacy.jpg) url(/backgrounds/subscribe.jpg);   // load images
+  }
 }
+
 
 #__next {
   height: 100%;
