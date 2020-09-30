@@ -79,17 +79,8 @@ const StayHereQuietly = ({
     return (
     <div className={`${styles.container} ${className}`}> 
        <ReactPlayer 
-        className={styles.video}
-        style="z-index: -1;"
+        className={styles.video2}
         url={videoURL}
-        config={{
-            vimeo: {
-            playerOptions:{
-                loop: true,
-                playsinline: true
-            }
-            }
-        }}
       />
 
       <ReactPlayer 
