@@ -1,7 +1,7 @@
 import { sendEmail } from '../../../lib/sendEmail';
 import { subscribeUser } from '../subscribe';
 const urlNEXT = process.env.NEXT_PUBLIC_URL;
-const PRAYERS_EMAIL = process.env.PRAYERS_EMAIL;
+const PRAYERS_CONTACT_EMAIL = process.env.PRAYERS_CONTACT_EMAIL;
 
 export default async (req, res) => {
     if(req.method === 'POST') {
@@ -40,7 +40,7 @@ export default async (req, res) => {
         `;
         const result = await sendEmail({ 
             name,
-            email: PRAYERS_EMAIL,
+            email: PRAYERS_CONTACT_EMAIL,
             emailContent,
             subject: `New contact from ${name}`
         });
