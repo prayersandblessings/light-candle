@@ -103,12 +103,6 @@ const WritePrayer = ({ onPrayerWritten })  => {
                   </Link>.
                 </span>
               </p>
-              <p>
-                <span>
-                  We never sell, share, or disclose any personal infomation about
-                  you or the recipient including email address.
-                </span>
-              </p>
               <p className={styles.description}>
                 The ritual of lighting a candle is ancient and sacred. When we light a candle, we can connect with the light in our own heart.
               </p>
