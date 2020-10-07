@@ -19,7 +19,7 @@ export const FORM_TEXT = {
   SEND_A_PRAYER: 'SEND A PRAYER WITH YOUR CANDLE',
   WRITE_NAME: 'Write your name',
   WRITE_EMAIL: 'Write your email address',
-  WRITE_RECEIPENT_NAME: 'Recipient\'s name',
+  WRITE_RECEIPENT_NAME: 'Recipient\'s first name',
   WRITE_RECEIPENT_EMAIL: 'Recipient\'s email address',
   WRITE_PRAYER: 'Write your Prayer'
 }
