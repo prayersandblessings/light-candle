@@ -92,7 +92,7 @@ const WritePrayer = ({ onPrayerWritten })  => {
                 checked={regularMailingAccepted}
                 onClick={handleRegularMailingAccepted}
               />
-              <p>
+              <p className={styles.readPoliciesButton}>
                 <span>
                   Click to read our{" "}
                   <Link
