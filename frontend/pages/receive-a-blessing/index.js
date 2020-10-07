@@ -21,7 +21,7 @@ const ReceiveABlessing = () => {
         <h2 className={styles.title + ' title'}>A blessing</h2>
         { showTitle && (
           <>
-            <p>Subscribe to receive a daily blessing in the form of an inspiring word to contemplate represented by an uplifting visual image. You can contemplate the blessing throughout the day or share it with whoever you wish.</p>
+            <p>Subscribe to receive a daily blessing in the form of an inspiring word to contemplate represented by an uplifting visual image. You can contemplate the blessing throughout the day and share it with whoever you wish.</p>
           </>
         )}
         <SubscribeComponent blessingDayProp={true} onSubscribe={handleSubscribe}/>
