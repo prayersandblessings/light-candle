@@ -13,11 +13,11 @@
         font-size: 1.15rem;
         line-height: 1.75rem;
 
-        span {
+        /*span {
             font-weight: 600;
-        }
+        }*/
     }
-
+    
     h5 {
         font-family: $text-font;
         font-size: 1.15rem;
@@ -29,6 +29,20 @@
 .policies {
     margin-top: 8rem;
     width: 69%;
+
+    a {
+        color: white;
+    }
+
+    ul {
+        font-family: $text-font;
+        list-style: initial;
+
+        li {
+            font-size: 1.15rem;
+            line-height: 1.75rem;
+        }
+    }
 }
 
 @keyframes fadeIn {
