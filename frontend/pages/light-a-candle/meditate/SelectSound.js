@@ -71,7 +71,7 @@ const SelectSound = ({ onSoundSelected, sounds = [] })  => {
             <p>An easy way to do this is to focus on your breath.</p>
             <p>Connect with the silence within.</p>
             <p>Light your candle and sit quietly.</p>
-            <p>Listen to the flute or the soothing sounds of nature.</p>
+            <p>Listen to the soothing sounds of the flute or the piano</p>
             <p>Watch your candle float on the golden sea beneath the Milky Way.</p>
           </section>
           <button type="submit" className={styles.emailIcon}>
