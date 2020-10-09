@@ -24,7 +24,7 @@ const WhoWeAre = () => {
             <p>  Phil lives with wife and two boys in Sydney, Australia. He loves his family, the ocean and being a filmmaker. With a deep interest in spirituality since childhood Phil has travelled the world in pursuit of a deeper understanding of this much loved topic and delights in any opportunity to further his own inner exploration. It’s his wish for people everywhere to experience the change they long for in the world as an expression of the peace they seek within themselves.</p>
           </div>
 
-          <h2 className={styles.title + ' title'}>Acknowledgement</h2>
+          <h2 className={styles.title + ' title'}>Acknowledgements</h2>
 
           <div className={styles.whoWeAreText}>
             <span className='caption'>JACQUELINE - CONTENT EDITOR</span>
