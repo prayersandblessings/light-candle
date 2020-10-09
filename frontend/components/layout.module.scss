@@ -5,26 +5,17 @@
 }
 
 .image {
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-size: cover;
+  // background-repeat: no-repeat;
   position: fixed;
-  height: 100%;
+  height: 105%;
+  min-width: 100%;
   left: 0;
   right: 0;
   top: 0;
   z-index: -2;
   opacity: 0;
   &.visible { opacity: 1;}
-  &.home, &.default { background-image: url(/backgrounds/default.jpg);}
-  &.ourStory { background-image: url(/backgrounds/our-intention.jpg);}
-  &.lightACandle { background-image: url(/backgrounds/light-a-candle.jpg); }
-  &.receiveAblessing { background-image: url(/backgrounds/receive-blessing.jpg); }
-  &.aPrayerForHumanity { background-image: url(/backgrounds/prayer-humanity.jpg);}
-  &.whoWeAre { background-image: url(/backgrounds/who-we-are.jpg);}
-
-  &.contact { background-image: url(/backgrounds/contact.jpg); }
-  &.subscribe { background-image: url(/backgrounds/subscribe.jpg); }
-  &.privacyPolicy{ background-image: url(/backgrounds/privacy.jpg); }
 }
 
 .secondaryNav {
