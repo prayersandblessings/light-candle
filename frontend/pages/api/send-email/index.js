@@ -46,7 +46,7 @@ export default async (req, res) => {
             name,
             email,
             emailContent,
-            subject: `${senderName} has sent you a prayer 🕯️`
+            subject: `${senderName} has sent you a blessing 🕯️`
         });
         const data = {
             email_address: senderEmail,

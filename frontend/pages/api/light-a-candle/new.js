@@ -87,7 +87,7 @@ async function main({senderName, receipentName, receipentEmail, message }) {
   let info = await transporter.sendMail({
     from: PRAYERS_EMAIL, // sender address
     to: `${receipentEmail}, ${PRAYERS_EMAIL}`, // list of receivers
-    subject: `${senderName} has sent you a prayer 🕯️`, // Subject line
+    subject: `${senderName} has sent you a blessing 🕯️`, // Subject line
     html: `
       <div style="max-width: 100%; background-color: #F8F9FA; padding: 1rem;">
         <div style="max-width: 620px; background-color: #28292a;; margin: 0 auto; padding: 1rem; text-align: center;">
