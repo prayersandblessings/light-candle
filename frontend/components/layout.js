@@ -31,7 +31,15 @@ const Layout = ({ children, classNameSection = 'default' }) => {
       </Head>
       <TopNav />
       <>
-        <div className={`${styles.image} ${styles[classNameSection]}`} />
+        <div className={`${styles.image} ${styles.default} ${classNameSection === 'default' || classNameSection === 'home' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.ourStory} ${classNameSection === 'ourStory' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.lightACandle} ${classNameSection === 'lightACandle' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.receiveAblessing} ${classNameSection === 'receiveAblessing' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.aPrayerForHumanity} ${classNameSection === 'aPrayerForHumanity' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.whoWeAre} ${classNameSection === 'whoWeAre' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.contact} ${classNameSection === 'contact' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.subscribe} ${classNameSection === 'subscribe' ? styles.visible: ''}`} ></div>
+        <div className={`${styles.image} ${styles.privacyPolicy} ${classNameSection === 'privacyPolicy' ? styles.visible: ''}`} ></div>
         <div className={styles.content}>{children}</div>
       </>
 

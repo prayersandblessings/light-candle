@@ -13,9 +13,10 @@
   right: 0;
   top: 0;
   z-index: -2;
-
-  &.home, &.default { background-image: url(/backgrounds/default.jpg); }
-  &.ourStory { background-image: url(/backgrounds/our-intention.jpg); }
+  opacity: 0;
+  &.visible { opacity: 1;}
+  &.home, &.default { background-image: url(/backgrounds/default.jpg);}
+  &.ourStory { background-image: url(/backgrounds/our-intention.jpg);}
   &.lightACandle { background-image: url(/backgrounds/light-a-candle.jpg); }
   &.receiveAblessing { background-image: url(/backgrounds/receive-blessing.jpg); }
   &.aPrayerForHumanity { background-image: url(/backgrounds/prayer-humanity.jpg);}
