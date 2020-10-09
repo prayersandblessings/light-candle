@@ -110,7 +110,10 @@ const WritePrayer = ({ onPrayerWritten })  => {
                 This ritual is a prayer in itself.
               </p>
               <p className={styles.description}>
-                You may wish to light a candle for a loved one, to let someone know that you are thinking of them or to call forth the best possible outcome in a situation. You may wish to light a candle to invoke the power within, to manifest light in dark places or as a means to remember the best of humanity.
+                You may wish to light a candle for a loved one, to let someone know that you are thinking of them or to call forth the best possible outcome in a situation. 
+              </p>
+              <p className={styles.description}>
+                You may wish to light a candle to invoke the power within, to manifest light in dark places or as a means to remember the best of humanity.
               </p>
             </div>
 
