@@ -16,6 +16,38 @@
   z-index: -2;
   opacity: 0;
   &.visible { opacity: 1;}
+
+  &.default {
+    background-color: #102544;
+  }
+
+  &.ourStory {
+    background-color: #280314;
+  }
+
+  &.lightACandle {
+    background-color: #10124F;
+  }
+
+  &.receiveAblessing {
+    background-color: #112A8F;
+  }
+
+  &.whoWeAre {
+    background-color: #3C254B;
+  }
+
+  &.contact {
+    background-color: #3A487D;
+  }
+
+  &.subscribe {
+    background-color: #233DA1;
+  }
+
+  &.privacyPolicy {
+    background-color: #372650;
+  }
 }
 
 .secondaryNav {

@@ -31,6 +31,7 @@ const Layout = ({ children, classNameSection = 'default' }) => {
       </Head>
       <TopNav />
       <>
+
         <img src='/backgrounds/default.jpg' className={`${styles.image} ${styles.default} ${classNameSection === 'default' || classNameSection === 'home' ? styles.visible: ''}`} />
         <img src='/backgrounds/our-intention.jpg' className={`${styles.image} ${styles.ourStory} ${classNameSection === 'ourStory' ? styles.visible: ''}`} />
         <img src='/backgrounds/light-a-candle.jpg' className={`${styles.image} ${styles.lightACandle} ${classNameSection === 'lightACandle' ? styles.visible: ''}`} />
@@ -40,6 +41,7 @@ const Layout = ({ children, classNameSection = 'default' }) => {
         <img src='/backgrounds/contact.jpg'className={`${styles.image} ${styles.contact} ${classNameSection === 'contact' ? styles.visible: ''}`} />
         <img src='/backgrounds/subscribe.jpg'className={`${styles.image} ${styles.subscribe} ${classNameSection === 'subscribe' ? styles.visible: ''}`} />
         <img src='/backgrounds/privacy.jpg'className={`${styles.image} ${styles.privacyPolicy} ${classNameSection === 'privacyPolicy' ? styles.visible: ''}`} />
+        
         <div className={styles.content}>{children}</div>
       </>
 
