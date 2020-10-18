@@ -12,7 +12,7 @@ export default async (req, res) => {
             <div style="max-width: 620px; margin: 0 auto; padding: 1rem; text-align: center; background-color: #FFFFFF !important;">
                 <p style="margin-left: 32px; margin-top: 40px; font-size: 1.5rem; color: #181f40; text-align: left;">Dear ${name}, </p>
                 <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #181f40; text-align: left;">${senderName} has sent you a blessing:</p>
-                <img style="width: 100%;" src='${urlNEXT}/candle-email.gif' >
+                <img style="width: 100%;" src='${urlNEXT}/candle-email.gif' alt="Light a candle image">
                 <p style="font-size: 1.25rem;  color: #181f40; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
                 "${message}"
                 </p>

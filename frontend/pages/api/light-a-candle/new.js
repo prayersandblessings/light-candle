@@ -93,7 +93,7 @@ async function main({senderName, receipentName, receipentEmail, message }) {
         <div style="max-width: 620px; background-color: #28292a;; margin: 0 auto; padding: 1rem; text-align: center;">
           <p style="margin-left: 32px; margin-top: 40px; font-size: 1.25rem; color: #d0d5ed; text-align: left;">Dear ${receipentName}, </p>
           <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #d0d5ed; text-align: left;">${senderName} has lit a candle for you:</p>
-          <img src='${urlNEXT}/candle-email.gif' >
+          <img src='${urlNEXT}/candle-email.gif' alt="Light a candle image">
           <p style="font-size: 1.25rem;  color: #d0d5ed; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
             "${message}"
           </p>
