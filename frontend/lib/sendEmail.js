@@ -29,6 +29,10 @@ const sendEmail = async (body) => {
             {
               type: 'text/html',
               value: emailContent
+            },
+            {
+              type: 'text/plain',
+              value: 'Visit prayersandblessings.com'
             }
           ]
         })
