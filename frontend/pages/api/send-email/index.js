@@ -18,7 +18,7 @@ export default async (req, res) => {
                 </tr>
                 <tr>
                     <td style="padding-left: 20px; padding-right: 20px;">
-                        <img width="100%" src="${urlNEXT}/candle-email.gif" />
+                        <img width="100%" src="${urlNEXT}/candle-email.gif" alt="Light a candle image" />
                     </td>
                 </tr>
                 <tr>
