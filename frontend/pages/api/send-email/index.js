@@ -8,38 +8,51 @@ export default async (req, res) => {
       try {
 
         const emailContent = `
-            <div style="max-width: 100%; background-color: #e5eaef; padding: 1rem;">
-            <div style="max-width: 620px; margin: 0 auto; padding: 1rem; text-align: center; background-color: #FFFFFF !important;">
-                <p style="margin-left: 32px; margin-top: 40px; font-size: 1.5rem; color: #181f40; text-align: left;">Dear ${name}, </p>
-                <p style="margin-left: 32px; margin-bottom: 40px; font-size: 1.25rem;  color: #181f40; text-align: left;">${senderName} has sent you a blessing:</p>
-                <img style="width: 100%;" src='${urlNEXT}/candle-email.gif' alt="Light a candle image">
-                <p style="font-size: 1.25rem;  color: #181f40; margin-left: 32px; margin-right: 32px; margin-top: 3rem; line-height: 2rem;">
-                "${message}"
-                </p>
-                <p style="font-size: 1.25rem; text-align: right; margin-left: 32px; margin-right: 32px; color: #181f40; margin-bottom: 2rem; font-style: italic;">
-                - ${senderName}
-                </p>
-                <div style="text-align: center;">
-                <a style="border: 1px solid #181f40 !important;
-                    text-decoration:none;
-                    color: #181f40;
-                    text-align: center;
-                    border-radius: 24px;
-                    padding: 10px 32px;
-                    display: inline-block;
-                    margin: 0 auto 2rem auto;
-                    font-size: 1.25rem;
-                    "
-                    href="${urlNEXT}"
-                >
-                    Visit Prayers & Blessings
-                </a>
-                </div>
-                <p style="text-align: center; margin-bottom: 60px; color: #181f40; font-size: .75rem;">
-                Copyright © 2020 Prayers & Blessings, All rights reserved.
-                </p>
-            </div>
-            </div>
+        <table width="100%" bgcolor="#e5eaef" border="0" style="padding: 48px; border-spacing:0;">
+            <tbody bgcolor="#ffffff" style="max-width: 620px;">
+                <tr border="0" bordercolor="#ffffff">
+                    <td style="font-size: 1.5rem; padding-left: 40px; padding-top: 40px; padding-bottom: 32px; color:#181f40;">Dear ${name},</td>
+                </tr>
+                <tr border="0" bordercolor="#ffffff">
+                    <td style="font-size: 1.25rem; padding-left: 40px; padding-bottom: 40px; color:#181f40;">${senderName} has sent you a blessing</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px; padding-right: 20px;">
+                        <img width="100%" src="${urlNEXT}/candle-email.gif" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1.25rem; color:#181f40; text-align: center; padding: 52px 40px;">
+                        "${message}"
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 0 40px 40px 40px; font-size: 1.25rem; font-style:italic; color:#181f40;">- ${senderName}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <a href="${urlNEXT}"
+                            style="
+                                color: #181f40;
+                                border: 1px solid #181f40;
+                                background: #ffffff;
+                                border-radius: 40px;
+                                font-size: 1.25rem;
+                                padding: 16px 20px;
+                                display: inline-block;
+                                text-decoration: none;
+                            "
+                        > Visit prayers and blessings
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: .75rem; color:#181f40; text-align: center; padding: 52px 0 80px 0;">
+                        Copyright © 2020 Prayers & Blessings, All rights reserved.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         `;
         const result = await sendEmail({ 
             senderName,
