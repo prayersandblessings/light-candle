@@ -25,7 +25,14 @@
     display: inline-block;
 
     &[aria-checked=true] {
-      background: white;
+      background: {
+        color: transparent;
+        image: url(/icon-check.svg);
+        size: 74%;
+        position: 55% 55%;
+        repeat: no-repeat;
+      }
+
       &::after {
         content:quote;
       }
