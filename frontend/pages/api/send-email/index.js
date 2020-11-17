@@ -54,13 +54,22 @@ export default async (req, res) => {
             </tbody>
         </table>
         `;
-        const result = await sendEmail({ 
+        await sendEmail({ 
             senderName,
             name,
             email,
             emailContent,
             subject: `${senderName} has sent you a blessing 🕯️`
         });
+
+        const emailContentConfirmation = `Hi ${senderName}, This is an email confirmation, You has sent an email to: ${name}, to the email: ${email}, with this content: ${emailContent}`;
+        // Sending confirmation email
+        await sendEmail({ 
+            email: senderEmail,
+            emailContent:  emailContentConfirmation,
+            subject: `You has sent a blessing 🕯️`
+        });
+
         const data = {
             email_address: senderEmail,
             merge_fields: {
