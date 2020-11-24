@@ -103,7 +103,7 @@ export default async (req, res) => {
         await sendEmail({ 
             email: senderEmail,
             emailContent:  emailContentConfirmation,
-            subject: `You blessing has been sent 🕯️`
+            subject: `Your blessing has been sent 🕯️`
         });
 
         const data = {
