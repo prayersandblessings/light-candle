@@ -62,12 +62,48 @@ export default async (req, res) => {
             subject: `${senderName} has sent you a blessing 🕯️`
         });
 
-        const emailContentConfirmation = `Hi ${senderName}, This is an email confirmation, You has sent an email to: ${name}, to the email: ${email}, with this content: ${emailContent}`;
+        const emailContentConfirmation = `
+            <table width="100%" bgcolor="#e5eaef" border="0" style="padding: 48px; border-spacing:0;">
+                <tbody bgcolor="#ffffff" style="max-width: 620px;">
+                    <tr border="0" bordercolor="#ffffff">
+                        <td style="font-size: 1.25rem; padding-left: 40px; padding-top: 40px; padding-bottom: 40px; color:#181f40;">${senderName}, <br> Your blessing has been sent to: ${name} to the email ${email}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px; padding-right: 20px;">
+                            <img width="100%" src="${urlNEXT}/candle-email.gif" alt="Light a candle image" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <a href="${urlNEXT}"
+                                style="
+                                    color: #181f40;
+                                    border: 1px solid #181f40;
+                                    background: #ffffff;
+                                    border-radius: 40px;
+                                    font-size: 1.25rem;
+                                    padding: 16px 20px;
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    margin-top: 40px;
+                                "
+                            > Visit prayers and blessings
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: .75rem; color:#181f40; text-align: center; padding: 52px 0 80px 0;">
+                            Copyright © 2020 Prayers & Blessings, All rights reserved.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
         // Sending confirmation email
         await sendEmail({ 
             email: senderEmail,
             emailContent:  emailContentConfirmation,
-            subject: `You has sent a blessing 🕯️`
+            subject: `You blessing has been sent 🕯️`
         });
 
         const data = {
