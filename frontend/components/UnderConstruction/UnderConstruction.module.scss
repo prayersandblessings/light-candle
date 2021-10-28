@@ -1,0 +1,52 @@
+.content *,
+.content *::before,
+.content *::after {
+  margin: 0;
+}
+
+.content {
+  text-align: center;
+  background: url("/backgrounds/under-construction.jpeg") no-repeat center
+    center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h1 {
+  font-family: "berling-italic";
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 4rem;
+  order: 2;
+}
+
+.content h2 {
+  font-family: "berling-italic";
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2.5rem;
+  order: 0;
+}
+
+.content .launch-date {
+  font-family: "Founders Grotesk Text";
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  order: 1;
+}
+
+.content .launch-info {
+  font-family: "Founders Grotesk Text";
+  font-size: 2rem;
+  margin-top: 8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  order: 3;
+}
