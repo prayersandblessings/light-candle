@@ -1,55 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital@0;1&display=swap');
+
 
 @font-face {
-  font-family: "tenor-sans";
-  src: url("../fonts/tenor-sans/Tenor-Sans.ttf.woff") format("woff"),
-    url("../fonts/tenor-sans/Tenor-Sans.ttf.eot") format("eot"),
-    url("../fonts/tenor-sans/Tenor-Sans.ttf.svg") format("svg"),
-    url("../fonts/tenor-sans/Tenor-Sans.ttf") format("truetype");
-  font-weight: normal;
+    font-family: 'tenor-sans';
+    src: url('../fonts/tenor-sans/Tenor-Sans.ttf.woff') format('woff'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf.eot') format('eot'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf.svg') format('svg'),
+         url('../fonts/tenor-sans/Tenor-Sans.ttf') format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: "open-sans";
-  src: url("../fonts/open-sans/light/OpenSans-Light-webfont.woff")
-      format("woff"),
-    url("../fonts/open-sans/light/OpenSans-Light-webfont.eot") format("eot"),
-    url("../fonts/open-sans/light/OpenSans-Light-webfont.svg") format("svg"),
-    url("../fonts/open-sans/light/OpenSans-Light-webfont.ttf")
-      format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'open-sans';
+    src: url('../fonts/open-sans/light/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/open-sans/light/OpenSans-Light-webfont.eot') format('eot'),
+         url('../fonts/open-sans/light/OpenSans-Light-webfont.svg') format('svg'),
+         url('../fonts/open-sans/light/OpenSans-Light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "open-sans";
-  src: url("../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.woff")
-      format("woff"),
-    url("../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.eot")
-      format("eot"),
-    url("../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.svg")
-      format("svg"),
-    url("../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.ttf")
-      format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "berling-italic";
-  src: url("../fonts/berling-bold-italic/BerlingBold_Italic.ttf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "berling-italic";
-  src: url("../fonts/berling-italic/BerlingItalic.ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Founders Grotesk Text";
-  src: url("../fonts/Founders-Grotesk-Text/Founders-Grotesk-Text-400.otf")
-    format("opentype");
+    font-family: 'open-sans';
+    src: url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.eot') format('eot'),
+         url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.svg') format('svg'),
+         url('../fonts/open-sans/semi-bold/OpenSans-Semibold-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
 }
