@@ -7,9 +7,7 @@ const UnderConstruction = () => {
   return (
     <div className={classes.content}>
       <div className={classes["content-wrapper"]}>
-        <Pulse>
-          <h1>Light to Light</h1>
-        </Pulse>
+        <h1>Light to Light</h1>
 
         <p className={classes.motto}>"A desire for light produces light"</p>
         <p className={classes["author-name"]}>Simone Weil</p>

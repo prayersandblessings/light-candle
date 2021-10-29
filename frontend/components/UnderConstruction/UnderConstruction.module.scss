@@ -18,7 +18,8 @@
 
 .content-wrapper {
   width: fit-content;
-  transform: translateX(55%);
+  margin-bottom: -8rem;
+  transform: translateX(18%);
 }
 
 .content h1 {
@@ -33,7 +34,7 @@
 .content p {
   font-family: "Founders Grotesk Text";
   font-size: 2.3rem;
-  letter-spacing: 2.2px;
+  letter-spacing: 3px;
 }
 
 .author-name {
@@ -43,28 +44,35 @@
 .content .launch-info {
   font-family: "Founders Grotesk Text";
   font-size: 2.5rem;
-  margin-top: 12rem;
+  margin-top: 16rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-@media (max-width: 1150px) {
-  .content-wrapper {
-    transform: translateX(35%);
-  }
 }
 
 @media (max-width: 950px) {
   .content-wrapper {
     transform: translateX(0);
+    margin-bottom: 0px;
   }
 
-  .content {
-    background-position: right;
+  // .content {
+  //   background-position: center;
+  // }
+  .content .launch-info {
+    margin-top: 12rem;
   }
 }
 
 @media (max-width: 487px) {
+  .content {
+    background-position-x: 67%;
+    background-size: 600px 100%;
+  }
+
+  .content-wrapper {
+    margin-bottom: 0px;
+  }
+
   .author-name {
     margin-top: 0;
   }
