@@ -10,11 +10,9 @@ const UnderConstruction = () => {
         <h1>Light to Light</h1>
       </Pulse>
 
-      <Pulse>
-        <h2>Prayers and Blessings</h2>
-      </Pulse>
+      <h2>Prayers and Blessings</h2>
 
-      <p className={classes["launch-date"]}>Will Launch 2022 As:</p>
+      <p className={classes["launch-date"]}>Will Launch In 2022 As:</p>
 
       <p className={classes["launch-info"]}>Stay Tuned!</p>
     </div>

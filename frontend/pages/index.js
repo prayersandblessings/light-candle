@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 
 import UnderConstruction from "../components/UnderConstruction/UnderConstruction";
 
+// If IsUnderConstruction is anything except than "true" the website will be back
 const IsUnderConstruction = "true";
 
 export const LinkCandle = ({ url, name }) => {
