@@ -16,38 +16,55 @@
   align-items: center;
 }
 
+.content-wrapper {
+  width: fit-content;
+  transform: translateX(55%);
+}
+
 .content h1 {
   font-family: "berling-italic";
+  font-size: 5.9rem;
   font-weight: 400;
   font-style: italic;
-  padding: 1rem;
-  margin-top: 4.5rem;
-  order: 2;
+  margin-bottom: 3rem;
 }
 
-.content h2 {
-  font-family: "berling-italic";
-  font-weight: 400;
-  font-style: italic;
-  font-size: 3rem;
-  order: 0;
-}
-
-.content .launch-date {
+.content p {
   font-family: "Founders Grotesk Text";
-  margin-top: 2rem;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 300;
-  order: 1;
+  font-size: 2.3rem;
+  letter-spacing: 2.2px;
+}
+
+.author-name {
+  margin-top: -0.5rem;
 }
 
 .content .launch-info {
   font-family: "Founders Grotesk Text";
-  font-size: 2rem;
-  margin-top: 8rem;
+  font-size: 2.5rem;
+  margin-top: 12rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  order: 3;
+}
+
+@media (max-width: 1150px) {
+  .content-wrapper {
+    transform: translateX(35%);
+  }
+}
+
+@media (max-width: 950px) {
+  .content-wrapper {
+    transform: translateX(0);
+  }
+
+  .content {
+    background-position: right;
+  }
+}
+
+@media (max-width: 487px) {
+  .author-name {
+    margin-top: 0;
+  }
 }

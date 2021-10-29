@@ -6,15 +6,16 @@ import classes from "./UnderConstruction.module.scss";
 const UnderConstruction = () => {
   return (
     <div className={classes.content}>
-      <Pulse>
-        <h1>Light to Light</h1>
-      </Pulse>
+      <div className={classes["content-wrapper"]}>
+        <Pulse>
+          <h1>Light to Light</h1>
+        </Pulse>
 
-      <h2>Prayers and Blessings</h2>
+        <p className={classes.motto}>"A desire for light produces light"</p>
+        <p className={classes["author-name"]}>Simone Weil</p>
 
-      <p className={classes["launch-date"]}>Will Launch In 2022 As:</p>
-
-      <p className={classes["launch-info"]}>Stay Tuned!</p>
+        <p className={classes["launch-info"]}>COMING SOON!</p>
+      </div>
     </div>
   );
 };
