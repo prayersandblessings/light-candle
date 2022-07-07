@@ -11,7 +11,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.15",
     "axios": "^0.19.2",
     "md5": "^2.3.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "next": "9.5.3",
     "nodemailer": "^6.4.11",
     "react": "16.13.1",
